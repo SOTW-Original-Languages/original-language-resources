@@ -9,7 +9,7 @@ This is a **three-passage, source-backed preview** for Genesis 1:1, John 1:1, an
 - BSB: original-language source table with surface forms, transliterations, morphology, original-word order and English renderings.
 - KJV: source-native Strong's tags.
 - NWB and ASV: supported KJV-derived display candidates only. **No internal disagreement records or unresolved links are included.**
-- Strong's: 30 historical Hebrew/Greek headwords with source-credited short definitions or clearly marked usage excerpts. Headword glosses are not passage-specific meanings.
+- Strong's: 30 historical Hebrew/Greek headwords with **concise, source-derived quick definitions** alongside longer source-credited historical definitions or clearly marked usage excerpts. Quick definitions are editorial summaries, not quoted source fields or passage-specific meanings.
 - Webster 1828: 19 selected historical English headword/sense excerpts. The 1828 dictionary is **not** the Webster 1833 Bible.
 - No BDB, Thayer candidate corpus, private flags, analytics or CGBC Sermon Player integration.
 
@@ -22,7 +22,7 @@ This is a **three-passage, source-backed preview** for Genesis 1:1, John 1:1, an
 ## Quality gates performed
 - Three Scripture passages with four English edition texts each.
 - 47 BSB original-language rows retained in native original-word order.
-- 30 unique Strong's identifiers resolved to Hebrew or Greek lexical records.
+- 30 unique Strong's identifiers resolved to Hebrew or Greek lexical records, each with a nonempty short gloss.
 - 19 Webster 1828 headword excerpts available for English lookup.
 - Every published KJV/NWB/ASV link position matches the intended English token in the corresponding verse.
 - All published Strong's IDs resolve to an excerpted lexicon record.
@@ -35,6 +35,7 @@ These are structural and provenance checks, **not** scholarly adjudication or fu
 - v1 fallback: Git commit `c011080f2ecf4d89c4b386f135d5deab9a153193`.
 - v2 preview data commit: `b6cd5cc8bf31ea8eec78d10721eeb6e52c5f7cd8`.
 - v2 viewer commit: `b4518f00ad7d5d887c95056efb3ec0bc51341058`.
+- v2.1 quick definitions: data `85eef3d7271eacb0f9f98e2f5c22c53af42481f9`; UI `b87d4fbc41dcc9219c4252793a02bc82659e901f`.
 - This site is isolated under `docs/inspector/`. No changes to CGBC or the separate Bible translation repositories.
 
 ## Next expansion
