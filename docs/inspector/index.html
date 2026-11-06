@@ -56,7 +56,7 @@ footer{margin-top:20px;font-size:12px;color:#607485;text-align:center}
 <div class="eyebrow">03 / BSB Native Source Table</div><h2>Original-language word sequence</h2>
 <p class="muted small">Shown in the source’s original-word order, not English word order. Hebrew, Aramaic, and Greek forms retain the source’s transliteration and morphology. This preview’s selected passages contain Hebrew and Greek.</p>
 <div id="original-rows" class="original-list"></div>
-<p class="small muted">“No direct English rendering” is an original-language occurrence, not an error. BSB and KJV may use different Strong’s identifiers for related grammatical forms; this viewer does not silently reconcile them.</p>
+<p class="small muted">“No direct English rendering” is an original-language occurrence, not an error. In Genesis 1:1, English “and” comes from an attached Hebrew waw prefix, not from the H853 object-marker headword. BSB and KJV may use different Strong’s identifiers for related grammatical forms; this viewer does not silently reconcile them.</p>
 </section>
 <section id="webster" class="panel">
 <div class="eyebrow">04 / Historical English</div><h2>Noah Webster’s 1828 Dictionary</h2>
@@ -111,7 +111,7 @@ function renderVerses(){
   head.appendChild(el("h3",edition));head.appendChild(el("span",methods[edition],"method"));card.appendChild(head);
   card.appendChild(el("div",v.texts[edition],"verse"));
   var words=el("div",null,"words");
-  var items=edition==="BSB"?v.rows.filter(function(r){return r[4]!==null}).map(function(r){return {id:r[0],word:r[4],row:r}}):v.links[edition].map(function(r){return {id:r[2],word:r[1],row:null}});
+  var items=edition==="BSB"?v.rows.filter(function(r){return r[4]!==null && !(r[0]==="H853" && r[4]==="and")}).map(function(r){return {id:r[0],word:r[4],row:r}}):v.links[edition].map(function(r){return {id:r[2],word:r[1],row:null}});
   items.forEach(function(item){
    var b=el("button",null,"word");b.type="button";b.setAttribute("data-strong-id",item.id);b.setAttribute("data-edition",edition);b.setAttribute("data-word",item.word);
    b.setAttribute("aria-pressed","false");b.appendChild(el("span",item.word));b.appendChild(el("strong",item.id));
