@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SOTW edition word alignment evidence 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "edition_id",
+    "verse_id",
+    "english_occurrence_id",
+    "source_witness_id",
+    "original_occurrence_id",
+    "status",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "record_type": {
+      "const": "translation_word_link"
+    },
+    "edition_id": {
+      "enum": [
+        "ASV1901",
+        "KJV1769",
+        "BSB",
+        "WEBSTER1833"
+      ]
+    },
+    "verse_id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9]{3,8}\\.[1-9][0-9]*\\.[1-9][0-9]*$"
+    },
+    "english_occurrence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_witness_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "original_occurrence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "strongs_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^strongs:[HG][0-9]{1,5}$"
+    },
+    "lexical_candidates": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "candidate",
+        "verified",
+        "disputed",
+        "rejected"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "locator"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "verification_note": {
+      "type": "string"
+    }
+  }
+}
