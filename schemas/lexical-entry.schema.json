@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SOTW lexical entry 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "source_id",
+    "native_entry_id",
+    "language",
+    "headword",
+    "publication_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "record_type": {
+      "const": "lexical_entry"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^lexicon:[a-z0-9._-]+:[A-Za-z0-9._-]+$"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "native_entry_id": {
+      "type": "string"
+    },
+    "language": {
+      "enum": [
+        "hebrew",
+        "aramaic",
+        "greek",
+        "english"
+      ]
+    },
+    "headword": {
+      "type": "string",
+      "minLength": 1
+    },
+    "strongs_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^strongs:[HG][0-9]{1,5}$"
+      }
+    },
+    "source_locator": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "publication_status": {
+      "enum": [
+        "research",
+        "validated",
+        "approved_public",
+        "excluded"
+      ]
+    },
+    "senses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sense_id",
+          "gloss"
+        ],
+        "properties": {
+          "sense_id": {
+            "type": "string"
+          },
+          "gloss": {
+            "type": "string"
+          },
+          "evidence_locator": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
