@@ -36,6 +36,7 @@ These are structural and provenance checks, **not** scholarly adjudication or fu
 - v2 preview data commit: `b6cd5cc8bf31ea8eec78d10721eeb6e52c5f7cd8`.
 - v2 viewer commit: `b4518f00ad7d5d887c95056efb3ec0bc51341058`.
 - v2.1 quick definitions: data `85eef3d7271eacb0f9f98e2f5c22c53af42481f9`; UI `b87d4fbc41dcc9219c4252793a02bc82659e901f`.
+- v2.1 cache and Webster visibility fix: UI `2e7e1b4edca0a0dffe79bdad2b8e59184b9b89ce`. Adds a version-pinned data URL to avoid stale JavaScript and displays selected-word Webster 1828 excerpts beside the Strong's definitions, when the sampled English headword is available.
 - This site is isolated under `docs/inspector/`. No changes to CGBC or the separate Bible translation repositories.
 
 ## Next expansion
