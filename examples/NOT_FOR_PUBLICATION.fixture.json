@@ -1,0 +1,42 @@
+{
+  "fixture_only": true,
+  "schema_version": "0.1.0",
+  "source_manifest": {
+    "schema_version": "0.1.0",
+    "source_id": "example-no-source",
+    "title": "Synthetic placeholder (not a real dataset)",
+    "edition": "NONE",
+    "origin_url": "https://example.invalid/not-a-source",
+    "original_sha256": null,
+    "rights_status": "unverified",
+    "publication_status": "not_ingested"
+  },
+  "lexical_entry": {
+    "schema_version": "0.1.0",
+    "record_type": "lexical_entry",
+    "id": "lexicon:example:DEMO1",
+    "source_id": "example-no-source",
+    "native_entry_id": "DEMO1",
+    "language": "hebrew",
+    "headword": "דוגמה",
+    "publication_status": "research",
+    "senses": []
+  },
+  "word_link": {
+    "schema_version": "0.1.0",
+    "record_type": "translation_word_link",
+    "edition_id": "ASV1901",
+    "verse_id": "GEN.1.1",
+    "english_occurrence_id": "synthetic-not-an-ASV-span",
+    "source_witness_id": "synthetic-not-a-real-witness",
+    "original_occurrence_id": "synthetic-not-a-real-token",
+    "status": "candidate",
+    "evidence": [
+      {
+        "source_id": "example-no-source",
+        "locator": "synthetic-only"
+      }
+    ],
+    "verification_note": "FAKE DATA: never publish or use as evidence"
+  }
+}
