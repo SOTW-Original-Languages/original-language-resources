@@ -221,6 +221,12 @@ Committed `scripts/validate_live_sotw_lexicon.py` at `0fdaff4d79ed9f018395de3cff
 
 **Scope:** Exact-schema compatibility of these 6,046 research records is certified locally. It does NOT certify field semantic correctness, rights/publication, source-authoritative flattened definition policy, occurrence alignment, or language for x-pn proper names. No GitHub Actions run claimed. No public release or player changes.
 
+## STEP 2 TYPED DEFINITION POLICY RESEARCH PROJECTION — 2026-11-07
+
+Executed a fresh local source-field segmentation pass from the previously preserved `SOTW_HEBREW_SOURCE_FIELDS_2026-11-07.zip` (not from inferred dictionary prose). All **8,674** entries have OSIS definition-list items, explanation notes and translation notes. Preserved **24,841** individual sense/list items, **8,670** exegesis notes, **8,674** explanation notes, **8,674** translation notes, and **124** x-typo correction notes across **121** entries. **Zero missing-field checks**. Produced research-only `SOTW_HEBREW_DEFINITION_POLICY_2026-11-07.zip` with source_field_projection.json, REPORT.json and README.md. Proposed policy: source list items remain sense items; source exegesis, explanation and translation remain separate typed notes; x-typo stays explicit correction metadata without silent changes to lemma or published prose; source translation note does not by itself prove KJV usage; x-pn retains null canonical language. Source OSIS is authoritative. This is not a canonical schema change or public release.
+
+**Next:** Independently assess source note semantics and original dictionary edition, determine public-facing presentation, rights and correction policy, and seek an explicit compatible canonical strategy for x-pn. Existing 6,046 eligible research lexicon records passed exact GitHub schema validation separately, but this typed research projection is not canonical schema v1. No player changes.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
