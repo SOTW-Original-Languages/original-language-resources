@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Locate accepted normalized public baseline before public index  
-**Status:** Owner switched continuity to regular GitHub files, no ZIP. Plain-file workspace and validator committed; full research JSON files not yet transferred. No production deployment.  
+**Stage:** Stage 1/5 completed: conservative Strong's research display projection  
+**Status:** Pre-beta Stage 1/5 completed locally, 8,674-entry research display projection generated; full data remain in downloadable stage file and Checkpoint 0, not GitHub.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -26,6 +26,15 @@
 Build a **deterministic, research-only display projection** from the selected Strong's digital source and the existing typed fields, preserving complete usable source content, Strong's IDs, grammar and provenance. Normalize only display metadata as previously agreed; **do not** import other lexicon definitions, silently remove senses, or claim original-1894 word perfection. Connect the existing lookup index and validate actual displayed attribution metadata. Preserve research source bytes separately. No public deployment or player change.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Stage 1/5 completed: deterministic research display projection
+- **VERIFIED:** Generated 8,674-entry `strongs_display_research_projection.json` (SHA-256 `deb05f625d7900cf7d3a939a8dc1e7312b78de089631fdeeee1ee0106bd99eba`), with report and README in `SOTW_HEBREW_STAGE1_2026-11-07/`.
+- **VERIFIED:** Exact Strong's ID match for 8,674 research and lookup records. 202 explicitly attribution-marked source items in 178 entries are tracked and excluded from the **new conservative reader projection**, while retained in Checkpoint 0 original research. 14 entries have no reader-facing definition or name gloss under this conservative rule.
+- **CAUTION:** This is **not** the previously claimed owner-approved zero-marker normalized public baseline. Search tokens still come from the internal research index and are not cleared for reader-facing use. Do not overwrite the original source with the projection.
+- **RECOVERY:** Owner-downloaded Checkpoint 0 remains the last complete recovery ZIP. Stage 1 data are separate until next checkpoint; download them if thread continuity is at risk.
+- **Next:** Stage 2/5, verify field completeness and clean search-token display projection without losing source information.
+
+
 
 ### 2026-11-07 | Owner clarifies pre-beta status and recovery cadence
 - **OWNER DECISION:** SOTW Original Languages is **pre-beta**. There is **no production player** at present. Stop describing this work as if a deployed player exists; continue building and testing the pre-beta system.
