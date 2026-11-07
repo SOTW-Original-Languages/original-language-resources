@@ -27,6 +27,15 @@ Build a **deterministic, research-only display projection** from the selected St
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
 
+### 2026-11-07 | Recovery Checkpoint 2 created through Stage 6
+- **OWNER CONTINUITY RULE:** In new threads owner can supply original source archives plus exactly ONE latest recovery ZIP. Do not require separate incremental Stage 6 inventory ZIP.
+- **VERIFIED:** `SOTW_RECOVERY_CHECKPOINT_2_THROUGH_STAGE6_2026-11-07.zip`, 3,291,131 bytes, SHA-256 `a4cbdbfd4b138a0d4c31e3d99ccb1485e33885d1c3f05a271db9149c64c364fa`.
+- **CONTENTS:** Nested complete Recovery Checkpoint 1 (includes original Checkpoint 0, corrected Stages 1–4 and Stage 5 manifest) plus Stage 6 resource reconnection inventory. Outer manifest and `verify_recovery.py` included; archive CRC and SHA validation PASS.
+- **EXCLUSIONS:** Original source ZIPs and the private inspector/public shell are not duplicated in this small recovery ZIP. Owner supplies them separately as original sources when needed. Stage 7 Webster integration is not yet built.
+- **NEXT:** Stage 7 build Webster 1828 lookup using original preserved source, distinct from Webster 1833 Bible. Continue updating progress log every completed stage; next full recovery after about five stages or sooner for continuity risk.
+
+
+
 ### 2026-11-07 | Stage 6: original local Word Study resources rediscovered and verified
 - **VERIFIED:** Original private 66-book inspector, public-safe shell, Webster/KJV/Strong's/lexicon source bundle, ASV continuity bundle and Hebrew Recovery Checkpoint 1 are all present locally. All five source ZIP CRC checks PASS. SHA-256s and member inventories recorded in `SOTW_STAGE6_RESOURCE_RECONNECTION_2026-11-07.zip` (downloadable conversation artifact; not stored in GitHub).
 - **DISTINCTION:** NWB/Webster 1833 is a Bible edition in the original inspector; Webster 1828 is a separate historical English dictionary source. Original Bible order: BSB, KJV, NWB/Webster 1833, ASV 1901.
