@@ -28,6 +28,13 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 - **One shared SOTW lexical resource library**, not a repository per dictionary; independent translation and historical-commentary repositories remain separate. No production player integration without specific owner authorization.
 - **BDB decision remains closed:** BibleAquifer digital BDB excluded from initial public release; do not reopen without owner instruction.
 
+## Owner-settled publication and source-retirement rules (2026-11-06)
+
+- **Unresolved evidence is not displayed as a resolved relationship.** If an original-language alignment, lexical association, or interpretive claim requires unresolved evidence-based review, omit that *claim* from the public projection. Preserve the actual source text and undisputed records; do not suppress an entire verse or resource merely because one association is disputed. Do not silently choose a disputed answer. The theologian uses independent research tools and, where available, paid services to investigate; SOTW does not claim to adjudicate those disputes for the reader.
+- **Optimized library is the intended durable operating source.** Build deterministic, versioned, validated canonical records from vetted inputs, with full source-authored fields, multiple tags, edition boundaries, licenses, provenance, and traceable transformation rules. Original archives are transitional ingestion inputs, not a required public runtime dependency.
+- **Retire original archive copies only after a documented migration gate:** verify complete required field/record coverage; original-source wording and distinctions; hash and source provenance; rights metadata; deterministic rebuild of public projections from optimized canonical records; cross-record integrity; private/public separation; and a recoverable backup of the optimized canonical library and scripts. Document any non-migrated material explicitly. Do not delete originals as part of this decision-register edit. If original bytes are the only way to re-run the *original ingestion* or substantiate a provenance dispute, acknowledge that capability will be lost on deletion; keep an owner-approved archival fallback until that risk is accepted.
+- **No unsupported public output:** uncertain links remain internal research evidence, not reader-facing inferred facts. The absence of an association is not a claim that no association exists.
+
 ## What was actually verified (as of 2026-11-06)
 
 - `docs/ARCHITECTURE.md` defines four layers: original source manifests, approved lexical records, evidence-backed translation links, and generated display projections.
@@ -58,6 +65,7 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 ## Change log
 
+- **2026-11-06 (owner pipeline policy):** Settled non-display of unresolved evidence-based claims and conditional retirement of original source archives after a complete, verified optimized-canonical migration. No data deletion or deployment performed.
 - **2026-11-06 (source continuity):** Added permanent vetted-source/artifact index with four original source-package SHA-256 hashes, derived research artifacts, stable repository roles, and explicit STEP comparison-only / Strong's primary-publication decisions. Index is metadata only, not an upload of private archives.
 - **2026-11-06 (owner follow-up):** Accepted archived Greek Strong's CC0 and Hebrew `StrongHebrewG.xml` Public Domain source declarations as the working publication basis; James Strong is the reader-facing historical attribution. No repeated historical-editorial-rights audit absent contradictory evidence. Retain internal provider provenance and update release manifests during implementation. Decision-record update only; no inspector or source-data deployment.
 - **2026-11-06:** Initial register created following owner report of repeated loss of decisions across threads. Read-only reconciliation of existing GitHub architecture, source/release policy, inspector README, archived source filenames, and continuation handoff. No change to production data, inspector, schemas, or other repositories.
