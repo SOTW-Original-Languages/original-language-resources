@@ -185,6 +185,12 @@ Fetched current GitHub canonical schema `schemas/sotw-canonical-v1.schema.json`,
 
 **Critical precision:** The validator used a locally transcribed lexicon/provenance subset from the fetched schema, not the checked-out GitHub schema document itself and not its complete top-level `oneOf` dispatch. This is a lexicon-constraint audit, **not yet full exact-file schema certification**. Definition formatting/field semantics and x-pn canonical policy remain unresolved. Do not release or change production.
 
+## STEP 2 TOP-LEVEL DISPATCH RECHECK — 2026-11-07
+
+Fetched current canonical schema (Git blob `2ff9b33ba9679e858f9994eb8fffbf29976a969e`). Executed local Python `jsonschema.Draft202012Validator` on all **6,046** corrected `heb`/`arc` lexicon records with the complete live lexicon, provenance and release constraints transcribed into a local schema, plus the top-level `oneOf` dispatch and mutually exclusive kind checks. **0 errors**. Local report `SOTW_HEBREW_FULL_DISPATCH_VALIDATION_2026-11-07.json` and executable `validate_sotw_exact.py` are conversation artifacts, not GitHub files.
+
+**Not yet exact-file certification:** The validator is a local transcription and substitutes kind-only schemas for non-lexicon branches; it is NOT the byte-identical GitHub JSON Schema document. Do not describe it as exact checked-out schema validation. 2,628 `x-pn` entries still require an evidence-backed canonical language representation. Derived definition rendering and typed note mapping remain research-only. No public release or player changes.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
