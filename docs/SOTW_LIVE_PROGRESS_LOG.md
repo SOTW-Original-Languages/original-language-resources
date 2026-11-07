@@ -2,7 +2,7 @@
 
 **Updated:** 2026-11-07  
 **Stage:** Stage 11 verification performed; browser-level test BLOCKED, not certified
-**Status:** Stage 11 live HTTP and UI wiring checks 14/14 PASS; actual Chromium navigation blocked by administrator, so browser visual/click validation remains OPEN. Recovery Checkpoint 11 includes prior Checkpoint 10. No deployment.
+**Status:** Stage 11 browser verification remains BLOCKED in this environment; owner-local Playwright click-through test packaged in Recovery Checkpoint 12. No browser pass claimed, no deployment.
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -24,9 +24,17 @@
 
 ## NEXT ACTION (one task only)
 
-**Complete Stage 11 real-browser validation on an environment that permits localhost navigation.** Open private inspector via loopback launcher, test all four translation word clicks, Webster panel and Strong's coexistence, attribution, missing headwords, and responsive layout. Repair only confirmed defects; no claim of browser pass yet. The latest owner backup is Checkpoint 11 (nested full Checkpoint 10 plus audit report); original archives remain separate. No public deployment.
+**Run the packaged Stage 11 browser test on an owner-controlled machine that permits localhost navigation.** Follow the `SOTW_STAGE11_BROWSER_HANDOFF_2026-11-07.zip` README inside Checkpoint 12, collect its JSON results and inspect mobile/edge-case behavior. Repair only observed defects. Stage 11 remains browser-blocked, not release-certified. No public deployment.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Stage 11 browser follow-up: navigation restriction reproduced; Checkpoint 12 test handoff
+- **REPRODUCED:** Playwright Chromium navigation returned `net::ERR_BLOCKED_BY_ADMINISTRATOR` for localhost, local file and even data: page. No browser PASS asserted and no source/UI modification.
+- **CREATED:** Owner-local Playwright script `test_browser.py` tests four translation cards, Webster 1828 word clicks for BSB/KJV/Webster 1833/ASV, Strong's + Webster panel coexistence, license visibility and JavaScript errors; emits machine-readable PASS/FAIL/BLOCKED results. README includes manual visual and missing-word tests. Script syntax compilation PASS; real browser execution remains blocked in this environment.
+- **LATEST RECOVERY:** `SOTW_RECOVERY_CHECKPOINT_12_BROWSER_HANDOFF_2026-11-07.zip`, 86,109,814 bytes, SHA-256 `d5c7547659bcdc4bca4024e85405b7d4817808e6d2cf2b59570c9392a2f68105`; contains complete Checkpoint 11 plus test-only handoff. ZIP CRC PASS. Original source archives remain separate.
+- **NEXT:** Owner-local real-browser validation, then targeted fixes only. No deployment.
+
+
 
 ### 2026-11-07 | Stage 11 verification: 14/14 supported checks PASS; browser navigation BLOCKED
 - **LIVE API:** Tested local loopback Python server against Webster 1828 `love` headword for BSB, KJV, Webster 1833 and ASV 1901, casefold, missing headword and invalid edition: PASS. Local site serves. UI static wiring shows four translation order, clickable English words, separate Strong's action, safe plain-text rendering, CC BY-SA attribution and loopback-only binding: PASS. Total **14 passed checks**.
