@@ -27,6 +27,15 @@ Build a **deterministic, research-only display projection** from the selected St
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
 
+### 2026-11-07 | Stage 5/5 COMPLETE: Recovery Checkpoint 1
+- **VERIFIED ZIP:** `SOTW_HEBREW_RECOVERY_CHECKPOINT_1_STAGE5_2026-11-07.zip`, 3,286,760 bytes, SHA-256 `9d37881c29febe4071fded3b2c4d4252fb07c428af8d301ae32db25830d8ecca`.
+- **CONTENTS:** Nested original Checkpoint 0 ZIP unchanged; corrected Stage 1 (8,674 entries), Stage 2 forward/reverse lexical indexes, Stage 3 search engine/tests, Stage 4 evaluation, manifest with individual SHA-256s, README and `verify_checkpoint.py`. Earlier rejected exclusion-based Stage 1 deliberately omitted.
+- **VALIDATION:** ZIP CRC integrity PASS; per-file manifest SHA-256 PASS; nested Checkpoint 0 archive PASS; Stage 3 unit tests 9/9 PASS; Stage 4 regression checks 52/52 PASS. All runnable using Python standard library after extraction.
+- **OWNER ACTION:** Download and retain the ZIP; reupload it to the next thread. This GitHub entry stores checkpoint metadata, **not** the ZIP bytes. Do not claim owner has downloaded until confirmed.
+- **NEXT CYCLE:** Resume pre-beta work from this ZIP. Do not reopen settled 202-marker normalization, scan comparisons or source selection; no player integration or deployment without owner request.
+
+
+
 ### 2026-11-07 | Stage 4/5: search evaluation completed
 - **VERIFIED:** 52/52 bounded regression checks PASS for exact IDs, unknown IDs, stopwords, deterministic ranking, valid postings, search limits, and representative English lexical queries. Evaluation script: `SOTW_HEBREW_STAGE4_2026-11-07/evaluate_search.py`; report: `STAGE4_REPORT.json`.
 - **VERIFIED:** Stage 2 raw index contains 106 numeric-only tokens and 23 single-character tokens; Stage 3 ordinary keyword parser filters these. They remain in research indexes; no source data altered.
