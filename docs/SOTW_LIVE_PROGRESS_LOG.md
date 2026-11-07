@@ -2,7 +2,7 @@
 
 **Updated:** 2026-11-07  
 **Stage:** Locate accepted normalized public baseline before public index  
-**Status:** BLOCKED on identifying owner-accepted normalized public artifact. Research lookup index exists; no production script or deployment.  
+**Status:** Existing research and lookup artifacts verified; next build a deterministic display projection from the accepted digital source. No production script or deployment.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -18,14 +18,21 @@
 - **OWNER DECISION:** Use the widely distributed, public-domain-designated Strong's digital edition as the practical foundation. Do not rebuild a word-perfect 1894 edition or require a PDF scan comparison. Preserve source and digital editorial provenance. No external STEP, Open Scriptures, TWOT, BDB, or CLBL **alternative dictionary definitions** are to be imported for public display. The owner has said the normalized display attribution count was already zero; **locate and verify that accepted baseline instead of reopening the audit**.
 - **VERIFIED (internal research):** A source-attribution audit found 202 explicitly labeled sense items in 178 entries in the raw research record. These are **source/audit markers, not 202 new imported sources or newly proven defects**. The earlier 14-unavailable stripped projection was an audit variant, **not** the approved final display.
 - **VERIFIED (research):** `SOTW_STRONGS_LOOKUP_RESEARCH_INDEX_2026-11-07.zip` indexes 8,674 Strong's IDs, 12,457 searchable tokens, 24,180 sense/name-gloss items, and 55 literal cross-reference candidates. These hooks are **not** verified semantic links and the index is **not public-ready**.
-- **UNVERIFIED:** The owner-accepted zero-marker normalized public artifact has not been positively identified among the compared packages. Do not claim its contents, regenerate it from an audit variant, or overwrite it.
+- **CLARIFICATION:** This thread produced research projections, a ten-entry presentation preview, and a lookup index; the record does not establish that a separate approved full public baseline file was ever created. The owner's zero-marker statement is a settled normalization/presentation expectation, not evidence of a missing file. Do not keep asking the owner to locate one.
 - **RELEASE BOUNDARY:** Research-only. No public deployment, production script, canonical-schema replacement, CGBC player modification, or player integration has been authorized.
 
 ## NEXT ACTION (one task only)
 
-**BLOCKED: identify the owner-accepted normalized public dictionary artifact.** GitHub code search and mounted ZIP filename/member inventory did not locate it. Need its exact GitHub path, ZIP filename, or owner-supplied copy. Once identified, verify its SHA/fields and zero-marker claim, then connect existing ID/token lookup without changing definitions. Do not substitute an audit variant.
+Build a **deterministic, research-only display projection** from the selected Strong's digital source and the existing typed fields, preserving complete usable source content, Strong's IDs, grammar and provenance. Normalize only display metadata as previously agreed; **do not** import other lexicon definitions, silently remove senses, or claim original-1894 word perfection. Connect the existing lookup index and validate actual displayed attribution metadata. Preserve research source bytes separately. No public deployment or player change.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Corrected false missing-file blocker
+- **VERIFIED:** Reinspected files from this conversation. `SOTW_HEBREW_PUBLIC_PRESENTATION_POLICY_RESEARCH_2026-11-07.zip` is explicitly a **10-entry sample preview**, with 8,674 source-field records audited, not a complete approved public baseline. `SOTW_STRONGS_DIGITAL_EDITION_RESTORED_RESEARCH_2026-11-07.zip` is a full research record; `SOTW_STRONGS_LOOKUP_RESEARCH_INDEX_2026-11-07.zip` is a research index.
+- **CORRECTION:** Earlier checkpoint incorrectly treated an unverified separate 'accepted normalized baseline' as a file the owner needed to find. The owner correctly identified that the work was being performed in this thread. No request for a missing ZIP is warranted.
+- **Next:** Produce deterministic normalized display projection from the accepted digital source and typed data, then validate its actual public fields; research-only until specifically authorized.
+
+
 
 ### 2026-11-07 | Baseline discovery attempt (no replacement)
 - **VERIFIED:** Searched current repository code index for `normalized`, `strongs`, `display`, `lexicon`; search returned no matching files. This search outcome does **not** establish repository absence because code indexing may be incomplete.
