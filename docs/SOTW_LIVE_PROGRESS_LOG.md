@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 10 private Webster 1828 Inspector integration completed
-**Status:** Pre-beta private local inspector integration built and 7/7 tests passed. Recovery Checkpoint 10 includes prior Checkpoint 9 and full private Stage 10 inspector. Not deployed or published.
+**Stage:** Stage 11 verification performed; browser-level test BLOCKED, not certified
+**Status:** Stage 11 live HTTP and UI wiring checks 14/14 PASS; actual Chromium navigation blocked by administrator, so browser visual/click validation remains OPEN. Recovery Checkpoint 11 includes prior Checkpoint 10. No deployment.
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -24,9 +24,17 @@
 
 ## NEXT ACTION (one task only)
 
-**Stage 11: Test the Stage 10 private inspector in a real local browser and review representative verse-word behavior in all four editions, including Strong's and Webster panel coexistence, attribution visibility and missing headwords.** Address actual UI defects only. Stage 10 includes original private research data, not a public release; source and rights audit before any public projection. The earlier Stage 8C alignments remain research candidates and were not silently promoted. Latest recovery is Checkpoint 10 plus original archives. No deployment.
+**Complete Stage 11 real-browser validation on an environment that permits localhost navigation.** Open private inspector via loopback launcher, test all four translation word clicks, Webster panel and Strong's coexistence, attribution, missing headwords, and responsive layout. Repair only confirmed defects; no claim of browser pass yet. The latest owner backup is Checkpoint 11 (nested full Checkpoint 10 plus audit report); original archives remain separate. No public deployment.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Stage 11 verification: 14/14 supported checks PASS; browser navigation BLOCKED
+- **LIVE API:** Tested local loopback Python server against Webster 1828 `love` headword for BSB, KJV, Webster 1833 and ASV 1901, casefold, missing headword and invalid edition: PASS. Local site serves. UI static wiring shows four translation order, clickable English words, separate Strong's action, safe plain-text rendering, CC BY-SA attribution and loopback-only binding: PASS. Total **14 passed checks**.
+- **NOT VERIFIED:** Playwright Chromium navigation to localhost returned `net::ERR_BLOCKED_BY_ADMINISTRATOR`. Browser click/visual test therefore **BLOCKED** (15th check), not passed. No release certification and no UI code change; owner-machine browser validation remains necessary.
+- **LATEST RECOVERY:** `SOTW_RECOVERY_CHECKPOINT_11_STAGE11_VERIFICATION_2026-11-07.zip`, **86,105,977 bytes**, SHA-256 `0b97a5c22214dc99b2f14688f60a6257ad8df73095b6c3edb9b987c7f4534d5d`. Includes nested complete Checkpoint 10 and Stage 11 report/README ZIP; CRC checks PASS. Original archives separate. Private inspector must not be published wholesale.
+- **NEXT:** Complete real browser validation in a permitted environment and address actual defects only. No deployment.
+
+
 
 ### 2026-11-07 | Stage 10 COMPLETE: private local Webster 1828 inspector integration; Checkpoint 10
 - **IMPLEMENTED:** Extended original 66-book private inspector, preserving its existing `site/data/` and Strong's evidence behavior. All English words in BSB, KJV, Webster 1833 and ASV are clickable for a direct Webster 1828 exact-headword lookup, independent of Strong's. Existing Strong's-linked words retain their Strong's detail action and additionally open the Webster dictionary panel. Definitions served from Stage 9 SQLite by a loopback-only Python endpoint `/api/webster`; source HTML rendered as plain text, not injected as markup. Source edition is validated; no stemming, sense selection or inferred Strong's tags.
