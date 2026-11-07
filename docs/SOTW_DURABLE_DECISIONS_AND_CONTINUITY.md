@@ -129,6 +129,14 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Next bounded action:** Execute the committed five-entry importer and independent audit using a repository checkout containing the exact canonical schema, then add full-dictionary field fidelity checks and lossless OSIS storage. Separately establish an authorized original Hebrew textual witness for Genesis 1:1 before making word occurrences. Preserve original archives; do not promote unverified alignment or source content into public release.
 
+## STEP 2 NEXT GATE — reproducible full-schema pilot runner (2026-11-07)
+
+**Committed:** `scripts/run_hebrew_pilot_gate.py` (commit `3efd2dc181f92e720a89e36496893bd8d2f46d46`). It runs the previously committed hash-locked five-entry importer and separate source-subtree auditor in sequence, using the **actual checked-out** `schemas/sotw-canonical-v1.schema.json`. It refuses writing generated research files inside the repository. Run from a checkout with `jsonschema>=4.18,<5` and the original source archive available locally:
+
+`python scripts/run_hebrew_pilot_gate.py --outer /path/to/SOTW_WordStudy_03_DICTIONARIES_LEXICONS_KJV_WEBSTER_2026-11-05.zip --out /tmp/sotw-hebrew-pilot`
+
+**Execution status:** Runner committed but **not yet executed end-to-end with a checked-out live GitHub schema**. The original archive is local/private, not in GitHub Actions; do not claim CI execution or full-schema certification. Earlier source inventory 8,674 entries and five-entry OSIS comparisons remain valid within their recorded scope. Next execute this exact command in a checkout, capture stdout, and only then mark canonical pilot gate passed. Afterward add full-dictionary field-fidelity and source coverage tests before scaling. No publication or deployment.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
