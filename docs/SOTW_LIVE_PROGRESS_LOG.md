@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 8A complete: KJV native Strong's occurrence hooks; Stage 8 remains partial  
-**Status:** Pre-beta Stage 8A complete: 66-book KJV source-native tagged-word index built and validated; Recovery Checkpoint 4 contains prior Checkpoint 3 and Stage 8A. BSB/NWB/ASV and morphology still outstanding. No deployment.  
+**Stage:** Stage 8B complete: BSB source-native original-language alignment; Stage 8 remains partial  
+**Status:** Pre-beta Stage 8B complete: 437,587 source-tagged BSB original-language rows built and validated against Stage 7 Strong's; Recovery Checkpoint 5 includes previous Checkpoint 4 and Stage 8B. NWB/ASV and deeper morphology hooks still outstanding. No deployment.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -24,9 +24,17 @@
 
 ## NEXT ACTION (one task only)
 
-**Stage 8B: Source-native BSB original-language alignments.** Read archived BSB USFM/USJ/USX source structure and extract only attested alignments with source locator, license and provenance. Preserve distinction from KJV native USFM tags and from any future supported KJV-derived NWB/ASV links. Stage 8A KJV occurrence index is complete; do not infer untagged word relationships or morphology. Checkpoint 4 is the latest owner-downloadable one-ZIP handoff; source archives remain separate. No deployment.
+**Stage 8C: Evidence-supported KJV-derived NWB/Webster Bible 1833 and ASV 1901 occurrence links.** Read original Bible text/source comparison artifacts and preserve all supported native KJV tag arrays; do not assume word equivalence across translations or assert unresolved alignments. Keep BSB source-native 8B and KJV source-native 8A independent. After Stage 8C, implement source-credited original-language morphology hooks. Owner needs only latest Recovery Checkpoint 5 plus original source archives. No deployment.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Stage 8B complete: BSB source-native alignment and Recovery Checkpoint 5
+- **VERIFIED:** Original `SOTW_WordStudy_04_BSB_TEXT_ALIGNMENT_REFERENCES_2026-11-05.zip / source_files/bsb_tables.tsv` parsed: 754,647 table rows, 437,587 source-tagged original-language word records, 294,728 Hebrew, 4,728 Aramaic, 138,131 Greek. 31,102 explicit VerseId anchors overall, including 31,023 on tagged rows; 406,564 tagged rows inherit same-verse source anchor with strict verse-number boundary. No unanchored tagged records, malformed columns, or unexpected languages. 437,587/437,587 Strong's references resolve against Stage 7 dictionaries.
+- **IMPORTANT SOURCE BOUNDARY:** BSB USFM/USJ/USX text has no inline Strong's word tags; BSB-native alignments originate in the source table, not KJV USFM. Preserve source row, Hebrew/Greek spelling, transliteration, compact/expanded parsing, source BSB English cell, and original verse anchor. This does not assert each sense applies to its verse. No inferred word alignment, no public release, no player change.
+- **LATEST RECOVERY:** `SOTW_RECOVERY_CHECKPOINT_5_STAGE8B_2026-11-07.zip`, 27,942,305 bytes, SHA-256 `2397eac84985393216bd8a61ce7371960437d52b8638b015f7f3d50ebcec0e14`. Contains complete nested Checkpoint 4 plus Stage 8B compressed dataset, deterministic build, cross-check validator, report and README. ZIP CRC, member hashes and nested archive integrity PASS. Original source ZIPs remain separate.
+- **NEXT:** Stage 8C supported KJV-derived NWB/Webster 1833 and ASV links, then morphology. No deployment.
+
+
 
 ### 2026-11-07 | Stage 8A complete: KJV source-native Strong's occurrence index and Recovery Checkpoint 4
 - **VERIFIED:** Parsed original archived `eng-kjv2006_usfm.zip` (SHA-256 `ce1f526c64c2376f407308c2c23cb2d2fb58efaf5296327d2d8e408c3700650d`) across 66 books. 313,813 tagged word occurrences, 313,813 source-attested tag associations, 29,699 distinct verse keys with tagged words; 418 additional source-tagged pre-verse heading words retained without fabricated verse anchors. Zero unmatched Strong's IDs against Stage 7 H/G dictionaries; zero parser errors. Original source attribute and per-word tag array preserved.
