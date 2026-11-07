@@ -4,9 +4,13 @@
 **Status:** Owner-directed architecture and research-continuity record. This document records owner decisions, including acceptance of the archived Greek CC0 and Hebrew Public Domain declarations as the working rights basis for the selected Strong's publication sources. It is not an independent legal guarantee or a blanket approval of unrelated third-party editions.  
 **Scope:** SOTW Original Languages and Word Study Inspector. No CGBC player or other-repository changes.
 
+## Permanent vetted-source index
+
+Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md)** before questioning any previously acquired source. It lists the four original source bundles, source members, whole-archive SHA-256 values, derived research artifacts, accepted publication roles, STEP's comparison-only role, and private/public boundaries. The archived sources were previously vetted as research inputs; do not demand a new general vetting campaign. **The index is a reference to original archives, not a claim that all source bytes reside in public GitHub.**
+
 ## Mandatory new-thread resume procedure
 
-1. Read this register, `docs/ARCHITECTURE.md`, `docs/SOURCES_AND_RELEASE.md`, `docs/TRANSLATION_ADAPTERS.md`, and the current inspector README.
+1. Read this register, `docs/SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md`, `docs/ARCHITECTURE.md`, `docs/SOURCES_AND_RELEASE.md`, `docs/TRANSLATION_ADAPTERS.md`, and the current inspector README.
 2. Inspect the latest GitHub files/commits and available original source archives and hashes before proposing new research or rebuilding anything.
 3. Distinguish **owner-settled design**, **verified implemented state**, **unverified historical claim**, and **open release gate**. Do not turn a missing citation into a reversal of an owner decision.
 4. Resume only the smallest unresolved task. Preserve research findings and original source provenance; no blanket restart.
@@ -54,6 +58,7 @@
 
 ## Change log
 
+- **2026-11-06 (source continuity):** Added permanent vetted-source/artifact index with four original source-package SHA-256 hashes, derived research artifacts, stable repository roles, and explicit STEP comparison-only / Strong's primary-publication decisions. Index is metadata only, not an upload of private archives.
 - **2026-11-06 (owner follow-up):** Accepted archived Greek Strong's CC0 and Hebrew `StrongHebrewG.xml` Public Domain source declarations as the working publication basis; James Strong is the reader-facing historical attribution. No repeated historical-editorial-rights audit absent contradictory evidence. Retain internal provider provenance and update release manifests during implementation. Decision-record update only; no inspector or source-data deployment.
 - **2026-11-06:** Initial register created following owner report of repeated loss of decisions across threads. Read-only reconciliation of existing GitHub architecture, source/release policy, inspector README, archived source filenames, and continuation handoff. No change to production data, inspector, schemas, or other repositories.
 
