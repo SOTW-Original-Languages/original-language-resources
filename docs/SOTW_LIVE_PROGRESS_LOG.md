@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 7 COMPLETE: source-faithful Hebrew and Greek Strong's field projection  
-**Status:** Pre-beta Stage 7 completed and tested (31/31); Recovery Checkpoint 3 contains Checkpoint 2 plus Stage 7 data/scripts. No deployment. Stage 8 next: source-attested word-occurrence and morphology hooks.  
+**Stage:** Stage 8A complete: KJV native Strong's occurrence hooks; Stage 8 remains partial  
+**Status:** Pre-beta Stage 8A complete: 66-book KJV source-native tagged-word index built and validated; Recovery Checkpoint 4 contains prior Checkpoint 3 and Stage 8A. BSB/NWB/ASV and morphology still outstanding. No deployment.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -24,9 +24,17 @@
 
 ## NEXT ACTION (one task only)
 
-**Stage 8: Build original-language occurrence and morphology hooks from original source-attested evidence.** Use the Stage 7 14,298-entry Strong's source-field projection as the lexicon baseline. Verify KJV's native USFM Strong's tags (including multiple tags per word), BSB's own native alignment, and only evidence-supported KJV-derived NWB/ASV links. Keep Greek/Hebrew morphology and lexicon candidates separately sourced, with no inferred verse-word or semantic equivalences. Preserve source rights and private/public boundaries. Do not modify player UI or deploy. Webster 1828 follows original-language integration. Owner carries only latest Recovery Checkpoint 3 plus original source archives.
+**Stage 8B: Source-native BSB original-language alignments.** Read archived BSB USFM/USJ/USX source structure and extract only attested alignments with source locator, license and provenance. Preserve distinction from KJV native USFM tags and from any future supported KJV-derived NWB/ASV links. Stage 8A KJV occurrence index is complete; do not infer untagged word relationships or morphology. Checkpoint 4 is the latest owner-downloadable one-ZIP handoff; source archives remain separate. No deployment.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Stage 8A complete: KJV source-native Strong's occurrence index and Recovery Checkpoint 4
+- **VERIFIED:** Parsed original archived `eng-kjv2006_usfm.zip` (SHA-256 `ce1f526c64c2376f407308c2c23cb2d2fb58efaf5296327d2d8e408c3700650d`) across 66 books. 313,813 tagged word occurrences, 313,813 source-attested tag associations, 29,699 distinct verse keys with tagged words; 418 additional source-tagged pre-verse heading words retained without fabricated verse anchors. Zero unmatched Strong's IDs against Stage 7 H/G dictionaries; zero parser errors. Original source attribute and per-word tag array preserved.
+- **SCOPE:** No multiple-tag occurrences found in this particular USFM source; parser models an array and does not collapse tags. Untagged words are not aligned by inference. No morphology claims. This is not BSB native alignment and not NWB/ASV derived mapping.
+- **LATEST RECOVERY ZIP:** `SOTW_RECOVERY_CHECKPOINT_4_STAGE8A_2026-11-07.zip`, 8,976,183 bytes, SHA-256 `c8908fe6261905b174f51c341529ab535dd62a41f59c45d1d7ba1015f6b95a95`. Contains full nested Checkpoint 3 plus Stage 8A dataset, script, report and README. CRC, file SHA-256 and nested checkpoint ZIP checks PASS. Original source archives are not duplicated; owner download required.
+- **NEXT:** Stage 8B BSB native source alignment, then supported NWB/ASV associations and morphology. Stage 8 overall remains IN PROGRESS. No public/player integration.
+
+
 
 ### 2026-11-07 | Stage 7 COMPLETE; Recovery Checkpoint 3 created
 - **VERIFIED:** Built complete source-field projections for 8,674 Hebrew/Aramaic Strong's IDs and 5,624 Greek Strong's IDs (14,298 total). Hebrew: 8,674 concise explanations, 8,674 KJV rendering fields, 8,670 exegesis notes, 21,500 selected expanded senses, 2,680 proper-name glosses, and all 24,841 original source list items preserved. Greek: 5,523 headwords, 5,507 concise definitions, 5,522 KJV rendering fields, 5,510 derivations, 101 explicit Not Used placeholders, 324 supplemental source-prose entries.
