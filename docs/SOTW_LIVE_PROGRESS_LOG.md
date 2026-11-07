@@ -28,6 +28,15 @@
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
 
+### 2026-11-07 | OWNER CORRECTION: Webster 1828 dictionary directly available for ALL Bible translations
+- **OWNER DECISION (supersedes prior Webster navigation design):** Webster 1828 is a general historical English dictionary accessible by direct headword lookup from every displayed Bible translation (BSB, KJV, Webster 1833 Bible, ASV 1901). Do **not** require routing via Webster 1833 Bible, KJV, or Strong's before opening a Webster 1828 dictionary entry.
+- **AUTHORSHIP/HISTORICAL INFERENCE:** Webster published his dictionary in 1828 before his KJV-based Bible revision in 1833. Shared author and chronological order reasonably support a working hypothesis that earlier lexical research informed the Bible revision, but do not document individual intended senses. Preserve this as historical inference, not an attested statement by Webster.
+- **STRONG'S PIPELINES:** Keep BSB's own native alignment and KJV's native Strong's tags. Build KJV-text-comparison-derived supported Strong's associations separately for ASV 1901 and Webster 1833. No custom theological inference protocol for Webster 1833.
+- **DICTIONARY PIPELINE:** Translation English word -> normalized direct Webster 1828 headword lookup -> display complete source-authored senses and provenance. Same reusable lookup service for all four editions. Do not equate English dictionary senses with Hebrew/Greek Strong's definitions or claim contextual disambiguation without evidence.
+- **SUPERSEDES:** Prior proposed mandatory chain Webster 1833 -> Webster 1828 -> Strong's, and any suggestion that only Webster 1833 has direct Webster dictionary access. Stage 8C remains next. Checkpoint 5 remains current; no source or deployment change made.
+
+
+
 ### 2026-11-07 | Owner confirms Webster author-paired Bible and Dictionary linkage
 - **OWNER DIRECTION:** Treat Noah Webster's 1833 Bible revision and 1828 English Dictionary as a complementary author-paired study path, using existing original archives rather than new source discovery or speculative interpretive protocols.
 - **EXACT SOURCES:** `SOTW_WordStudy_03_DICTIONARIES_LEXICONS_KJV_WEBSTER_2026-11-05.zip / source_files/engwebster_usfm.zip` (Webster 1833 Bible); same parent archive / `source_files/webster1828-master.zip` (Webster 1828 Dictionary). Distinct provenance and source hashes retained.
