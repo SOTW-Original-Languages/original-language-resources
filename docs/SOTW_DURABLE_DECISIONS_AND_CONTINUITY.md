@@ -179,6 +179,12 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **GitHub:** Added deterministic source-field projection script `scripts/project_hebrew_source_fields.py` commit `0811959f55149702360dcf0d838b9aee55a89b01`. The local run used equivalent logic on the same preserved OSIS inputs; the exact GitHub script has not yet been independently executed in CI. This research-side projection does not alter canonical v1 schema, does not solve proper-name language mapping, and is not itself an approved public lexicon. Live-schema certification and final source-authored definition rendering remain open. No player integration or source deletion.
 
+## STEP 2 CANONICAL LEXICON CONSTRAINT AUDIT — 2026-11-07
+
+Fetched current GitHub canonical schema `schemas/sotw-canonical-v1.schema.json`, blob SHA `2ff9b33ba9679e858f9994eb8fffbf29976a969e`. Independently executed a local Python Draft 2020-12 validator reproducing the exact `$defs.lexicon` property/required/enum/pattern/additionalProperties constraints and `$defs.provenance` constraints on **6,046** corrected research lexicon records: **5,393 heb**, **653 arc**, **0 errors**. Cross-checked every record's source language against independently preserved OSIS source-field projection and verified native Strong's ID and research-only release flag. All **2,628 x-pn** entries remain withheld and accounted for; no guessed language. Input ZIP SHA256 `e75411a664265d72ec6a40b2120214bc92ad8d0bf72c5d9f803ff7d998272342`. Audit report `SOTW_HEBREW_LEXICON_CONSTRAINT_AUDIT_2026-11-07.json` is a conversation artifact.
+
+**Critical precision:** The validator used a locally transcribed lexicon/provenance subset from the fetched schema, not the checked-out GitHub schema document itself and not its complete top-level `oneOf` dispatch. This is a lexicon-constraint audit, **not yet full exact-file schema certification**. Definition formatting/field semantics and x-pn canonical policy remain unresolved. Do not release or change production.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
