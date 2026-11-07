@@ -27,6 +27,13 @@ Build a **deterministic, research-only display projection** from the selected St
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
 
+### 2026-11-07 | Stage 6: original local Word Study resources rediscovered and verified
+- **VERIFIED:** Original private 66-book inspector, public-safe shell, Webster/KJV/Strong's/lexicon source bundle, ASV continuity bundle and Hebrew Recovery Checkpoint 1 are all present locally. All five source ZIP CRC checks PASS. SHA-256s and member inventories recorded in `SOTW_STAGE6_RESOURCE_RECONNECTION_2026-11-07.zip` (downloadable conversation artifact; not stored in GitHub).
+- **DISTINCTION:** NWB/Webster 1833 is a Bible edition in the original inspector; Webster 1828 is a separate historical English dictionary source. Original Bible order: BSB, KJV, NWB/Webster 1833, ASV 1901.
+- **NEXT:** Stage 7 inspect the archived Webster 1828 source schema and build a separate headword lookup resource with provenance. Preserve private research data and do not deploy.
+
+
+
 ### 2026-11-07 | Stage 5/5 COMPLETE: Recovery Checkpoint 1
 - **VERIFIED ZIP:** `SOTW_HEBREW_RECOVERY_CHECKPOINT_1_STAGE5_2026-11-07.zip`, 3,286,760 bytes, SHA-256 `9d37881c29febe4071fded3b2c4d4252fb07c428af8d301ae32db25830d8ecca`.
 - **CONTENTS:** Nested original Checkpoint 0 ZIP unchanged; corrected Stage 1 (8,674 entries), Stage 2 forward/reverse lexical indexes, Stage 3 search engine/tests, Stage 4 evaluation, manifest with individual SHA-256s, README and `verify_checkpoint.py`. Earlier rejected exclusion-based Stage 1 deliberately omitted.
