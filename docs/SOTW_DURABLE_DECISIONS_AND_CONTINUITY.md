@@ -167,6 +167,12 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Result:** Full research export is **NOT canonical-fidelity certified and NOT approved for public release**. Earlier structural/hash/OSIS preservation passes still stand. Fix source language mapping and preserve proper-name marker explicitly, document note-field segmentation and deterministic reading transformation, regenerate and revalidate against the exact live schema. Local report `SOTW_HEBREW_LANGUAGE_AND_FIELDS_AUDIT_2026-11-07.json` is a conversation artifact, not installed in GitHub. No original archives deleted or player edits.
 
+## STEP 2 LANGUAGE-CORRECTED RESEARCH PROJECTION — 2026-11-07
+
+**Executed locally from the prior 8,674-entry full research ZIP and its preserved OSIS subtrees:** verified 8,674 aligned record/subtree IDs and per-entry serialized-subtree SHA-256 values. Original `w xml:lang` counts: `heb` 5,393, `arc` 653, `x-pn` 2,628; no unexpected marker. Regenerated **6,046** research-only canonical-shaped records with explicit `heb`/`arc` labels. Withheld the **2,628** `x-pn` proper-name entries from canonical language projection pending a schema-compatible explicit source-marker model; preserved their IDs and subtree hashes in an unresolved classification manifest. No invented language labels. Recounted note types: exegesis 8,670, explanation 8,674, translation 8,674, x-typo 124. Output `SOTW_HEBREW_LANGUAGE_CORRECTION_2026-11-07.zip` (conversation artifact, not uploaded to GitHub) contains corrected records, unresolved proper-name manifest and report. Original preserved OSIS remains in earlier full export.
+
+**Scope:** This correction resolves the **653 explicit Aramaic mislabels** in the research projection; it does not complete all 8,674 canonical records or solve note/definition fidelity. Exact live repository JSON Schema validation, deterministic regeneration script in GitHub, and proper-name schema handling remain pending. Do not publish these records or infer word alignments. No original archive deletion or production edits.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
