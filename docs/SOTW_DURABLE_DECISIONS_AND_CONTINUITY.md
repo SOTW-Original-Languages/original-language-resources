@@ -263,6 +263,12 @@ Applied owner's one-source priority to all **8,674** original Hebrew Strong's en
 
 **Important scope:** The selection gate only checks presence of Strong's senses and priority; it does **not** verify every definition against an 1894 facsimile or independently clear later digital-editor changes. Therefore **0 fallbacks required by this test** is not a claim that all 8,674 have passed a full content/rights audit. Marked `research_selected_publication_pending`; no public release or canonical-schema/player changes. Keep source archives intact. Next test actual source-text divergences/modern edits, and only replace specific entries if needed.
 
+## EXECUTED HEBREW STRONG'S VS OPEN SCRIPTURES FIELD COMPARISON — 2026-11-07
+
+Compared all **8,674** shared Strong's IDs directly from the two original archived XML files. Matched original OSIS `note type=exegesis` against Open Scriptures `source`, `note type=explanation` against `meaning`, and `note type=translation` against `usage`. Comparison normalizes whitespace, case, `×` versus `[idiom]`, and em dash; raw field strings retained per entry. Matches: **1,908 origin/source**, **8,138 explanation/meaning**, **8,109 translation/usage**, **1,729 all three**; **6,945 at least one field mismatch**. Original Strong's OSIS also contains **24,841 separately numbered list senses**, which must not be assumed to correspond to Open Scriptures' `meaning` field. Example H1 original has 11 numbered senses plus separate explanatory note, while Open Scriptures meaning corresponds closely to the explanatory note. Full CSV/report and reproducible local Python script in conversation artifacts `SOTW_STRONGS_FIELD_LEVEL_COMPARISON_2026-11-07.zip` and `compare_sotw_fields.py`.
+
+**Interpretation limit:** mismatches can be segmentation, omissions, editorial adjustments, and markup/cross-reference formatting; they are not proven deviations from 1894 print or evidence of copyrighted TWOT expression. Do **not** auto-switch 6,945 entries. Preserve owner-selected one-source policy and original research archives. Next triage mismatch classes and verify which actual chosen definition fields have substantive discrepancies, with fallback only for concrete cases. No publication or production edits.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
