@@ -203,6 +203,12 @@ Executed an independent cross-projection comparison between `SOTW_HEBREW_SOURCE_
 
 **Interpretation:** This is a source-field-order comparison with whitespace normalization, not proof of lossless original text, correct semantic segmentation, or complete original XML document-order rendering. Preserve the original OSIS and typed note fields; document and explicitly test whether typo notes are metadata/corrections rather than dictionary prose. **Do not publish flattened definitions or guess languages for x-pn.** Exact byte-identical live GitHub JSON Schema certification is still pending. No schema or player changes.
 
+## STEP 2 66-ENTRY DEFINITION ORDER RESOLUTION — 2026-11-07
+
+Independently executed `/mnt/data/audit_order.py` using all 8,674 preserved original OSIS entry subtrees and 6,046 corrected Hebrew/Aramaic research lexicon records. Reconstructed readings two ways: (1) definition list items followed by all typed notes, and (2) source XML document order (list items and notes in their actual sequence), normalizing whitespace only. **5,980/6,046** matched both methods; **66/6,046** differed under list-then-notes but **all 66 matched original document-order reconstruction**. Of the 66, **64** contain one leading `x-typo` note and **2** contain two leading `x-typo` notes; all include subsequent exegesis, explanation and translation notes. No unresolved differences under document-order comparison. Local full report `SOTW_HEBREW_ORDER_RESOLUTION_2026-11-07.json` and local executable `audit_order.py` are conversation artifacts.
+
+**Limitations:** Matching whitespace-normalized XML document order does not certify original punctuation/spacing byte identity, semantic correctness of field placement, or public suitability of `x-typo` corrections. Keep typed note metadata and original OSIS. The 2,628 `x-pn` entries remain language-unresolved. Exact checked-out live schema certification remains pending; no public release or player changes.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
