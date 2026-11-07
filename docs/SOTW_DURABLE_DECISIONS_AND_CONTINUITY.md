@@ -137,6 +137,14 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Execution status:** Runner committed but **not yet executed end-to-end with a checked-out live GitHub schema**. The original archive is local/private, not in GitHub Actions; do not claim CI execution or full-schema certification. Earlier source inventory 8,674 entries and five-entry OSIS comparisons remain valid within their recorded scope. Next execute this exact command in a checkout, capture stdout, and only then mark canonical pilot gate passed. Afterward add full-dictionary field-fidelity and source coverage tests before scaling. No publication or deployment.
 
+## STEP 2 FULL SOURCE STRUCTURAL FIDELITY PASS — 2026-11-07
+
+**Executed against original vetted Hebrew Strong's archive:** All three pinned archive/nested/XML SHA-256 values matched. All **8,674** dictionary entries had unique native IDs, exactly one direct `w` element matching `H<number>`, nonempty lemma and transliteration attributes, a `list`, a `note`, and nonempty `list` reading text. All 8,674 OSIS entry subtrees survived XML serialize/parse/canonicalize round trips. Zero exceptions in the audited checks. Direct-child inventory: 8,674 `w`, 3,686 `foreign`, 8,674 `list`, 26,142 `note`. Source output report: `SOTW_HEBREW_FULL_SOURCE_FIDELITY_AUDIT_2026-11-07.json` (conversation download, not installed as a repository data shard).
+
+**Committed reproducible auditor:** `scripts/audit_full_strongs_hebrew_source.py`, commit `c2052cd486099ae3dccf82cc38a03e388a612ab7`. It checks structural field presence and XML subtree round trips, **not** that a future canonical projection reproduces every source-authored definition and note exactly. The live canonical-schema importer/audit runner remains pending full end-to-end execution; no 8,674-record canonical export has been certified. No Hebrew textual witness, English alignment or public release approved.
+
+**Next:** Run `scripts/run_hebrew_pilot_gate.py` in an actual repo checkout with the original ZIP and checked-out schema; then design/test full source-to-canonical lossless field mapping, retaining OSIS markup and all source-authored text. Preserve original archive and rights declarations; no CGBC/player edits.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
