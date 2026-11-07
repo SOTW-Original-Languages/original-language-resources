@@ -121,6 +121,14 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Next:** run the committed importer and audit with a checkout of the actual canonical schema (not a reconstructed one), record results; add explicit full-source coverage/field fidelity checks before scaling. Independently establish a permitted original-language Genesis 1:1 textual witness; the earlier research slice's STEP-derived tokens are comparison/research, not automatically publishable original-language occurrence records. No production uploads or release approval.
 
+## STEP 2 FULL HEBREW SOURCE INVENTORY — 2026-11-07
+
+**Executed locally against actual original archive:** SHA-256 verified for the outer source ZIP, nested `strongs-master.zip`, and `StrongHebrewG.xml` against previously pinned values. Found **8,674** OSIS dictionary entries with **8,674 unique numeric native IDs**, ranging 1–8674. Every entry has a matching `w ID=H<number>` and nonempty reading content. Direct child elements across entries: `w` 8,674; `list` 8,674; `note` 26,142; `foreign` 3,686. Counts are for the selected source edition, not proof of Hebrew Bible textual-witness completeness.
+
+**Committed reproducible inventory script:** `scripts/inventory_strongs_hebrew_source.py` (commit `50e0e1ee0b5ece38c983a7d217cbf0b913379dad`). Local research report `SOTW_HEBREW_SOURCE_INVENTORY_2026-11-07.json` is a conversation artifact, not automatically uploaded into GitHub. The complete importer/audit against the **actual GitHub canonical schema** remains to be executed and logged; no full 8,674-record conversion has been certified.
+
+**Next bounded action:** Execute the committed five-entry importer and independent audit using a repository checkout containing the exact canonical schema, then add full-dictionary field fidelity checks and lossless OSIS storage. Separately establish an authorized original Hebrew textual witness for Genesis 1:1 before making word occurrences. Preserve original archives; do not promote unverified alignment or source content into public release.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
