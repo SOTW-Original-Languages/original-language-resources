@@ -209,6 +209,12 @@ Independently executed `/mnt/data/audit_order.py` using all 8,674 preserved orig
 
 **Limitations:** Matching whitespace-normalized XML document order does not certify original punctuation/spacing byte identity, semantic correctness of field placement, or public suitability of `x-typo` corrections. Keep typed note metadata and original OSIS. The 2,628 `x-pn` entries remain language-unresolved. Exact checked-out live schema certification remains pending; no public release or player changes.
 
+## STEP 2 EXACT CHECKED-OUT SCHEMA VALIDATOR ADDED — 2026-11-07
+
+Committed `scripts/validate_live_sotw_lexicon.py` at `0fdaff4d79ed9f018395de3cffade9717380f8a9`. It reads the **actual checked-out** `schemas/sotw-canonical-v1.schema.json`, checks the Draft 2020-12 schema itself, validates every supplied research lexicon record through the **full top-level oneOf** and all $refs, rejects duplicate IDs or non-research release flags, and reports both raw schema SHA-256 and Git blob SHA-1 for independent pin verification. Local script syntax compilation passed. Latest GitHub schema blob observed `2ff9b33ba9679e858f9994eb8fffbf29976a969e`.
+
+**Execution is still pending:** The local runtime has the 6,046-record research JSON but cannot fetch the exact GitHub schema over its network, and the GitHub connector does not directly mount its bytes in that runtime. Do **not** claim the exact-file gate passed. Run after checking out repository: `python scripts/validate_live_sotw_lexicon.py --schema schemas/sotw-canonical-v1.schema.json --records /path/to/lexicon-research-language-corrected.json --report /path/to/validation-report.json`. Confirm reported Git blob hash matches pinned/current expected hash. No source archives or production files modified. 2,628 x-pn remain research-only outside canonical language projection; public rendering/rights gates remain open.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
