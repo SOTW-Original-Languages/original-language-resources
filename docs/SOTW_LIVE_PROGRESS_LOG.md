@@ -27,6 +27,15 @@ Build a **deterministic, research-only display projection** from the selected St
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
 
+### 2026-11-07 | Stage 2/5: display-derived search indexes completed
+- **VERIFIED:** Corrected Stage 1 projection SHA-256 `0ddf649c80b3c03a836298f0b6d8b0ea3b7afc811eae3245ea3e579b872ab2b9` has 8,674 unique entries and retains 21,500 definitions and 2,680 name glosses without reapplying the settled source-attribution filter.
+- **VERIFIED:** Generated `SOTW_HEBREW_STAGE2_2026-11-07/display_token_to_strongs.json` (SHA-256 `db484f19205b663ebba426d7318505b9a519cca6735ac7548c42ebddf7917d87`) and `display_tokens_by_strongs.json` (SHA-256 `fccf6cebd18bc390447b6a3ca26d6a6b35f61275e65d3b6306557cfc7269f7e6`). 12,999 tokens, 114,253 token-entry links, forward/reverse consistency PASS.
+- **VERIFIED:** Compared with original internal index: 553 new-only tokens, 11 old-only tokens. Numeric and short-fragment tokens need reader-search tests; no public release claim.
+- **RECOVERY:** GitHub log is updated, but large working JSON remains in local Stage 1/2 files; owner-downloaded Checkpoint 0 is the last full ZIP. Next full recovery ZIP due after Stage 5 or sooner for continuity risk.
+- **Next:** Stage 3/5, test exact Strong's lookup, token matching, ranking and edge cases; do not reopen normalization audit.
+
+
+
 ### 2026-11-07 | Stage 1 corrected: source content retained
 - **VERIFIED:** Generated `SOTW_HEBREW_STAGE1_CORRECTED_2026-11-07/strongs_display_research_projection.json`: 8,674 unique Strong's IDs, 21,500 definition items, 2,680 proper-name glosses, 637 grammar labels, and original remaining typed fields retained. SHA-256 `0ddf649c80b3c03a836298f0b6d8b0ea3b7afc811eae3245ea3e579b872ab2b9`.
 - **CORRECTION:** No source items were filtered by the settled 202-marker audit. The earlier exclusion-based Stage 1 candidate is superseded. Original source research and audit metadata remain in Checkpoint 0.
