@@ -197,6 +197,12 @@ Executed an independent source-marker and morphology inventory over all 8,674 re
 
 **Schema decision remains open:** Current canonical lexicon v1 requires `language` in `heb|arc|grc` and forbids extra properties. Keep these 2,628 as research source records with `source_language_marker=x-pn` and `canonical_language=null` outside the canonical published lexicon until an explicitly reviewed schema extension or independently evidenced language mapping is approved. Do not silently set `language=heb` for them. This audit does not constitute exact live-schema certification of the 6,046 eligible entries or public release.
 
+## STEP 2 DEFINITION FIELD-ORDER FIDELITY GATE — 2026-11-07
+
+Executed an independent cross-projection comparison between `SOTW_HEBREW_SOURCE_FIELDS_2026-11-07.zip` and `SOTW_HEBREW_LANGUAGE_CORRECTION_2026-11-07.zip`. Confirmed 8,674 unique source entries, 6,046 eligible Hebrew/Aramaic records with matching original language markers, 2,628 `x-pn` entries withheld, and no empty exported definitions. Constructed a test reading by concatenating original OSIS `list/item` text followed by all typed note text and normalizing whitespace. **5,980/6,046** current exported definitions equal that test reading; **66/6,046** differ. Some differences are due to `x-typo` correction notes being placed before list content in current flattened text, whereas the test reconstruction appends all notes after list items. Example H336. Source field totals among 6,046: 17,480 list items; 6,042 exegesis notes; 6,046 explanation notes; 6,046 translation notes; 68 x-typo notes. Local report `SOTW_HEBREW_DEFINITION_FIELD_FIDELITY_GATE_2026-11-07.json`.
+
+**Interpretation:** This is a source-field-order comparison with whitespace normalization, not proof of lossless original text, correct semantic segmentation, or complete original XML document-order rendering. Preserve the original OSIS and typed note fields; document and explicitly test whether typo notes are metadata/corrections rather than dictionary prose. **Do not publish flattened definitions or guess languages for x-pn.** Exact byte-identical live GitHub JSON Schema certification is still pending. No schema or player changes.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
