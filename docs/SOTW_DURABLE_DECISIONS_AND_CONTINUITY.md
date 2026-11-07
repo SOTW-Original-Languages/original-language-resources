@@ -70,8 +70,24 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 - Do not insist on re-researching the entire lexicon because one source decision or field is not yet documented.
 - Do not infer that a private 66-book build has been approved for public release.
 
+## CURRENT WORK HANDOFF — Genesis schema design (2026-11-06)
+
+**Current requested step:** Step 1 of the automated source-to-optimized-library pipeline: **define and lock the canonical output schema**. The owner has explicitly asked that a new thread be able to scan GitHub and resume from here. This is a **work checkpoint**, not a new source-vetting request.
+
+**Verified work already completed:**
+- Owner-settled source choices, STEP comparison-only role, original-source preservation preference, non-display of unresolved associations, and provenance rules are in this register and `docs/SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md`.
+- Read live `docs/ARCHITECTURE.md`, `docs/TRANSLATION_ADAPTERS.md`, `docs/SOURCES_AND_RELEASE.md` to establish existing ID and release contracts.
+- Selected **Genesis 1:1 first**, then Genesis 1, then all Genesis as the pilot. Hebrew original-language occurrences and Strong's entries are shared resources; English verse text and English token spans stay in their respective translation repositories.
+
+**Not yet done:** No canonical v1 schema file, sample Genesis canonical JSON, ingestion/validation scripts, source sharding, or bulk GitHub upload has been created by this step. No production UI or repository data was changed. Do not report Step 1 complete until the schema and validation examples are actually committed and verified.
+
+**Exact next action:** Inspect existing `schemas/` and `examples/` in the SOTW repository and pinned foundation IDs/contracts before choosing paths; write a versioned JSON Schema for source manifests, original-language occurrence records, lexical entries, and evidence-backed edition-specific links, plus a valid Genesis 1:1 fixture and a rejected/disputed-link test. Ensure Strong's native tag arrays, source text editions, full source-authored definitions, original forms/lemmas/morphology as distinct fields, source locator/hashes, public rights states, and explicit non-display of candidate/disputed links. Validate schema against fixtures and commit the result. Then begin Genesis extraction scripting in a later step.
+
+**Non-negotiable:** Do not re-vet the previously acquired sources or reopen why STEP is not the primary published dictionary. Public release only includes independently supported source records and verified links; disputed links stay in research-only records. Original archives should be retained in the Bible Foundation where feasible, not copied indiscriminately into public GitHub.
+
 ## Change log
 
+- **2026-11-06 (work handoff):** Owner requested a scan-friendly checkpoint for the start of Step 1 (Genesis canonical schema). Architecture, adapters and release rules inspected. Schema, fixtures and scripts **not yet committed**. Resume at schema implementation, not source re-vetting.
 - **2026-11-06 (owner refinement):** Prefer preserving original vetted archives in the existing Bible Foundation where feasible; optimized SOTW library remains independent. No source files moved or deleted.
 - **2026-11-06 (owner pipeline policy):** Settled non-display of unresolved evidence-based claims and conditional retirement of original source archives after a complete, verified optimized-canonical migration. No data deletion or deployment performed.
 - **2026-11-06 (source continuity):** Added permanent vetted-source/artifact index with four original source-package SHA-256 hashes, derived research artifacts, stable repository roles, and explicit STEP comparison-only / Strong's primary-publication decisions. Index is metadata only, not an upload of private archives.
