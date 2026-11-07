@@ -1,0 +1,23 @@
+name: Verify SOTW Bible Foundation compatibility
+on:
+  push:
+    paths:
+      - 'compatibility/foundation-v0.1.snapshot.json'
+      - 'schemas/sotw-canonical-v1.schema.json'
+      - 'examples/sotw-canonical-v1.synthetic.json'
+      - 'scripts/validate_foundation_compatibility.py'
+      - '.github/workflows/verify-foundation-compatibility.yml'
+  workflow_dispatch:
+jobs:
+  compatibility:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'jsonschema>=4.18,<5'
+      - run: python scripts/validate_canonical_v1.py
+      - run: python scripts/validate_foundation_compatibility.py
