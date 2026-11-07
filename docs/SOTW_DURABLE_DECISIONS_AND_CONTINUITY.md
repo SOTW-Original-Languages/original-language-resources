@@ -105,6 +105,14 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Resume next:** inspect the vetted original-source package index, retrieve actual Genesis 1:1 source material and verify byte hashes, map into canonical occurrence/lexicon/link records without promoting disputed associations, validate and audit output before expanding to Genesis 1 and Genesis. Do not restart source selection, rights debates or STEP primacy discussions.
 
+## STEP 2 CONTINUATION — OSIS preservation pilot (2026-11-06)
+
+**Completed:** Committed `scripts/ingest_strongs_hebrew_pilot.py` (commit `8b108b484567ae49f6a2481ff8ab03162e7c6d7b`). It pins original archive, nested archive and Hebrew OSIS XML SHA-256, extracts five Genesis-related Strong's Hebrew entries (H7225, H1254, H430, H8064, H776), validates canonical lexical record shape using the committed schema, and retains each full XML entry subtree separately to prevent loss of structured notes and attributes.
+
+**Local verification:** Independently re-read actual original archives and verified all three source hashes and XML subtree round trips for 5/5 entries. Produced conversation download `SOTW_GENESIS_STEP2_OSIS_PRESERVATION_2026-11-06.zip` containing source lock and preserved OSIS subtrees; this ZIP is not installed in GitHub. **Caveat:** The full committed Python importer itself has not yet been run end-to-end in GitHub CI; do not conflate the local extraction checks with CI certification. ElementTree subtree serialization preserves XML structure/information, not the exact original entry byte ranges. Original archive remains the byte-exact preservation authority.
+
+**Next:** Run the committed importer end-to-end against the original source archive and live schema, compare records to the earlier research pilot and add regression tests; separately select/verify an independently publishable original-language textual witness for Genesis 1:1 before generating word occurrences. Do not equate dictionary headwords with Genesis word occurrences or publish inferred alignments. No bulk ingestion, production integration, or original archive deletion.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
