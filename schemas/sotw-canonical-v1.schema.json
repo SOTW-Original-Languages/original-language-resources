@@ -1,0 +1,386 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SOTW-Original-Languages/original-language-resources/blob/main/schemas/sotw-canonical-v1.schema.json",
+  "title": "SOTW canonical lexical/original-language record v1",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/source"
+    },
+    {
+      "$ref": "#/$defs/occurrence"
+    },
+    {
+      "$ref": "#/$defs/lexicon"
+    },
+    {
+      "$ref": "#/$defs/link"
+    }
+  ],
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_locator",
+        "source_sha256"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      },
+      "additionalProperties": false
+    },
+    "release": {
+      "enum": [
+        "not_ingested",
+        "research",
+        "validated",
+        "approved_public",
+        "excluded"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "title",
+        "edition",
+        "origin",
+        "sha256",
+        "rights",
+        "release_status"
+      ],
+      "properties": {
+        "kind": {
+          "const": "source"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "edition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "origin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "rights": {
+          "type": "object",
+          "required": [
+            "basis",
+            "notice"
+          ],
+          "properties": {
+            "basis": {
+              "type": "string",
+              "minLength": 1
+            },
+            "notice": {
+              "type": "string",
+              "minLength": 1
+            },
+            "attribution": {
+              "type": "string"
+            },
+            "decision_reference": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "release_status": {
+          "$ref": "#/$defs/release"
+        },
+        "transformations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "occurrence": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "verse_id",
+        "witness_id",
+        "position",
+        "surface",
+        "language",
+        "strongs_ids",
+        "provenance",
+        "release_status"
+      ],
+      "properties": {
+        "kind": {
+          "const": "occurrence"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verse_id": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]{3}\\.\\d+\\.\\d+$"
+        },
+        "witness_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "position": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "surface": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "enum": [
+            "heb",
+            "arc",
+            "grc"
+          ]
+        },
+        "lemma": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "root": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "morphology": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "scheme",
+              "code"
+            ],
+            "properties": {
+              "scheme": {
+                "type": "string",
+                "minLength": 1
+              },
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "strongs_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^strongs:[HG][0-9]+$"
+          }
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "release_status": {
+          "$ref": "#/$defs/release"
+        }
+      },
+      "additionalProperties": false
+    },
+    "lexicon": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "resource_id",
+        "native_entry_id",
+        "language",
+        "full_definition",
+        "strongs_ids",
+        "provenance",
+        "release_status"
+      ],
+      "properties": {
+        "kind": {
+          "const": "lexicon"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^lexicon:[^:]+:.+$"
+        },
+        "resource_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "native_entry_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "enum": [
+            "heb",
+            "arc",
+            "grc"
+          ]
+        },
+        "headword": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transliteration": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "short_definition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "full_definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kjv_usage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "strongs_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^strongs:[HG][0-9]+$"
+          }
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "release_status": {
+          "$ref": "#/$defs/release"
+        }
+      },
+      "additionalProperties": false
+    },
+    "link": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schema_version",
+        "id",
+        "verse_id",
+        "translation_edition",
+        "english_occurrence_id",
+        "original_occurrence_id",
+        "mapping_method",
+        "evidence",
+        "status",
+        "release_status"
+      ],
+      "properties": {
+        "kind": {
+          "const": "link"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verse_id": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]{3}\\.\\d+\\.\\d+$"
+        },
+        "translation_edition": {
+          "enum": [
+            "KJV1769",
+            "ASV1901",
+            "BSB",
+            "WEBSTER1833"
+          ]
+        },
+        "english_occurrence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_occurrence_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mapping_method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/provenance"
+          }
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "candidate",
+            "disputed",
+            "rejected"
+          ]
+        },
+        "release_status": {
+          "$ref": "#/$defs/release"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
