@@ -145,6 +145,14 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Next:** Run `scripts/run_hebrew_pilot_gate.py` in an actual repo checkout with the original ZIP and checked-out schema; then design/test full source-to-canonical lossless field mapping, retaining OSIS markup and all source-authored text. Preserve original archive and rights declarations; no CGBC/player edits.
 
+## STEP 2 COMPLETE HEBREW RESEARCH EXPORT — 2026-11-07
+
+**Executed locally:** Read the original vetted 28 MB dictionary source archive; all three pinned SHA-256 hashes passed. Parsed **8,674/8,674** source entries into canonical-shaped **research-only** lexicon records, retained a separately serialized full OSIS entry subtree for each, and passed **8,674/8,674** XML subtree round trips. Confirmed 8,674 unique native IDs. Direct child inventory: 8,674 `w`, 8,674 `list`, 26,142 `note`, 3,686 `foreign`. Produced downloadable `SOTW_HEBREW_FULL_CANONICAL_RESEARCH_2026-11-07.zip` with `lexicon-research.json`, `preserved-osis-entries.json`, and `REPORT.json`. This ZIP is a conversation artifact **not uploaded to GitHub**.
+
+**Important limitations:** The record shapes follow the known canonical lexical contract but the complete export was **not validated against the exact live GitHub schema** in the local runtime. The `full_definition` reading field collapses source whitespace and section boundaries; the preserved OSIS subtree and original ZIP remain authoritative. Short definitions and KJV usage are null rather than fabricated pending source field-level mapping. XML subtree round-trip is not proof of original byte-for-byte entry extraction. No Hebrew Bible textual witness, translation alignment, public projection, or player integration has been certified. Do not call this a final validated canonical migration or publicly release the archive wholesale.
+
+**Next:** Run the full research export through the checked-out exact schema and add source-authored field segmentation/fidelity tests. Maintain a deterministic rebuild script in GitHub, test completeness and release boundaries, then independently verify a permitted Hebrew textual witness for Genesis 1:1. No production edits or original archive deletion.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
