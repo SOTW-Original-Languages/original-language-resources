@@ -227,6 +227,12 @@ Executed a fresh local source-field segmentation pass from the previously preser
 
 **Next:** Independently assess source note semantics and original dictionary edition, determine public-facing presentation, rights and correction policy, and seek an explicit compatible canonical strategy for x-pn. Existing 6,046 eligible research lexicon records passed exact GitHub schema validation separately, but this typed research projection is not canonical schema v1. No player changes.
 
+## STEP 2 RESEARCH-ONLY PUBLIC PRESENTATION POLICY PREVIEW — 2026-11-07
+
+Executed local presentation-policy audit of all **8,674** typed source-field research records from `SOTW_HEBREW_DEFINITION_POLICY_2026-11-07.zip` (input SHA-256 `0b2327298c9a18cb50cf6e8157e610929698fbb31da995241fe47d5e20873e99`). Checks covered nonempty sense lists, typed field arrays, research-only flags and source marker/canonical language consistency: **0 structural policy violations**. Counts: 5,393 heb, 653 arc, 2,628 x-pn language-unresolved. Created `SOTW_HEBREW_PUBLIC_PRESENTATION_POLICY_RESEARCH_2026-11-07.zip` containing REPORT.json, sample-display-data.json, a static escaped-HTML preview for ten representative entries (H1, H50, H336, H424, H468, H7225, H1254, H430, H8064, H776), and README.md. This package is a conversation artifact, not uploaded to GitHub or deployed.
+
+**Display policy under test:** Display source definition senses in order; separate exegesis, explanation, source translation notes, and correction metadata; never silently apply x-typo changes, call source translation notes verified KJV usage, infer language for x-pn, or generate an AI quick meaning. HTML escape all source text. This is a *research preview*, not a public release, rights clearance, historical accuracy certification, canonical schema extension, or production UI. Next: independently verify source-edition and rights basis and determine approved proper-name representation and public release criteria. No production changes.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
