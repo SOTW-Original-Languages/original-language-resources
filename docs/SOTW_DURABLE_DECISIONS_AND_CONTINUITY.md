@@ -161,6 +161,12 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Next:** Implement and test a deterministic, documented `full_definition` rendering policy with comparison diagnostics across all 8,674 entries; validate against the exact repository schema and only then consider public lexical projections. Original source archive and preserved OSIS remain intact; no occurrence or translation alignment publication.
 
+## STEP 2 SOURCE LANGUAGE / FIELD FIDELITY FINDING — 2026-11-07
+
+**New independent audit of preserved full-export OSIS:** All 8,674 exported research records currently set `language=heb`, but original `w xml:lang` markers are **5,393 `heb`**, **653 `arc`**, and **2,628 `x-pn`**. Thus 653 explicitly Aramaic entries are wrongly labeled Hebrew. `x-pn` is a source proper-name category rather than a recognized canonical language code; it must be retained as an independent source marker and the underlying language must not be guessed. Current canonical lexicon schema only permits `heb`, `arc`, `grc`, so a documented schema-compatible proper-name handling decision is required before publishing these records. Original `note type` counts: exegesis 8,670; explanation 8,674; translation 8,674; x-typo 124. Existing export collapses those distinct note roles into one `full_definition` and sets `kjv_usage=null`, although the source has translation-type notes. Do not equate the source's `translation` note to KJV usage without verifying its semantic role.
+
+**Result:** Full research export is **NOT canonical-fidelity certified and NOT approved for public release**. Earlier structural/hash/OSIS preservation passes still stand. Fix source language mapping and preserve proper-name marker explicitly, document note-field segmentation and deterministic reading transformation, regenerate and revalidate against the exact live schema. Local report `SOTW_HEBREW_LANGUAGE_AND_FIELDS_AUDIT_2026-11-07.json` is a conversation artifact, not installed in GitHub. No original archives deleted or player edits.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
