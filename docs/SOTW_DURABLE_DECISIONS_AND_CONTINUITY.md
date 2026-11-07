@@ -173,6 +173,12 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Scope:** This correction resolves the **653 explicit Aramaic mislabels** in the research projection; it does not complete all 8,674 canonical records or solve note/definition fidelity. Exact live repository JSON Schema validation, deterministic regeneration script in GitHub, and proper-name schema handling remain pending. Do not publish these records or infer word alignments. No original archive deletion or production edits.
 
+## STEP 2 LOSSLESS SOURCE-FIELD RESEARCH PROJECTION — 2026-11-07
+
+**Completed locally:** Reprocessed all 8,674 preserved OSIS entry subtrees from the earlier full research export. Verified each serialized entry SHA-256, matching source-native word ID, unique entry ID, and allowed source language marker. Produced `SOTW_HEBREW_SOURCE_FIELDS_2026-11-07.zip` SHA-256 `2c7bad3144e2775b2e3838df02ef6e880a115e6259cbe0ad10b637a0dbb9239e` containing `source-fields-research.json` and `REPORT.json`. Original OSIS `list` XML, each typed `note` XML and text, word attributes, original entry hash, and source language marker are retained per entry. Counts: 5,393 heb, 653 arc, 2,628 x-pn; note types 8,670 exegesis, 8,674 explanation, 8,674 translation, 124 x-typo. `x-pn` entries have null canonical language and are not misrepresented as Hebrew. Source `translation` notes are **not automatically mapped to KJV usage**.
+
+**GitHub:** Added deterministic source-field projection script `scripts/project_hebrew_source_fields.py` commit `0811959f55149702360dcf0d838b9aee55a89b01`. The local run used equivalent logic on the same preserved OSIS inputs; the exact GitHub script has not yet been independently executed in CI. This research-side projection does not alter canonical v1 schema, does not solve proper-name language mapping, and is not itself an approved public lexicon. Live-schema certification and final source-authored definition rendering remain open. No player integration or source deletion.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
