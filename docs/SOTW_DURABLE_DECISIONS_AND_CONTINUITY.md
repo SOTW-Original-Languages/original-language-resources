@@ -97,8 +97,17 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Next action:** Open GitHub Actions workflow `verify-foundation-compatibility.yml`; confirm both canonical and Foundation validators pass, capture run evidence, and update this checkpoint. Do **not** call it certified before that evidence. Then verify actual pinned full book-code catalog if available and begin real Genesis 1:1 source-byte/hash validation. Foundation presently advertises an architecture seed/reference-only v0.1 contract; do not mistake that for a complete book or lexical catalog.
 
+## FOUNDATION COMPATIBILITY CI PASS — owner screenshot (2026-11-06)
+
+**PASS (defined automated scope):** Owner provided a GitHub Actions screenshot titled `Verify SOTW Bible Foundation co...`, showing `Successful in 8s`, green completion checks for checkout, Python setup, dependency installation, `python scripts/validate_canonical_v1.py`, `python scripts/validate_foundation_compatibility.py`, and job completion. This establishes a successful run of the configured tests against the pinned Foundation v0.1 snapshot. Screenshot does not supply run URL, run ID, exact SHA, or full logs; do not claim those were independently retrieved.
+
+**Step 1 status:** COMPLETE for canonical v1 synthetic-schema and pinned Foundation v0.1 compatibility checks. **Not certified:** full 66-book code catalog, actual Hebrew/Greek source bytes, translation foreign keys, real Genesis word associations, provenance and public release rights. Those are Phase 2 / real Genesis ingestion gates.
+
+**Resume next:** inspect the vetted original-source package index, retrieve actual Genesis 1:1 source material and verify byte hashes, map into canonical occurrence/lexicon/link records without promoting disputed associations, validate and audit output before expanding to Genesis 1 and Genesis. Do not restart source selection, rights debates or STEP primacy discussions.
+
 ## Change log
 
+- **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
 - **2026-11-06 (Foundation compatibility):** Pinned live Foundation reference contract, added compatibility verifier and CI workflow, corrected verse-ID regex. CI outcome not yet observed.
 - **2026-11-06 (CI evidence):** Owner supplied screenshot of successful GitHub Actions schema-validation job, including validator step. Synthetic/schema CI PASS; Foundation compatibility and real-source validation still pending.
 - **2026-11-06 (certification attempt):** Added GitHub Actions schema-validation workflow; no successful execution evidence retrieved yet. Status remains pending, not certified. Container network could not access GitHub raw files; do not substitute reconstructed data for actual repository bytes.
