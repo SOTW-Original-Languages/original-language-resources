@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 1/5 corrected locally; Stage 2 next  
-**Status:** Pre-beta Stage 1 corrected research projection generated locally with no 202-marker filtering; Checkpoint 0 remains last complete recovery ZIP. Stage 2 next.  
+**Stage:** Stage 6 complete; Stage 7 reprioritized to complete Hebrew/Greek Strong's foundation before Webster  
+**Status:** Pre-beta Recovery Checkpoint 2 complete through Stage 6. Source inspection identified missing concise Hebrew fields and unbuilt Greek dictionary. Stage 7 will complete original-language Strong's layers before Webster 1828.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -14,6 +14,7 @@
 ## CURRENT STATE
 
 - **VERIFIED:** Selected Hebrew Strong's digital OSIS source is `strongs-master.zip / strongs-master/hebrew/StrongHebrewG.xml`, inside `SOTW_WordStudy_03_DICTIONARIES_LEXICONS_KJV_WEBSTER_2026-11-05.zip`. Original XML SHA-256: `1f9659ea208f4c498843a0280dacb1448627c33ca77712642d8705793ab66061`.
+- **VERIFIED (2026-11-07 source inspection):** Hebrew OSIS source has 8,674 `lemma`, transliteration (`xlit`), POS, morphology, concise `note type=explanation`, and KJV `note type=translation` fields, plus expanded numbered list items. Corrected Stage 1 retained numbered senses but omitted concise explanations, KJV renderings, headword scripts and some grammar. This is a field-completeness gap, not a renewed attribution audit. Greek Strong's XML is present in the original source bundle with 5,624 entries; it exposes `strongs_def`, `kjv_def`, derivation, Greek spellings and transliteration, but has not yet been projected or integrated. Distinct BDB/Thayer/STEP resources remain separate candidates/hooks, not merged Strong's definitions.
 - **VERIFIED (research):** 8,674 entries; 24,841 original list items; 21,500 numbered senses and 2,680 proper-name glosses in the selected-content classification. Source language markers: 6,046 Hebrew/Aramaic and 2,628 `x-pn` proper-name markers that must **not** be miscast as a language.
 - **OWNER DECISION:** Use the widely distributed, public-domain-designated Strong's digital edition as the practical foundation. Do not rebuild a word-perfect 1894 edition or require a PDF scan comparison. Preserve source and digital editorial provenance. No external STEP, Open Scriptures, TWOT, BDB, or CLBL **alternative dictionary definitions** are to be imported for public display. The owner has said the normalized display attribution count was already zero; **locate and verify that accepted baseline instead of reopening the audit**.
 - **VERIFIED (internal research):** A source-attribution audit found 202 explicitly labeled sense items in 178 entries in the raw research record. These are **source/audit markers, not 202 new imported sources or newly proven defects**. The earlier 14-unavailable stripped projection was an audit variant, **not** the approved final display.
@@ -23,9 +24,17 @@
 
 ## NEXT ACTION (one task only)
 
-Build a **deterministic, research-only display projection** from the selected Strong's digital source and the existing typed fields, preserving complete usable source content, Strong's IDs, grammar and provenance. Normalize only display metadata as previously agreed; **do not** import other lexicon definitions, silently remove senses, or claim original-1894 word perfection. Connect the existing lookup index and validate actual displayed attribution metadata. Preserve research source bytes separately. No public deployment or player change.
+**Stage 7 (reordered by owner): Complete original-language Strong's foundation BEFORE Webster 1828.** First restore Hebrew source's concise explanation, KJV rendering, Hebrew/Aramaic lemma, transliteration, POS, morphology, derivation/exegesis and cross-reference fields alongside the already indexed expanded senses. Build Greek Strong's parallel entry projection from archived 5,624-entry XML with Greek lemma, transliteration, pronunciation, concise Strong's definition, KJV rendering and derivation. Preserve provenance and edition distinctions. Test field completeness and Hebrew/Greek lookup; do not infer word-to-verse mappings without evidence. Deeper lexicons and STEP occurrence morphology are distinct subsequent integrations. Do not reopen the 202-marker audit or Webster source selection. No deployment.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Owner reorders Stage 7: Hebrew and Greek Strong's before Webster
+- **OWNER DIRECTION:** Finish the original-language Hebrew/Greek foundation before adding Noah Webster's 1828 English dictionary. Earlier Stage 7 Webster plan is superseded; Webster remains queued, not canceled.
+- **VERIFIED from archived original Strong's sources:** Hebrew `StrongHebrewG.xml` has 8,674 entry headwords, concise explanation notes, KJV rendering notes, lemma, transliteration, POS, morph and expanded sense lists. Current Stage 1 corrected projection only retained expanded sense/gloss fields, so it is **not a complete Strong's entry presentation**. Greek XML contains 5,624 entries and distinct `strongs_def`, `kjv_def`, derivation and Greek forms; not yet built.
+- **FIELD DESIGN:** Concise Strong's explanation and KJV rendering are separate fields; expanded Hebrew senses are another source layer, not automatically a matching Greek 'long Strong's' field. Longer BDB/Thayer entries, when separately sourced and cleared, must remain distinct source-credited lexicon records.
+- **NEXT:** Stage 7 complete Hebrew concise/original-script fields and Greek Strong's entries with validation, then original-language occurrence/morphology hooks and later Webster 1828. Recovery Checkpoint 2 remains current; no new ZIP yet.
+
+
 
 ### 2026-11-07 | Recovery Checkpoint 2 created through Stage 6
 - **OWNER CONTINUITY RULE:** In new threads owner can supply original source archives plus exactly ONE latest recovery ZIP. Do not require separate incremental Stage 6 inventory ZIP.
