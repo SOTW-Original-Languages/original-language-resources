@@ -153,6 +153,14 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Next:** Run the full research export through the checked-out exact schema and add source-authored field segmentation/fidelity tests. Maintain a deterministic rebuild script in GitHub, test completeness and release boundaries, then independently verify a permitted Hebrew textual witness for Genesis 1:1. No production edits or original archive deletion.
 
+## STEP 2 FULL EXPORT INDEPENDENT RECHECK — 2026-11-07
+
+**Independently rechecked the conversation artifact** `SOTW_HEBREW_FULL_CANONICAL_RESEARCH_2026-11-07.zip` (SHA-256 `3bf05d0c79dbe755d637b4055d0ca1d427af33523705a46776f804ea6e108970`). The archive contains 8,674 lexical research records and 8,674 serialized OSIS entry subtrees. All entry IDs, matching headword and transliteration attributes, Strong's ID arrays, per-entry subtree hashes, source XML provenance hashes and research-only release flags passed the local export checks. The preserved XML contains 24,841 list items, 26,142 notes, and 3,686 foreign elements.
+
+**Important new fidelity finding:** Reconstructing the reading text from preserved OSIS and normalizing only whitespace still differs from exported `full_definition` in **5,086/8,674** entries. Example H1 has a space before a comma in raw OSIS iteration but not the exported reading. This does **not** by itself establish lost meaning, but it means the flattened text is not a reversible or exact source transcription and requires a documented transformation policy and detailed diff audit. Preserved OSIS is the authority; do not label `full_definition` byte-exact or certify field fidelity. The independent recheck used known lexical constraints, **not the exact checked-out GitHub JSON Schema**, so live schema certification remains pending.
+
+**Next:** Implement and test a deterministic, documented `full_definition` rendering policy with comparison diagnostics across all 8,674 entries; validate against the exact repository schema and only then consider public lexical projections. Original source archive and preserved OSIS remain intact; no occurrence or translation alignment publication.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
