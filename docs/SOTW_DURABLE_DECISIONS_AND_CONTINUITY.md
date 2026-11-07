@@ -215,6 +215,12 @@ Committed `scripts/validate_live_sotw_lexicon.py` at `0fdaff4d79ed9f018395de3cff
 
 **Execution is still pending:** The local runtime has the 6,046-record research JSON but cannot fetch the exact GitHub schema over its network, and the GitHub connector does not directly mount its bytes in that runtime. Do **not** claim the exact-file gate passed. Run after checking out repository: `python scripts/validate_live_sotw_lexicon.py --schema schemas/sotw-canonical-v1.schema.json --records /path/to/lexicon-research-language-corrected.json --report /path/to/validation-report.json`. Confirm reported Git blob hash matches pinned/current expected hash. No source archives or production files modified. 2,628 x-pn remain research-only outside canonical language projection; public rendering/rights gates remain open.
 
+## STEP 2 EXACT BYTE-IDENTICAL GITHUB SCHEMA GATE PASSED — 2026-11-07
+
+**Executed locally, not merely transcribed:** Reconstructed `schemas/sotw-canonical-v1.schema.json` from the live GitHub fetch and verified its **exact Git blob SHA-1** `2ff9b33ba9679e858f9994eb8fffbf29976a969e` (8,297 bytes; raw SHA-256 `1741ada0f607931af42a5c5bc77bea8271ab384c88be06c6e314459ba0d015c9`). This verifies byte identity with the current GitHub schema blob. Ran `jsonschema.Draft202012Validator.check_schema` and the full top-level `oneOf` with all references on every record from `SOTW_HEBREW_LANGUAGE_CORRECTION_2026-11-07.zip`. **PASS: 6,046/6,046 valid records; 0 schema errors; 6,046 unique IDs; 5,393 heb and 653 arc; all release_status=research.** Independently counted **2,628** unresolved x-pn records retained outside canonical export. Local executable `/mnt/data/run_exact_sotw_gate.py` and report `SOTW_HEBREW_EXACT_GITHUB_SCHEMA_VALIDATION_2026-11-07.json` created. This supersedes earlier pending-exact-schema statements.
+
+**Scope:** Exact-schema compatibility of these 6,046 research records is certified locally. It does NOT certify field semantic correctness, rights/publication, source-authoritative flattened definition policy, occurrence alignment, or language for x-pn proper names. No GitHub Actions run claimed. No public release or player changes.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
