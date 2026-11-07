@@ -1,17 +1,17 @@
-# Word Study Inspector — public test v2 (2026-11-06)
+# Word Study Inspector — research inspection preview v2.3 (2026-11-06)
 
 Public URL: https://sotw-original-languages.github.io/original-language-resources/inspector/
 
 ## Scope
-This is a **three-passage, source-backed preview** for Genesis 1:1, John 1:1, and Romans 10:9. It is **not** the 66-book online corpus. The full research corpus remains separate. Public files: `index.html`, `data-preview.js`, this README.
+This is a **three-passage, source-backed preview** for Genesis 1:1, John 1:1, and Romans 10:9. It is **not** the 66-book online corpus. The full research corpus remains separate. Public files: `index.html`, `data-preview.js`, `data-step-inspection.js`, this README.
 
 - Translation order: BSB, KJV, NWB (Webster Bible 1833), ASV 1901.
 - BSB: original-language source table with surface forms, transliterations, morphology, original-word order and English renderings.
-- KJV: source-native Strong's tags.
+- KJV: English source-native Strong's tags in KJV USFM. These are **not** original-language surface forms from a KJV Hebrew/Greek text. The KJV panel now switches to English-tag inspection, and any BSB original-language parallels are explicitly labeled as comparisons.
 - NWB and ASV: supported KJV-derived display candidates only. **No internal disagreement records or unresolved links are included.**
 - Strong's: 30 historical Hebrew/Greek headwords with **concise, source-derived quick definitions** alongside longer source-credited historical definitions or clearly marked usage excerpts. Quick definitions are editorial summaries, not quoted source fields or passage-specific meanings.
 - Webster 1828: 19 selected historical English headword/sense excerpts. The 1828 dictionary is **not** the Webster 1833 Bible.
-- STEP Bible TBESH (Hebrew) and TBESG (Greek): **23 uniquely mapped source `Gloss` records only**, source-file hashes and CC BY 4.0 attribution included. The TBESH `Meaning` column is explicitly excluded: its header asks projects to obtain permission from Online Bible before reuse. Multiple extended Strong's subentries are not silently merged.
+- STEP Bible TBESH (Hebrew) and TBESG (Greek): **all 41 exact numeric-base `Gloss` rows** across the 30 preview Strong's IDs, including **7 IDs with multiple distinct extended entries**. Each is displayed independently with eStrong, dStrong, uStrong, source lemma, morphology, source line, SHA-256, and CC BY 4.0 attribution. **These are candidate dictionary entries, not passage-level sense selections.** The TBESH `Meaning` column is excluded: its header asks projects to obtain permission from Online Bible before reuse. The original 23-row subset was removed from `data-preview.js` to avoid duplicate or competing STEP data.
 - No BDB, Thayer candidate corpus, private flags, analytics or CGBC Sermon Player integration.
 
 ## Source archives and attribution
@@ -25,12 +25,12 @@ This is a **three-passage, source-backed preview** for Genesis 1:1, John 1:1, an
 - Three Scripture passages with four English edition texts each.
 - 47 BSB original-language rows retained in native original-word order.
 - 30 unique Strong's identifiers resolved to Hebrew or Greek lexical records, each with a nonempty short gloss.
-- 23 uniquely mapped STEP Bible short glosses, each with exact extended Strong's ID, source field, license and source-file hash; 7 Strong's IDs with multiple STEP extended subentries intentionally receive no STEP gloss in this preview.
+- 41 exact STEP Bible short `Gloss` rows for 30 Strong's IDs; 23 IDs have one entry and 7 IDs have multiple entries (including H1254A/H1254B). Every row retains its source line and eStrong/dStrong/uStrong provenance. The longer `Meaning` column is not copied.
 - 19 Webster 1828 headword excerpts available for English lookup.
 - Every published KJV/NWB/ASV link position matches the intended English token in the corresponding verse.
 - All published Strong's IDs resolve to an excerpted lexicon record.
-- Public `data-preview.js` contains no internal flags, conflict counts, or private audit records.
-- Inline JavaScript syntax checked against the published file.
+- Neither public data file contains internal flags, conflict counts, or private audit records. The public word associations continue to omit unsupported links. The KJV USFM's H0853 tag on English “and” in Genesis 1:1 is explained as a source-tag caveat, not presented as the word's lexical meaning.
+- Inline JavaScript syntax checked against the published file. Mock-DOM interaction tests passed for switching BSB → KJV → NWB, opening H1254A/H1254B from KJV “created,” and changing passages. These are automated code-level checks, not live GitHub Pages/browser verification.
 
 These are structural and provenance checks, **not** scholarly adjudication or full textual verification.
 
@@ -41,6 +41,7 @@ These are structural and provenance checks, **not** scholarly adjudication or fu
 - v2.1 quick definitions: data `85eef3d7271eacb0f9f98e2f5c22c53af42481f9`; UI `b87d4fbc41dcc9219c4252793a02bc82659e901f`.
 - v2.2 STEP source glosses and UI labels: data `d198110170a3a423bf875b57554bfee423c0680b`; UI `8bafb14d5df5102cba49bacd0ceb58d623fab54e`.
 - v2.1 cache and Webster visibility fix: UI `2e7e1b4edca0a0dffe79bdad2b8e59184b9b89ce`. Adds a version-pinned data URL to avoid stale JavaScript and displays selected-word Webster 1828 excerpts beside the Strong's definitions, when the sampled English headword is available.
+- v2.3 source inspection: STEP exact rows `a460ed719eb261a5a50de0609bc34e1a1fc32e9e`; edition-aware UI `1ce4964f07c3642164c3a930ba74e9d1da109147`; deduplicated preview data `7cc1df895f7688644f69e395bac1187f66d04bb3`; pinned cache version `e563b82ab6c54890be1481b3b3a8fddf51e06d78`.
 - This site is isolated under `docs/inspector/`. No changes to CGBC or the separate Bible translation repositories.
 
 ## Next expansion
