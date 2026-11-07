@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 8E compound-word evidence review complete; Stage 8 remains research-only  
-**Status:** Pre-beta Stage 8E complete: 1,052 withheld rows examined, 36 duplicates, unique source/target phrase evidence cataloged without promoting ambiguous tags. Checkpoint 8 includes all earlier stages. No deployment.  
+**Stage:** Stage 9 complete: Webster 1828 standalone dictionary lookup across four translations
+**Status:** Pre-beta Stage 9 built and tested (7/7): 62,391 Webster 1828 entries in source-preserving SQLite with direct English lookup for BSB, KJV, Webster 1833, ASV. Recovery Checkpoint 9 includes all prior stages. No deployment.
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -24,9 +24,18 @@
 
 ## NEXT ACTION (one task only)
 
-**Stage 9: Webster 1828 English dictionary direct lookup from all four translations.** Inspect archived Webster 1828 source, preserve authored headwords, all definitions/senses, source rights and provenance; implement deterministic headword lookup independent of Strong's and accessible for BSB, KJV, Webster Bible 1833 and ASV 1901. Historical Webster 1828 is author-paired with Webster 1833, but dictionary senses are not contextual interpretation. Do not promote Stage 8E phrase matches into confirmed word-level Strong's links without further token/markup proof. Owner retains Checkpoint 8 plus original archives; no deployment.
+**Stage 10: Integrate the existing source-preserving Webster 1828 lookup adapter into a private/local Word Study Inspector test path for all four Bible editions.** Use the Stage 9 SQLite resource and original private inspector/shell. Preserve source-authored HTML, sanitize it for browser display, and display CC BY-SA 4.0 attribution/rights. Test real verse-word selection, exact headword matches, duplicate headwords, unavailable inflected forms and private/public separation. Do not invent stemming or sense interpretation, and do not deploy to production. Latest owner backup is Checkpoint 9; original source archives remain separate.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Stage 9 COMPLETE: Webster 1828 direct lookup and Checkpoint 9
+- **VERIFIED SOURCE:** Original source bundle `SOTW_WordStudy_03_DICTIONARIES_LEXICONS_KJV_WEBSTER_2026-11-05.zip` (SHA-256 `a9fbecc8f08063a227ae94da868dfb4c3ad8b98cc3140c492aba17ef77f423eb`), nested `source_files/webster1828-master.zip` (SHA-256 `be9bb797197a878a42a95d2fd63e14cfd3af25a4dc300a6aab4de99a59e48be5`), `webster1828-master/webster1828.csv` (SHA-256 `5ba9750ae13e3938441721d00677f8eacf45b63bd631639de247155892e54fb0`). Digital source LICENSE is **CC BY-SA 4.0**; preserve source attribution/share-alike conditions. Original historical book status does not erase digital transcription license.
+- **IMPLEMENTED:** 62,391 two-column source-authored headword/HTML-definition rows, 62,388 normalized lookup keys; duplicate headwords retained as separate rows. 586 unfinished source rows excluded from authoritative lookup (not deleted from owner originals). Source-authored HTML preserved as CSV text, not converted into invented senses.
+- **DIRECT LOOKUP:** Research-only SQLite and `lookup.py` for BSB, KJV, WEBSTER_1833 and ASV_1901, with exact casefold/whitespace/curly-apostrophe normalization. No KJV or Strong's dependency, no guessed stemming or contextual sense selection. 7/7 automated tests PASS. HTML requires sanitization before public browser display. No UI integration or deployment yet.
+- **LATEST ONE-ZIP RECOVERY:** `SOTW_RECOVERY_CHECKPOINT_9_STAGE9_2026-11-07.zip`, **43,907,559 bytes**, SHA-256 **`483b98a391a042bb22bfe107f7efb9544cde90a72686bd9a042402cc55ccd661`**. Contains complete nested Checkpoint 8 plus Stage 9 SQLite, scripts, tests, source license, source README, manifest and verifier hashes. Outer ZIP CRC, embedded checkpoint hash and Stage 9 file hashes PASS. Original archives remain separate.
+- **NEXT:** Stage 10 private inspector test integration for four translations, no deployment.
+
+
 
 ### 2026-11-07 | Stage 8E: targeted withheld compound-word evidence; Checkpoint 8
 - **VERIFIED:** Examined all 1,052 Stage 8D withheld source-tag rows; 36 exact duplicate evidence rows, 1,016 distinct withheld cases. 924 distinct cases have a unique literal KJV phrase; 742 have unique exact phrase in KJV and Webster 1833, and 734 in KJV and ASV 1901. 46 cases have no exact KJV phrase and 46 have multiple KJV phrase locations; original 59 out-of-order cases are not automatically resolved. Counts are evidence candidates, not newly established Strong's word links.
