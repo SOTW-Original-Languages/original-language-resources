@@ -83,8 +83,17 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Publication invariant:** candidate/disputed/rejected links must not appear as verified public associations, even if the underlying record passes JSON Schema. Original archives should be preserved in the Bible Foundation where feasible; no source files moved or deleted.
 
+## SCHEMA CI RESULT — owner-provided GitHub Actions evidence (2026-11-06)
+
+**PASS: Automated canonical-v1 schema test job.** Owner supplied a GitHub Actions screenshot showing green completed steps for checkout, Python setup, dependency installation, `python scripts/validate_canonical_v1.py`, post-run steps, and job completion. This is user-provided visible evidence of a successful job, not an independently retrieved full run log or run ID. The earlier push-trigger commit was `17421062cc5e0c0f473b094e5df882eab28714b1`; screenshot does not establish its exact run SHA.
+
+**Certification scope:** JSON Schema Draft 2020-12 syntax and the synthetic fixtures, invalid-record tests, and publication-exclusion policy covered by the committed validator passed in CI. **Not certified:** interoperability with pinned Bible Foundation schemas/IDs, real Genesis source hashes and coverage, provenance/right-to-publish evidence on real records, or ingestion pipeline correctness. Those remain required before real source publication.
+
+**Next work:** Verify Foundation compatibility, then ingest and validate source-backed Genesis 1:1 records with preserved original-source hashes and exact evidence; expand to Genesis 1 and full Genesis only after that gate. No need to rerun source-selection or STEP discussions.
+
 ## Change log
 
+- **2026-11-06 (CI evidence):** Owner supplied screenshot of successful GitHub Actions schema-validation job, including validator step. Synthetic/schema CI PASS; Foundation compatibility and real-source validation still pending.
 - **2026-11-06 (certification attempt):** Added GitHub Actions schema-validation workflow; no successful execution evidence retrieved yet. Status remains pending, not certified. Container network could not access GitHub raw files; do not substitute reconstructed data for actual repository bytes.
 - **2026-11-06 (validation preparation):** 18/18 fetched-schema structural checks passed; committed standards-based Draft 2020-12 validator with negative and public-exclusion tests. Python validator not yet executed in a checked-out repository; do not claim full validation passed.
 - **2026-11-06 (Step 1 implementation):** Committed canonical v1 schema, synthetic fixture and schema contract documentation. Automated validation and real Genesis ingestion remain next tasks.
