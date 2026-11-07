@@ -27,6 +27,13 @@ Build a **deterministic, research-only display projection** from the selected St
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
 
+### 2026-11-07 | Owner clarifies pre-beta status and recovery cadence
+- **OWNER DECISION:** SOTW Original Languages is **pre-beta**. There is **no production player** at present. Stop describing this work as if a deployed player exists; continue building and testing the pre-beta system.
+- **OWNER DECISION:** GitHub progress log updates after each completed stage; produce a verified, downloadable full-working-files recovery ZIP approximately every five stages and earlier for risky changes or thread continuity. Owner confirmed downloading the existing `SOTW_HEBREW_LATEST_WORKING_SNAPSHOT_2026-11-07.zip` as recovery checkpoint 0.
+- **Next:** Stage 1 of 5, deterministic complete Hebrew Strong's research/display projection from existing source; no restart of prior source research.
+
+
+
 ### 2026-11-07 | Partial direct upload of working JSON
 - **VERIFIED:** Uploaded `research/hebrew-strongs/indexes/literal_reference_hooks.json` as a normal GitHub file: 55 source-literal reference candidates, all explicitly unverified. Commit `ac34adb924d0c6e89f80dc5fa6f891749232bb77`.
 - **PENDING:** Three large regular JSON files (`data/strongs_digital_selected_research.json`, `indexes/lookup_by_strongs.json`, `indexes/token_to_strongs.json`) are not uploaded. Local container cannot resolve github.com; connector writes GitHub text but cannot read local container files, so a reliable bulk transfer is still unavailable.
