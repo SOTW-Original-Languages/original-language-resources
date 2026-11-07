@@ -28,6 +28,15 @@
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
 
+### 2026-11-07 | Owner refines Stage 8C: KJV textual alignment bridge for ASV and Webster 1833
+- **OWNER DIRECTION:** Favor a straightforward, source-evidenced KJV-to-ASV and KJV-to-Webster Bible 1833 word-alignment workflow over newly invented logical/interpretive protocols. Reuse KJV native Strong's tags as the initial reference for both related translations.
+- **HISTORICAL PRECISION:** ASV 1901 descends through the English Revised Version from the KJV revision tradition; Webster 1833 is a KJV revision. Neither is to be labeled a word-for-word identical KJV text or assumed to preserve every KJV word/tag.
+- **IMPLEMENTATION RULE:** Compare corresponding verses and actual word surfaces; carry all native KJV Strong's tags only across verified unchanged or unambiguous word correspondences. Record exact source/target tokens, verse, method, source tag array, confidence/evidence and unresolved cases. No invented original-language tag for an unmatched ASV/NWB word; no speculative theological sense selection. BSB source-native links remain independent.
+- **DISTINCTION:** Noah Webster's **1833 Bible** is the translation being aligned here; Noah Webster's **1828 Dictionary** remains a separate later lexical resource, not a Bible translation.
+- **STATUS:** Owner-approved method refinement only; Stage 8C not yet executed. Current Recovery Checkpoint 5 remains latest.
+
+
+
 ### 2026-11-07 | Stage 8B complete: BSB source-native alignment and Recovery Checkpoint 5
 - **VERIFIED:** Original `SOTW_WordStudy_04_BSB_TEXT_ALIGNMENT_REFERENCES_2026-11-05.zip / source_files/bsb_tables.tsv` parsed: 754,647 table rows, 437,587 source-tagged original-language word records, 294,728 Hebrew, 4,728 Aramaic, 138,131 Greek. 31,102 explicit VerseId anchors overall, including 31,023 on tagged rows; 406,564 tagged rows inherit same-verse source anchor with strict verse-number boundary. No unanchored tagged records, malformed columns, or unexpected languages. 437,587/437,587 Strong's references resolve against Stage 7 dictionaries.
 - **IMPORTANT SOURCE BOUNDARY:** BSB USFM/USJ/USX text has no inline Strong's word tags; BSB-native alignments originate in the source table, not KJV USFM. Preserve source row, Hebrew/Greek spelling, transliteration, compact/expanded parsing, source BSB English cell, and original verse anchor. This does not assert each sense applies to its verse. No inferred word alignment, no public release, no player change.
