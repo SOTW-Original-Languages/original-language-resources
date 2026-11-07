@@ -91,8 +91,15 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Next work:** Verify Foundation compatibility, then ingest and validate source-backed Genesis 1:1 records with preserved original-source hashes and exact evidence; expand to Genesis 1 and full Genesis only after that gate. No need to rerun source-selection or STEP discussions.
 
+## FOUNDATION COMPATIBILITY BUILD CHECKPOINT (2026-11-06)
+
+**Built and committed, awaiting CI result:** `compatibility/foundation-v0.1.snapshot.json` (live fetched Foundation v0.1 reference schema/fixture and source blob SHAs), `scripts/validate_foundation_compatibility.py`, `docs/SOTW_FOUNDATION_COMPATIBILITY_V1.md`, and `.github/workflows/verify-foundation-compatibility.yml`. Corrected `schemas/sotw-canonical-v1.schema.json` verse-ID pattern to Foundation's 3–8 character book codes and positive chapter/verse numbering.
+
+**Next action:** Open GitHub Actions workflow `verify-foundation-compatibility.yml`; confirm both canonical and Foundation validators pass, capture run evidence, and update this checkpoint. Do **not** call it certified before that evidence. Then verify actual pinned full book-code catalog if available and begin real Genesis 1:1 source-byte/hash validation. Foundation presently advertises an architecture seed/reference-only v0.1 contract; do not mistake that for a complete book or lexical catalog.
+
 ## Change log
 
+- **2026-11-06 (Foundation compatibility):** Pinned live Foundation reference contract, added compatibility verifier and CI workflow, corrected verse-ID regex. CI outcome not yet observed.
 - **2026-11-06 (CI evidence):** Owner supplied screenshot of successful GitHub Actions schema-validation job, including validator step. Synthetic/schema CI PASS; Foundation compatibility and real-source validation still pending.
 - **2026-11-06 (certification attempt):** Added GitHub Actions schema-validation workflow; no successful execution evidence retrieved yet. Status remains pending, not certified. Container network could not access GitHub raw files; do not substitute reconstructed data for actual repository bytes.
 - **2026-11-06 (validation preparation):** 18/18 fetched-schema structural checks passed; committed standards-based Draft 2020-12 validator with negative and public-exclusion tests. Python validator not yet executed in a checked-out repository; do not claim full validation passed.
