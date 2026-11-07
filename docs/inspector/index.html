@@ -38,12 +38,12 @@ footer{margin-top:20px;font-size:12px;color:#607485;text-align:center}
 @media(max-width:850px){.verse-grid,.detail-layout,.sources{grid-template-columns:1fr}.verse{min-height:0}}
 @media(max-width:580px){header{padding:20px 17px}.panel{padding:16px}.original-list{grid-template-columns:1fr}.metadata{grid-template-columns:96px 1fr}.verse{font-size:19px}}
 </style>
-<script src="data-preview.js?v=85eef3d7271eacb0f9f98e2f5c22c53af42481f9"></script>
+<script src="data-preview.js?v=d198110170a3a423bf875b57554bfee423c0680b"></script>
 </head>
 <body>
 <header><div class="mast"><div><div class="kicker">STEWARDS OF THE WAY · ORIGINAL LANGUAGES</div><h1>Word Study Inspector</h1><p>Trace English Scripture words to historical Strong’s, original script, morphology, and Webster 1828.</p></div><nav class="toplinks" aria-label="Page sections"><a href="#explorer">Scripture</a><a href="#details">Word details</a><a href="#original">Hebrew / Greek</a><a href="#webster">Webster 1828</a><a href="#sources">Sources</a></nav></div></header>
 <main>
-<div class="notice"><strong>Public research preview, version 2.</strong> Three representative passages are available online. Strong’s and original-language details come from the supplied source archives; Webster 1828 contains selected historical English sense excerpts. This is not yet the full 66-book online corpus. Unresolved NWB and ASV links remain excluded, not shown as warnings.</div>
+<div class="notice"><strong>Public research preview, version 2.</strong> Three representative passages are available online. Strong’s and original-language details come from the supplied source archives; selected STEP Bible TBESH/TBESG short glosses are shown with citations, but their longer TBESH “Meaning” column is excluded; Webster 1828 contains selected historical English sense excerpts. This is not yet the full 66-book online corpus. Unresolved NWB and ASV links remain excluded, not shown as warnings.</div>
 <section id="explorer" class="panel">
 <div class="flex space"><div><div class="eyebrow">01 / Scripture Explorer</div><h2>Four translations, one word-study workspace</h2><p class="muted small" style="margin:0">BSB → KJV → NWB (Webster Bible 1833) → ASV 1901</p></div><div class="flex"><label for="passage" class="small"><strong>Passage</strong></label><select id="passage" aria-label="Choose a passage"></select></div></div>
 <div class="verse-grid" id="verses"></div>
@@ -51,7 +51,7 @@ footer{margin-top:20px;font-size:12px;color:#607485;text-align:center}
 </section>
 <section id="details" class="panel">
 <div class="eyebrow">02 / Historical Strong’s</div><h2>Word evidence and short definition</h2>
-<div class="detail-layout"><div><span class="pill" id="strong-id">Select a word</span><div class="big-lemma" id="lemma" lang="und">—</div><p class="muted" id="translit" style="margin:0"></p><dl class="metadata" id="meta"></dl></div><div><h3>Strong’s quick definition</h3><div class="quick-gloss" id="quick-gloss">Choose a word to see its quick meaning.</div><p class="quick-note">Short editorial summary of the historical entry, not a passage-specific interpretation.</p><h3>Historical dictionary definition</h3><div class="definition" id="gloss">Choose a word above or an original-language occurrence below.</div><p class="small muted" id="definition-note">A dictionary headword does not determine its meaning in a particular verse.</p><h3>Noah Webster’s 1828 English definition</h3><div class="webster-inline empty" id="webster-inline" aria-live="polite">Choose an English word to see a sampled Webster entry, when available.</div><p class="small muted">Webster defines historical English usage, not the Greek or Hebrew headword. <a href="#webster">Search Webster 1828</a></p></div></div>
+<div class="detail-layout"><div><span class="pill" id="strong-id">Select a word</span><div class="big-lemma" id="lemma" lang="und">—</div><p class="muted" id="translit" style="margin:0"></p><dl class="metadata" id="meta"></dl></div><div><h3>Strong’s Quick Meaning</h3><div class="quick-gloss" id="quick-gloss">Choose a word to see its quick meaning.</div><p class="quick-note">Short editorial summary of the historical entry, not a passage-specific interpretation.</p><h3>Strong’s Expanded Dictionary Definition</h3><div class="definition" id="gloss">Choose a word above or an original-language occurrence below.</div><p class="small muted" id="definition-note">A dictionary headword does not determine its meaning in a particular verse.</p><h3>STEP Bible Hebrew/Greek Lexicon (brief gloss)</h3><div class="webster-inline empty" id="step-gloss" aria-live="polite">Select a word to see a verified STEP brief gloss, when available.</div><p class="small muted" id="step-citation">Source: <a href="https://github.com/STEPBible/STEPBible-Data/tree/master/Lexicons" target="_blank" rel="noopener noreferrer">STEP Bible lexicons</a>, CC BY 4.0. The TBESH longer “Meaning” column is not published.</p><h3>Noah Webster’s 1828 English definition</h3><div class="webster-inline empty" id="webster-inline" aria-live="polite">Choose an English word to see a sampled Webster entry, when available.</div><p class="small muted">Webster defines historical English usage, not the Greek or Hebrew headword. <a href="#webster">Search Webster 1828</a></p></div></div>
 </section>
 <section id="original" class="panel">
 <div class="eyebrow">03 / BSB Native Source Table</div><h2>Original-language word sequence</h2>
@@ -67,11 +67,12 @@ footer{margin-top:20px;font-size:12px;color:#607485;text-align:center}
 <p class="muted small">Only 19 sampled English entries are available. Selecting a word above also shows its Webster entry in section 02 when present. Original 1828 transcription is licensed CC BY-SA 4.0 by its digitization contributors; excerpt selections and punctuation cleanup are editorial modifications. <a href="https://github.com/akaitsurugi/webster1828" target="_blank" rel="noopener noreferrer">Source and license</a>.</p>
 </section>
 <section id="sources" class="panel">
-<div class="eyebrow">05 / Source and Rights</div><h2>Provenance preserved</h2><p class="muted small">The source archives were supplied with SHA-256 manifests. Quick definitions are editorial condensations of the historical Strong’s entries, with full excerpts shown alongside. The excerpts here are not a full lexicon import, and the historical BDB dataset remains excluded.</p>
+<div class="eyebrow">05 / Source and Rights</div><h2>Provenance preserved</h2><p class="muted small">The source archives were supplied with SHA-256 manifests. Quick definitions are editorial condensations of historical Strong’s entries. Selected STEP Bible TBESH/TBESG brief “Gloss” fields are separately attributed under CC BY 4.0. TBESH’s Online Bible-derived longer “Meaning” field is not reproduced because its source requires additional permission. The excerpts here are not a full lexicon import, and the historical BDB dataset remains excluded.</p>
 <div class="sources">
 <div class="source"><strong>BSB native original-language table</strong><p>Hebrew/Greek surface forms, transliteration, morphology, and English rendering. No generated BSB alignment.</p><div class="hash">bsb_tables.tsv · SHA-256 <span id="hash-bsb"></span></div></div>
 <div class="source"><strong>Greek Strong’s</strong><p>Historical Strong’s Greek XML, Ulrik Sandborg-Petersen / morphgnt edition, released CC0. Definitions are headword-level.</p><a href="https://github.com/morphgnt/strongs-dictionary-xml" target="_blank" rel="noopener noreferrer">Greek source (CC0)</a><div class="hash" id="hash-greek"></div></div>
 <div class="source"><strong>Hebrew Strong’s</strong><p>Open Scriptures Hebrew Bible Project, HebrewStrong.xml, CC BY 4.0 digital edition. Attribution retained. BDB not included.</p><a href="https://github.com/openscriptures/HebrewLexicon" target="_blank" rel="noopener noreferrer">Hebrew source (CC BY 4.0)</a><div class="hash" id="hash-hebrew"></div></div>
+<div class="source"><strong>STEP Bible TBESH / TBESG</strong><p>Tyndale House Cambridge / STEP Bible, CC BY 4.0. Only the source’s short “Gloss” column is shown for uniquely mapped extended Strong’s IDs. TBESH’s Online Bible-derived “Meaning” column is withheld pending permission.</p><a href="https://github.com/STEPBible/STEPBible-Data/tree/master/Lexicons" target="_blank" rel="noopener noreferrer">STEP Bible lexicon files (CC BY 4.0)</a><div class="hash">TBESH SHA-256 <span id="hash-tbesh"></span></div><div class="hash">TBESG SHA-256 <span id="hash-tbesg"></span></div></div>
 <div class="source"><strong>Webster 1828 English</strong><p>Historical English dictionary transcription, CC BY-SA 4.0; selected sense excerpts and punctuation cleanup are identified as modifications.</p><a href="https://github.com/akaitsurugi/webster1828" target="_blank" rel="noopener noreferrer">Webster source (CC BY-SA 4.0)</a><div class="hash" id="hash-webster"></div></div>
 </div>
 </section>
@@ -127,7 +128,7 @@ function renderVerses(){
   b.setAttribute("data-strong-id",r[0]);b.setAttribute("data-edition","BSB");b.setAttribute("data-word",r[4]||"");
   b.setAttribute("aria-pressed","false");
   var s=el("span",r[1],"surface");s.setAttribute("dir",r[0][0]==="H"?"rtl":"ltr");s.setAttribute("lang",r[0][0]==="H"?"he":"el");b.appendChild(s);
-  b.appendChild(el("span",r[2],"translit"));b.appendChild(el("span",r[0]+" · "+(r[4]||"No direct English rendering"),"eng"));
+  b.appendChild(el("span",r[2],"translit"));b.appendChild(el("span",r[0]+" · BSB English: "+(r[4]||"No direct English rendering"),"eng"));
   b.appendChild(el("span",r[3],"morph"));
   b.addEventListener("click",function(){select(r[0],r[4]||"", "BSB",r);byId("details").scrollIntoView({behavior:"smooth",block:"start"})});
   orig.appendChild(b);
@@ -140,6 +141,16 @@ function renderDetails(){
  var lemma=byId("lemma");lemma.textContent=entry.lemma||"No lexicon excerpt";lemma.setAttribute("lang",s.id&&s.id[0]==="H"?"he":"el");lemma.setAttribute("dir",s.id&&s.id[0]==="H"?"rtl":"ltr");
  byId("translit").textContent=entry.translit?"Transliteration: "+entry.translit:"";
  byId("quick-gloss").textContent=entry.quick||"Preview data is out of date. Refresh the page to load the quick definition.";byId("gloss").textContent=entry.gloss||"No historical definition loaded for this Strong’s ID.";
+ var stepBox=byId("step-gloss"),stepCitation=byId("step-citation"),stepEntry=entry.step;
+ stepBox.className="webster-inline"+(stepEntry?"":" empty");
+ stepBox.textContent=stepEntry?stepEntry.lexicon+" · "+stepEntry.gloss:"No uniquely mapped STEP brief gloss published for this entry. Strong’s definitions remain available.";
+ empty(stepCitation);
+ if(stepEntry){
+  var prefix=stepEntry.lexicon+" · "+stepEntry.sourceId+" · “"+stepEntry.field+"” field · STEP Bible / Tyndale House Cambridge · CC BY 4.0 · ";
+  stepCitation.appendChild(el("span",prefix));
+  var sourceLink=el("a","Source lexicon");sourceLink.href="https://github.com/STEPBible/STEPBible-Data/tree/master/Lexicons";sourceLink.target="_blank";sourceLink.rel="noopener noreferrer";stepCitation.appendChild(sourceLink);
+  stepCitation.appendChild(el("span"," · Pinned source-file SHA-256 "+(stepEntry.lexicon==="TBESH"?D.sourceLocks.tbesh_file:D.sourceLocks.tbesg_file)));
+ }else{stepCitation.textContent="STEP extended-Strong’s subentries are not silently combined. No dictionary fallback is inferred."}
  var englishKey=getWebsterKey(s.word),websterBox=byId("webster-inline"),websterEntry=D.webster[englishKey];
  websterBox.className="webster-inline"+(websterEntry?"":" empty");
  websterBox.textContent=websterEntry?englishKey.toUpperCase()+" · "+websterEntry:"No Webster 1828 excerpt loaded for “"+(s.word||"this word")+"” in the current three-passage preview.";
@@ -172,6 +183,8 @@ byId("hash-bsb").textContent=D.sourceLocks.bsb_table;
 byId("hash-greek").textContent="Archive SHA-256 "+D.sourceLocks.greek_strongs_zip;
 byId("hash-hebrew").textContent="Archive SHA-256 "+D.sourceLocks.hebrew_lexicon_zip;
 byId("hash-webster").textContent="Archive SHA-256 "+D.sourceLocks.webster1828_zip;
+byId("hash-tbesh").textContent=D.sourceLocks.tbesh_file;
+byId("hash-tbesg").textContent=D.sourceLocks.tbesg_file;
 renderVerses();
 })();
 </script>
