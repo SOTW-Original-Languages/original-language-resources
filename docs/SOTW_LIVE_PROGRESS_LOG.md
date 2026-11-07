@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 1/5 requires correction: prior source-audit filter was mistakenly reapplied  
-**Status:** Pre-beta Stage 1 generated a research-only projection but is NOT ACCEPTED as normalized display output: it incorrectly reapplied a settled source-attribution filter. Preserve Checkpoint 0; correct Stage 1 before advancing.  
+**Stage:** Stage 1/5 corrected locally; Stage 2 next  
+**Status:** Pre-beta Stage 1 corrected research projection generated locally with no 202-marker filtering; Checkpoint 0 remains last complete recovery ZIP. Stage 2 next.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -26,6 +26,15 @@
 Build a **deterministic, research-only display projection** from the selected Strong's digital source and the existing typed fields, preserving complete usable source content, Strong's IDs, grammar and provenance. Normalize only display metadata as previously agreed; **do not** import other lexicon definitions, silently remove senses, or claim original-1894 word perfection. Connect the existing lookup index and validate actual displayed attribution metadata. Preserve research source bytes separately. No public deployment or player change.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Stage 1 corrected: source content retained
+- **VERIFIED:** Generated `SOTW_HEBREW_STAGE1_CORRECTED_2026-11-07/strongs_display_research_projection.json`: 8,674 unique Strong's IDs, 21,500 definition items, 2,680 proper-name glosses, 637 grammar labels, and original remaining typed fields retained. SHA-256 `0ddf649c80b3c03a836298f0b6d8b0ea3b7afc811eae3245ea3e579b872ab2b9`.
+- **CORRECTION:** No source items were filtered by the settled 202-marker audit. The earlier exclusion-based Stage 1 candidate is superseded. Original source research and audit metadata remain in Checkpoint 0.
+- **SCOPE:** This is a pre-beta development projection, not independent proof of a previously accepted final normalized public edition. Actual JSON exists in conversation files, not GitHub.
+- **RECOVERY:** Owner's Checkpoint 0 ZIP is the last full recovery; corrected Stage 1 file must be included in the next checkpoint.
+- **Next:** Stage 2/5, generate search projection from the corrected display fields and validate against existing internal token index.
+
+
 
 ### 2026-11-07 | Owner correction: stop reopening the settled 202-marker audit
 - **OWNER DECISION REAFFIRMED:** The 202 markers are original digital-source research/audit metadata, **not 202 unresolved public normalization defects**. The normalized final issues were already resolved. Do not strip senses or re-run attribution review merely because these markers exist in source archives.
