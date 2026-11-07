@@ -2,7 +2,7 @@
 
 **Updated:** 2026-11-07  
 **Stage:** Locate accepted normalized public baseline before public index  
-**Status:** Existing research and lookup artifacts verified; next build a deterministic display projection from the accepted digital source. No production script or deployment.  
+**Status:** Full working snapshot ZIP assembled and hash-verified; GitHub snapshot pointer created, but actual ZIP upload pending appropriate storage/access. No production script or deployment.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -26,6 +26,14 @@
 Build a **deterministic, research-only display projection** from the selected Strong's digital source and the existing typed fields, preserving complete usable source content, Strong's IDs, grammar and provenance. Normalize only display metadata as previously agreed; **do not** import other lexicon definitions, silently remove senses, or claim original-1894 word perfection. Connect the existing lookup index and validate actual displayed attribution metadata. Preserve research source bytes separately. No public deployment or player change.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Actual working snapshot assembled, GitHub pointer created
+- **VERIFIED:** Built `SOTW_HEBREW_LATEST_WORKING_SNAPSHOT_2026-11-07.zip` (1,836,147 bytes; SHA-256 `fcfbe18b121e4e0eee89b20dcfcc5744f439ab982dde17e5166c15dfd4f19f6c`) containing complete selected digital research, lookup index, normalization reconciliation and manifest with component hashes.
+- **VERIFIED:** Created `docs/SOTW_LATEST_WORKING_SNAPSHOT.md` to track the actual working ZIP separately from this progress log.
+- **NOT YET UPLOADED:** Actual ZIP bytes are not in GitHub. Do not claim they are. The snapshot includes internal research text and needs an appropriate repository visibility/rights decision before upload.
+- **Next:** Upload the ZIP to an approved appropriately controlled stable location, verify hash, and update the pointer; then continue display projection.
+
+
 
 ### 2026-11-07 | Corrected false missing-file blocker
 - **VERIFIED:** Reinspected files from this conversation. `SOTW_HEBREW_PUBLIC_PRESENTATION_POLICY_RESEARCH_2026-11-07.zip` is explicitly a **10-entry sample preview**, with 8,674 source-field records audited, not a complete approved public baseline. `SOTW_STRONGS_DIGITAL_EDITION_RESTORED_RESEARCH_2026-11-07.zip` is a full research record; `SOTW_STRONGS_LOOKUP_RESEARCH_INDEX_2026-11-07.zip` is a research index.
