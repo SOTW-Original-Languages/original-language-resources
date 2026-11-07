@@ -27,6 +27,7 @@ select,input{padding:10px 12px;border:1px solid #b9cbd6;border-radius:8px;backgr
 .big-lemma{font-size:clamp(32px,4vw,44px);line-height:1.4;font-family:"Noto Sans",Arial,sans-serif;margin:7px 0;overflow-wrap:anywhere}
 .definition{font-size:17px;line-height:1.55;background:#f5f8fa;border-left:3px solid var(--gold);padding:12px 15px;border-radius:4px}
 .quick-gloss{font-size:22px;line-height:1.4;font-weight:750;color:#173e56;background:#e9f4f9;border-left:4px solid #2d779e;padding:12px 15px;border-radius:4px;margin:7px 0 17px}.quick-note{font-size:12px;color:var(--muted);margin:-11px 0 17px}.webster-inline{font-size:14px;line-height:1.55;background:#f2f8f3;border-left:3px solid #507c65;padding:10px 13px;border-radius:4px;margin-top:8px}.webster-inline.empty{background:#f7f9fa;border-color:#bdcdd6;color:var(--muted)}#step-citation{overflow-wrap:anywhere}
+.step-variants{display:grid;grid-template-columns:1fr;gap:9px;margin:10px 0}.step-variant{border:1px solid #c9dde8;background:#f8fcff;border-radius:9px;padding:12px 14px}.step-code{font-weight:800;color:#155b81;font-size:13px}.step-gloss-value{font-size:19px;font-weight:750;margin:7px 0;color:#173e56}.step-variant .hash{font-size:10px;line-height:1.6}.source-status{padding:12px 15px;background:#f1f7fa;border:1px solid #d3e3ec;border-radius:9px;margin:12px 0;font-size:13px;line-height:1.55}.edition-switch{margin:12px 0}.edition-switch .button{font-size:13px}.edition-switch .button[aria-pressed="true"]{background:var(--navy);color:white;border-color:var(--navy)}.method-matrix{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}.method-matrix th,.method-matrix td{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid var(--border)}.method-matrix th{color:var(--blue);background:#f4f8fa}.method-matrix td:first-child{font-weight:750;white-space:nowrap}
 .metadata{display:grid;grid-template-columns:120px 1fr;gap:9px 14px;font-size:13px;margin:14px 0}.metadata dt{color:var(--muted)}.metadata dd{margin:0;overflow-wrap:anywhere}
 .original-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:13px}
 .original-row{border:1px solid #d2e0e8;border-radius:9px;background:#fff;text-align:left;padding:11px;display:flex;flex-direction:column;gap:4px}
@@ -39,11 +40,12 @@ footer{margin-top:20px;font-size:12px;color:#607485;text-align:center}
 @media(max-width:580px){header{padding:20px 17px}.panel{padding:16px}.original-list{grid-template-columns:1fr}.metadata{grid-template-columns:96px 1fr}.verse{font-size:19px}}
 </style>
 <script src="data-preview.js?v=d198110170a3a423bf875b57554bfee423c0680b"></script>
+<script src="data-step-inspection.js?v=a460ed719eb261a5a50de0609bc34e1a1fc32e9e"></script>
 </head>
 <body>
 <header><div class="mast"><div><div class="kicker">STEWARDS OF THE WAY · ORIGINAL LANGUAGES</div><h1>Word Study Inspector</h1><p>Trace English Scripture words to historical Strong’s, original script, morphology, and Webster 1828.</p></div><nav class="toplinks" aria-label="Page sections"><a href="#explorer">Scripture</a><a href="#details">Word details</a><a href="#original">Hebrew / Greek</a><a href="#webster">Webster 1828</a><a href="#sources">Sources</a></nav></div></header>
 <main>
-<div class="notice"><strong>Public research preview, version 2.</strong> Three representative passages are available online. Strong’s and original-language details come from the supplied source archives; selected STEP Bible TBESH/TBESG short glosses are shown with citations, but their longer TBESH “Meaning” column is excluded; Webster 1828 contains selected historical English sense excerpts. This is not yet the full 66-book online corpus. Unresolved NWB and ASV links remain excluded, not shown as warnings.</div>
+<div class="notice"><strong>Research inspection preview, version 2.3 (not production UI).</strong> Three representative passages are available online. Strong’s and original-language details come from the supplied source archives; 41 STEP Bible TBESH/TBESG short-gloss source rows are shown with citations, but their longer TBESH “Meaning” column is excluded; Webster 1828 contains selected historical English sense excerpts. This is not yet the full 66-book online corpus. Unresolved NWB and ASV links remain excluded, not shown as warnings.</div>
 <section id="explorer" class="panel">
 <div class="flex space"><div><div class="eyebrow">01 / Scripture Explorer</div><h2>Four translations, one word-study workspace</h2><p class="muted small" style="margin:0">BSB → KJV → NWB (Webster Bible 1833) → ASV 1901</p></div><div class="flex"><label for="passage" class="small"><strong>Passage</strong></label><select id="passage" aria-label="Choose a passage"></select></div></div>
 <div class="verse-grid" id="verses"></div>
@@ -51,13 +53,24 @@ footer{margin-top:20px;font-size:12px;color:#607485;text-align:center}
 </section>
 <section id="details" class="panel">
 <div class="eyebrow">02 / Historical Strong’s</div><h2>Word evidence and short definition</h2>
-<div class="detail-layout"><div><span class="pill" id="strong-id">Select a word</span><div class="big-lemma" id="lemma" lang="und">—</div><p class="muted" id="translit" style="margin:0"></p><dl class="metadata" id="meta"></dl></div><div><h3>Strong’s Quick Meaning</h3><div class="quick-gloss" id="quick-gloss">Choose a word to see its quick meaning.</div><p class="quick-note">Short editorial summary of the historical entry, not a passage-specific interpretation.</p><h3>Strong’s Expanded Dictionary Definition</h3><div class="definition" id="gloss">Choose a word above or an original-language occurrence below.</div><p class="small muted" id="definition-note">A dictionary headword does not determine its meaning in a particular verse.</p><h3>STEP Bible Hebrew/Greek Lexicon (brief gloss)</h3><div class="webster-inline empty" id="step-gloss" aria-live="polite">Select a word to see a verified STEP brief gloss, when available.</div><p class="small muted" id="step-citation">Source: <a href="https://github.com/STEPBible/STEPBible-Data/tree/master/Lexicons" target="_blank" rel="noopener noreferrer">STEP Bible lexicons</a>, CC BY 4.0. The TBESH longer “Meaning” column is not published.</p><h3>Noah Webster’s 1828 English definition</h3><div class="webster-inline empty" id="webster-inline" aria-live="polite">Choose an English word to see a sampled Webster entry, when available.</div><p class="small muted">Webster defines historical English usage, not the Greek or Hebrew headword. <a href="#webster">Search Webster 1828</a></p></div></div>
+<div class="detail-layout"><div><span class="pill" id="strong-id">Select a word</span><div class="big-lemma" id="lemma" lang="und">—</div><p class="muted" id="translit" style="margin:0"></p><dl class="metadata" id="meta"></dl></div><div><h3>Strong’s Quick Meaning</h3><div class="quick-gloss" id="quick-gloss">Choose a word to see its quick meaning.</div><p class="quick-note">Short editorial summary of the historical entry, not a passage-specific interpretation.</p><h3>Strong’s Expanded Dictionary Definition</h3><div class="definition" id="gloss">Choose a word above or an original-language occurrence below.</div><p class="small muted" id="definition-note">A dictionary headword does not determine its meaning in a particular verse.</p><h3>STEP Bible TBESH / TBESG: all source subentries</h3><p class="small muted">Exact source Gloss rows sharing this Strong’s numeric base. Multiple entries are shown separately, <strong>not selected as a verse interpretation</strong>. A STEP dictionary entry does not repair a missing English-to-original-language link.</p><div id="step-variants" class="step-variants" aria-live="polite"></div><p class="small muted" id="step-citation">Source: <a href="https://github.com/STEPBible/STEPBible-Data/tree/master/Lexicons" target="_blank" rel="noopener noreferrer">STEP Bible lexicons</a>, CC BY 4.0. TBESH longer “Meaning” is withheld.</p><h3>Noah Webster’s 1828 English definition</h3><div class="webster-inline empty" id="webster-inline" aria-live="polite">Choose an English word to see a sampled Webster entry, when available.</div><p class="small muted">Webster defines historical English usage, not the Greek or Hebrew headword. <a href="#webster">Search Webster 1828</a></p></div></div>
 </section>
 <section id="original" class="panel">
-<div class="eyebrow">03 / BSB Native Source Table</div><h2>Original-language word sequence</h2>
-<p class="muted small">Shown in the source’s original-word order, not English word order. Hebrew, Aramaic, and Greek forms retain the source’s transliteration and morphology. This preview’s selected passages contain Hebrew and Greek.</p>
+<div class="eyebrow">03 / Source-aware Language Inspector</div><h2 id="original-title">Original-language source inspection</h2>
+<p class="muted small">Choose an edition to inspect the <strong>actual kind of source data available</strong>. The BSB has native original-language occurrences; KJV has English word tags; NWB and ASV have supported KJV-derived associations. We never relabel a BSB Hebrew word as KJV source text.</p>
+<div class="flex edition-switch" id="inspector-editions" role="group" aria-label="Inspect source by translation"></div>
+<div class="source-status" id="original-source" aria-live="polite"></div>
 <div id="original-rows" class="original-list"></div>
-<p class="small muted">“No direct English rendering” is an original-language occurrence, not an error. In Genesis 1:1, English “and” comes from an attached Hebrew waw prefix, not from the H853 object-marker headword. BSB and KJV may use different Strong’s identifiers for related grammatical forms; this viewer does not silently reconcile them.</p>
+<p class="small muted" id="original-notes"></p>
+<table class="method-matrix" aria-label="Source data availability">
+<thead><tr><th>Edition</th><th>Actual source under the hood</th><th>What is not claimed</th></tr></thead>
+<tbody>
+<tr><td>BSB</td><td>Native Hebrew/Greek surface forms, transliteration, morphology, word order, and BSB English renderings</td><td>Not a KJV word-form table</td></tr>
+<tr><td>KJV</td><td>English USFM tokens with native Strong’s tags, plus independent lexicon headwords</td><td>Lexicon headwords are not KJV-attested inflected forms</td></tr>
+<tr><td>NWB / ASV</td><td>Supported KJV-derived English associations, with the same independent lexicon lookup</td><td>No native NWB/ASV original-language tagging claimed</td></tr>
+<tr><td>STEP</td><td>All matching brief Gloss subentries for preview Strong’s IDs, with identifiers and source lines</td><td>No automatic selection of a contextual sense; restricted longer meanings excluded</td></tr>
+</tbody></table>
+<p class="small muted">The KJV source file does tag the English “and” in Genesis 1:1 as H0853. That identifier denotes a Hebrew object marker, not the English conjunction; the public word association remains withheld rather than presenting a misleading definition. The BSB source shows the attached Hebrew waw separately in its native occurrence.</p>
 </section>
 <section id="webster" class="panel">
 <div class="eyebrow">04 / Historical English</div><h2>Noah Webster’s 1828 Dictionary</h2>
@@ -72,7 +85,7 @@ footer{margin-top:20px;font-size:12px;color:#607485;text-align:center}
 <div class="source"><strong>BSB native original-language table</strong><p>Hebrew/Greek surface forms, transliteration, morphology, and English rendering. No generated BSB alignment.</p><div class="hash">bsb_tables.tsv · SHA-256 <span id="hash-bsb"></span></div></div>
 <div class="source"><strong>Greek Strong’s</strong><p>Historical Strong’s Greek XML, Ulrik Sandborg-Petersen / morphgnt edition, released CC0. Definitions are headword-level.</p><a href="https://github.com/morphgnt/strongs-dictionary-xml" target="_blank" rel="noopener noreferrer">Greek source (CC0)</a><div class="hash" id="hash-greek"></div></div>
 <div class="source"><strong>Hebrew Strong’s</strong><p>Open Scriptures Hebrew Bible Project, HebrewStrong.xml, CC BY 4.0 digital edition. Attribution retained. BDB not included.</p><a href="https://github.com/openscriptures/HebrewLexicon" target="_blank" rel="noopener noreferrer">Hebrew source (CC BY 4.0)</a><div class="hash" id="hash-hebrew"></div></div>
-<div class="source"><strong>STEP Bible TBESH / TBESG</strong><p>Tyndale House Cambridge / STEP Bible, CC BY 4.0. Only the source’s short “Gloss” column is shown for uniquely mapped extended Strong’s IDs. TBESH’s Online Bible-derived “Meaning” column is withheld pending permission.</p><a href="https://github.com/STEPBible/STEPBible-Data/tree/master/Lexicons" target="_blank" rel="noopener noreferrer">STEP Bible lexicon files (CC BY 4.0)</a><div class="hash">TBESH SHA-256 <span id="hash-tbesh"></span></div><div class="hash">TBESG SHA-256 <span id="hash-tbesg"></span></div></div>
+<div class="source"><strong>STEP Bible TBESH / TBESG</strong><p>Tyndale House Cambridge / STEP Bible, CC BY 4.0. The source’s short “Gloss” column is shown for all exact numeric-base subentries, with distinct dStrong/uStrong identifiers and line citations; multiple entries are not disambiguated. TBESH’s Online Bible-derived “Meaning” column is withheld pending permission.</p><a href="https://github.com/STEPBible/STEPBible-Data/tree/master/Lexicons" target="_blank" rel="noopener noreferrer">STEP Bible lexicon files (CC BY 4.0)</a><div class="hash">TBESH SHA-256 <span id="hash-tbesh"></span></div><div class="hash">TBESG SHA-256 <span id="hash-tbesg"></span></div></div>
 <div class="source"><strong>Webster 1828 English</strong><p>Historical English dictionary transcription, CC BY-SA 4.0; selected sense excerpts and punctuation cleanup are identified as modifications.</p><a href="https://github.com/akaitsurugi/webster1828" target="_blank" rel="noopener noreferrer">Webster source (CC BY-SA 4.0)</a><div class="hash" id="hash-webster"></div></div>
 </div>
 </section>
@@ -83,7 +96,7 @@ footer{margin-top:20px;font-size:12px;color:#607485;text-align:center}
 "use strict";
 var D=window.SOTW_DATA;
 var byId=function(id){return document.getElementById(id)};
-var current="GEN.1.1", selected=null;
+var current="GEN.1.1", selected=null, inspectorEdition="BSB", STEP=window.SOTW_STEP_INSPECTION||null;
 var labels={BSB:"Berean Standard Bible",KJV:"King James Version",NWB:"Noah Webster Bible (1833)",ASV:"American Standard Version (1901)"};
 var methods={BSB:"Native BSB table",KJV:"Native KJV Strong’s tags",NWB:"KJV-derived, supported only",ASV:"KJV-derived, supported only"};
 function el(tag,txt,cls){var e=document.createElement(tag);if(txt!==null&&txt!==undefined)e.textContent=txt;if(cls)e.className=cls;return e}
@@ -97,7 +110,9 @@ function getWebsterKey(text){
 }
 function select(id,word,edition,row){
  selected={id:id,word:word,edition:edition,row:row||null};
+ inspectorEdition=edition;
  renderDetails();
+ renderOriginal();
  var key=getWebsterKey(word);
  byId("webster-search").value=key;renderWebster()
  document.querySelectorAll("[data-strong-id]").forEach(function(n){
@@ -122,18 +137,51 @@ function renderVerses(){
   });
   card.appendChild(words);target.appendChild(card);
  });
- var orig=byId("original-rows");empty(orig);
- v.rows.forEach(function(r){
-  var b=el("button",null,"original-row");b.type="button";
-  b.setAttribute("data-strong-id",r[0]);b.setAttribute("data-edition","BSB");b.setAttribute("data-word",r[4]||"");
-  b.setAttribute("aria-pressed","false");
-  var s=el("span",r[1],"surface");s.setAttribute("dir",r[0][0]==="H"?"rtl":"ltr");s.setAttribute("lang",r[0][0]==="H"?"he":"el");b.appendChild(s);
-  b.appendChild(el("span",r[2],"translit"));b.appendChild(el("span",r[0]+" · BSB English: "+(r[4]||"No direct English rendering"),"eng"));
-  b.appendChild(el("span",r[3],"morph"));
-  b.addEventListener("click",function(){select(r[0],r[4]||"", "BSB",r);byId("details").scrollIntoView({behavior:"smooth",block:"start"})});
-  orig.appendChild(b);
- });
  select(v.rows[0][0],v.rows[0][4]||"","BSB",v.rows[0]);
+}
+function renderOriginal(){
+ var v=D.verses[current], orig=byId("original-rows"), nav=byId("inspector-editions");
+ empty(orig);empty(nav);
+ D.order.forEach(function(edition){
+  var b=el("button",edition,"button");b.type="button";b.setAttribute("aria-pressed",String(inspectorEdition===edition));
+  b.addEventListener("click",function(){
+   if(edition==="BSB"){var r=v.rows.find(function(x){return x[4]!==null})||v.rows[0];select(r[0],r[4]||"","BSB",r);}
+   else{var l=v.links[edition][0];if(l)select(l[2],l[1],edition,null);else{inspectorEdition=edition;renderOriginal()}}
+  });nav.appendChild(b);
+ });
+ if(inspectorEdition==="BSB"){
+  byId("original-title").textContent="BSB native Hebrew / Greek word sequence";
+  byId("original-source").textContent="SOURCE: bsb_tables.tsv · Original-language occurrence order · native BSB Hebrew/Greek surface forms, transliteration and morphology. The English labels are BSB renderings.";
+  byId("original-notes").textContent="The BSB includes grammatical markers with no direct English rendering. For Genesis 1:1, the attached waw supplies “and”; H853 itself marks the direct object. This panel does not reconstruct a KJV Hebrew text.";
+  v.rows.forEach(function(r){
+   var b=el("button",null,"original-row");b.type="button";
+   b.setAttribute("data-strong-id",r[0]);b.setAttribute("data-edition","BSB");b.setAttribute("data-word",r[4]||"");
+   b.setAttribute("aria-pressed",String(!!selected&&selected.edition==="BSB"&&selected.id===r[0]&&selected.word===(r[4]||"")));
+   var s=el("span",r[1],"surface");s.setAttribute("dir",r[0][0]==="H"?"rtl":"ltr");s.setAttribute("lang",r[0][0]==="H"?"he":"el");b.appendChild(s);
+   b.appendChild(el("span",r[2],"translit"));b.appendChild(el("span",r[0]+" · BSB English: "+(r[4]||"No direct English rendering"),"eng"));
+   b.appendChild(el("span",r[3],"morph"));
+   b.addEventListener("click",function(){select(r[0],r[4]||"","BSB",r);byId("details").scrollIntoView({behavior:"smooth",block:"start"})});
+   orig.appendChild(b);
+  });
+ }else{
+  var ed=inspectorEdition,method=ed==="KJV"?"NATIVE_KJV_USFM_TAG":"KJV_DERIVED_SUPPORTED_ASSOCIATION";
+  byId("original-title").textContent=ed+" English-to-Strong’s source associations";
+  byId("original-source").textContent=ed==="KJV"?"SOURCE: tagged KJV USFM English tokens, native Strong’s IDs. Hebrew/Greek headwords below are from separate Strong’s lexicons, not native KJV original-language surface forms.":"SOURCE: "+ed+" English tokens with supported KJV-derived Strong’s associations. No independent original-language word-form table for this edition. Unresolved associations are not published.";
+  byId("original-notes").textContent="Cards follow the selected English translation’s token order. Any BSB comparison is separately labeled and is not represented as the selected edition’s original-language form.";
+  (v.links[ed]||[]).forEach(function(l){
+   var id=l[2],word=l[1],entry=D.strongs[id]||{};
+   var b=el("button",null,"original-row");b.type="button";
+   b.setAttribute("data-strong-id",id);b.setAttribute("data-edition",ed);b.setAttribute("data-word",word);
+   b.setAttribute("aria-pressed",String(!!selected&&selected.edition===ed&&selected.id===id&&selected.word===word));
+   b.appendChild(el("span",word,"surface"));
+   b.appendChild(el("span","English token "+l[0]+" · "+id+" · "+(ed==="KJV"?"Native KJV tag":"KJV-derived supported link"),"translit"));
+   b.appendChild(el("span","Separate lexicon headword: "+(entry.lemma||"Not loaded")+" · "+(entry.translit||""),"eng"));
+   var parallel=v.rows.filter(function(r){return r[0]===id});
+   b.appendChild(el("span",parallel.length?"BSB comparison only: "+parallel.map(function(r){return r[1]}).join(", "):"No identical Strong’s ID in BSB verse; no equivalence inferred.","morph"));
+   b.addEventListener("click",function(){select(id,word,ed,null);byId("details").scrollIntoView({behavior:"smooth",block:"start"})});
+   orig.appendChild(b);
+  });
+ }
 }
 function renderDetails(){
  var s=selected||{},entry=D.strongs[s.id]||{};
@@ -141,16 +189,25 @@ function renderDetails(){
  var lemma=byId("lemma");lemma.textContent=entry.lemma||"No lexicon excerpt";lemma.setAttribute("lang",s.id&&s.id[0]==="H"?"he":"el");lemma.setAttribute("dir",s.id&&s.id[0]==="H"?"rtl":"ltr");
  byId("translit").textContent=entry.translit?"Transliteration: "+entry.translit:"";
  byId("quick-gloss").textContent=entry.quick||"Preview data is out of date. Refresh the page to load the quick definition.";byId("gloss").textContent=entry.gloss||"No historical definition loaded for this Strong’s ID.";
- var stepBox=byId("step-gloss"),stepCitation=byId("step-citation"),stepEntry=entry.step;
- stepBox.className="webster-inline"+(stepEntry?"":" empty");
- stepBox.textContent=stepEntry?stepEntry.lexicon+" · "+stepEntry.gloss:"No uniquely mapped STEP brief gloss published for this entry. Strong’s definitions remain available.";
- empty(stepCitation);
- if(stepEntry){
-  var prefix=stepEntry.lexicon+" · "+stepEntry.sourceId+" · “"+stepEntry.field+"” field · STEP Bible / Tyndale House Cambridge · CC BY 4.0 · ";
-  stepCitation.appendChild(el("span",prefix));
-  var sourceLink=el("a","Source lexicon");sourceLink.href="https://github.com/STEPBible/STEPBible-Data/tree/master/Lexicons";sourceLink.target="_blank";sourceLink.rel="noopener noreferrer";stepCitation.appendChild(sourceLink);
-  stepCitation.appendChild(el("span"," · Pinned source-file SHA-256 "+(stepEntry.lexicon==="TBESH"?D.sourceLocks.tbesh_file:D.sourceLocks.tbesg_file)));
- }else{stepCitation.textContent="STEP extended-Strong’s subentries are not silently combined. No dictionary fallback is inferred."}
+ var stepBox=byId("step-variants"),stepCitation=byId("step-citation");empty(stepBox);empty(stepCitation);
+ var stepRows=STEP&&STEP.rows[s.id]||[];
+ if(!STEP){stepBox.appendChild(el("p","STEP inspection data did not load. Refresh this page.","muted"))}
+ else if(!stepRows.length){stepBox.appendChild(el("p","No matching STEP numeric-base entry in this preview.","muted"))}
+ else{
+  var sourceName=s.id[0]==="H"?"TBESH":"TBESG",sourceFile=STEP.sourceFiles[sourceName];
+  var summary=el("p",stepRows.length+" source "+(stepRows.length===1?"entry":"subentries")+" for "+s.id+(stepRows.length>1?" · no contextual choice made":""),"small muted");stepBox.appendChild(summary);
+  stepRows.forEach(function(r){
+   var c=el("div",null,"step-variant");
+   c.appendChild(el("div",r[1],"step-code"));
+   c.appendChild(el("div",r[6],"step-gloss-value"));
+   c.appendChild(el("div","Lemma: "+r[3]+" · "+r[4]+" · "+r[5],"small"));
+   c.appendChild(el("div","eStrong "+r[0]+" · uStrong "+r[2],"small muted"));
+   c.appendChild(el("div",sourceName+" · Gloss column · source line "+r[7]+" · STEP Bible / Tyndale House Cambridge · CC BY 4.0 · SHA-256 "+sourceFile.sha256,"hash"));
+   stepBox.appendChild(c);
+  });
+  var a=el("a","View STEP Bible lexicon source files");a.href="https://github.com/STEPBible/STEPBible-Data/tree/master/Lexicons";a.target="_blank";a.rel="noopener noreferrer";stepCitation.appendChild(a);
+  stepCitation.appendChild(el("span"," · Source-file SHA-256 "+sourceFile.sha256+". Only brief Gloss fields are reproduced; TBESH longer Online Bible-derived Meaning is excluded."));
+ }
  var englishKey=getWebsterKey(s.word),websterBox=byId("webster-inline"),websterEntry=D.webster[englishKey];
  websterBox.className="webster-inline"+(websterEntry?"":" empty");
  websterBox.textContent=websterEntry?englishKey.toUpperCase()+" · "+websterEntry:"No Webster 1828 excerpt loaded for “"+(s.word||"this word")+"” in the current three-passage preview.";
