@@ -77,14 +77,15 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 - `examples/sotw-canonical-v1.synthetic.json`: synthetic-only Genesis 1:1 shaped records including a disputed research-only link. **Not real biblical text or an approved data projection.**
 - `docs/SOTW_CANONICAL_SCHEMA_V1.md`: contract explanations and required public exclusion rules.
 
-**Work completed:** schema and fixture committed; existing architecture, translation adapter and source/release documents consulted. **Not yet completed:** automated JSON Schema validation run, compatibility audit against all existing schemas/foundation catalogs, real Genesis 1:1 ingestion, parser/build scripts, publication tests, or data upload. Do not call the entire Genesis pipeline complete.
+**Work completed:** schema, fixture and regression validator script committed; 18/18 direct structural checks passed against fetched GitHub records. The validator at `scripts/validate_canonical_v1.py` uses `jsonschema` Draft 2020-12 and includes 7 invalid-record tests plus disputed-link public-exclusion checks. **Not yet completed:** execution of that Python validator in a checked-out GitHub workspace (its presence alone is not a passing run), compatibility audit against all existing schemas/foundation catalogs, real Genesis 1:1 ingestion, ingestion/build scripts, or data upload. Do not call the entire Genesis pipeline complete.
 
-**Next action:** run Draft 2020-12 validation against the synthetic fixture, add negative and public-exclusion tests, compare pinned foundation IDs and any existing schema paths, and correct any conflicts. Then ingest the previously vetted real Genesis 1:1 slice with source-hash verification. Follow with Genesis 1 and full Genesis. Do not re-vet source selection or reopen STEP as a required publication source.
+**Next action:** execute `python -m pip install 'jsonschema>=4.18'` then `python scripts/validate_canonical_v1.py` in a repository checkout or CI and record actual results. Compare pinned foundation IDs and existing schema paths, and correct any conflicts. Then ingest the previously vetted real Genesis 1:1 slice with source-hash verification. Follow with Genesis 1 and full Genesis. Do not re-vet source selection or reopen STEP as a required publication source.
 
 **Publication invariant:** candidate/disputed/rejected links must not appear as verified public associations, even if the underlying record passes JSON Schema. Original archives should be preserved in the Bible Foundation where feasible; no source files moved or deleted.
 
 ## Change log
 
+- **2026-11-06 (validation preparation):** 18/18 fetched-schema structural checks passed; committed standards-based Draft 2020-12 validator with negative and public-exclusion tests. Python validator not yet executed in a checked-out repository; do not claim full validation passed.
 - **2026-11-06 (Step 1 implementation):** Committed canonical v1 schema, synthetic fixture and schema contract documentation. Automated validation and real Genesis ingestion remain next tasks.
 - **2026-11-06 (work handoff):** Owner requested a scan-friendly checkpoint for the start of Step 1 (Genesis canonical schema). Architecture, adapters and release rules inspected. Schema, fixtures and scripts **not yet committed**. Resume at schema implementation, not source re-vetting.
 - **2026-11-06 (owner refinement):** Prefer preserving original vetted archives in the existing Bible Foundation where feasible; optimized SOTW library remains independent. No source files moved or deleted.
