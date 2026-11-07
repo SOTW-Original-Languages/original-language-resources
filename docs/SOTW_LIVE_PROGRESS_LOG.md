@@ -27,6 +27,15 @@ Build a **deterministic, research-only display projection** from the selected St
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
 
+### 2026-11-07 | Stage 3/5: executable Strong's search engine
+- **VERIFIED:** Created `SOTW_HEBREW_STAGE3_2026-11-07/search_engine.py` (SHA-256 `fbb0b0c781f3ec7eaa155ad1471cedd3bdc86829d96565568177e198f180385b`) and `test_search_engine.py` (SHA-256 `427c139ebe3741090a96bf307070eb2a9ecb07c9a9104b9adfa9ae13064a65d7`).
+- **VERIFIED:** 9/9 unit tests passed: 8,674 entries, exact Strong ID lookup and leading zeros, unknown IDs, stopword and numeric filtering, father and multiword search, stable ranking, no index mutation.
+- **LIMIT:** Pre-beta lexical search only; no inferred semantic/theological links, fuzzy spelling, morphology, or integrated beta UI. Original source fields and settled normalization unchanged.
+- **RECOVERY:** Actual Stage 3 code and report are downloadable conversation artifacts; GitHub log is metadata only. Owner-downloaded Checkpoint 0 is still last complete ZIP. Stage 5 ZIP due after two more stages, or early if continuity risk.
+- **Next:** Stage 4/5: relevance and edge-case evaluation, stabilize search interface and document behavior.
+
+
+
 ### 2026-11-07 | Stage 2/5: display-derived search indexes completed
 - **VERIFIED:** Corrected Stage 1 projection SHA-256 `0ddf649c80b3c03a836298f0b6d8b0ea3b7afc811eae3245ea3e579b872ab2b9` has 8,674 unique entries and retains 21,500 definitions and 2,680 name glosses without reapplying the settled source-attribution filter.
 - **VERIFIED:** Generated `SOTW_HEBREW_STAGE2_2026-11-07/display_token_to_strongs.json` (SHA-256 `db484f19205b663ebba426d7318505b9a519cca6735ac7548c42ebddf7917d87`) and `display_tokens_by_strongs.json` (SHA-256 `fccf6cebd18bc390447b6a3ca26d6a6b35f61275e65d3b6306557cfc7269f7e6`). 12,999 tokens, 114,253 token-entry links, forward/reverse consistency PASS.
