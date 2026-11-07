@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 1/5 completed: conservative Strong's research display projection  
-**Status:** Pre-beta Stage 1/5 completed locally, 8,674-entry research display projection generated; full data remain in downloadable stage file and Checkpoint 0, not GitHub.  
+**Stage:** Stage 1/5 requires correction: prior source-audit filter was mistakenly reapplied  
+**Status:** Pre-beta Stage 1 generated a research-only projection but is NOT ACCEPTED as normalized display output: it incorrectly reapplied a settled source-attribution filter. Preserve Checkpoint 0; correct Stage 1 before advancing.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -26,6 +26,13 @@
 Build a **deterministic, research-only display projection** from the selected Strong's digital source and the existing typed fields, preserving complete usable source content, Strong's IDs, grammar and provenance. Normalize only display metadata as previously agreed; **do not** import other lexicon definitions, silently remove senses, or claim original-1894 word perfection. Connect the existing lookup index and validate actual displayed attribution metadata. Preserve research source bytes separately. No public deployment or player change.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Owner correction: stop reopening the settled 202-marker audit
+- **OWNER DECISION REAFFIRMED:** The 202 markers are original digital-source research/audit metadata, **not 202 unresolved public normalization defects**. The normalized final issues were already resolved. Do not strip senses or re-run attribution review merely because these markers exist in source archives.
+- **CORRECTION:** Stage 1's conservative reader projection excluded 202 items and left 14 entries without display definitions. This is a **regressive audit-derived variant**, not accepted final normalized display. Mark it research-only/rejected for reader projection; do not use it as Stage 2 input.
+- **NEXT:** Reconcile Stage 1 against the owner-settled normalized display treatment, preserving usable source definitions. Do not reopen historical 1894 scans or third-party dictionary sourcing. If the exact earlier normalized output is not separately saved, build the correct projection from existing source without treating 202 as unresolved defects; verify actual output fields rather than repeating the audit.
+
+
 
 ### 2026-11-07 | Stage 1/5 completed: deterministic research display projection
 - **VERIFIED:** Generated 8,674-entry `strongs_display_research_projection.json` (SHA-256 `deb05f625d7900cf7d3a939a8dc1e7312b78de089631fdeeee1ee0106bd99eba`), with report and README in `SOTW_HEBREW_STAGE1_2026-11-07/`.
