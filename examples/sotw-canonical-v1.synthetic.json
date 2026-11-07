@@ -1,0 +1,79 @@
+[
+  {
+    "kind": "source",
+    "schema_version": "1.0.0",
+    "id": "fixture-source",
+    "title": "SYNTHETIC TEST ONLY",
+    "edition": "fixture",
+    "origin": "synthetic:test",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "rights": {
+      "basis": "synthetic test",
+      "notice": "Not a historical source"
+    },
+    "release_status": "research"
+  },
+  {
+    "kind": "occurrence",
+    "schema_version": "1.0.0",
+    "id": "fixture-occ-1",
+    "verse_id": "GEN.1.1",
+    "witness_id": "fixture-witness",
+    "position": 0,
+    "surface": "TEST_FORM",
+    "language": "heb",
+    "lemma": null,
+    "root": null,
+    "morphology": [],
+    "strongs_ids": [
+      "strongs:H1",
+      "strongs:H2"
+    ],
+    "provenance": {
+      "source_id": "fixture-source",
+      "source_locator": "fixture:1",
+      "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "release_status": "research"
+  },
+  {
+    "kind": "lexicon",
+    "schema_version": "1.0.0",
+    "id": "lexicon:fixture:1",
+    "resource_id": "fixture",
+    "native_entry_id": "1",
+    "language": "heb",
+    "headword": null,
+    "short_definition": null,
+    "full_definition": "SYNTHETIC DEFINITION ONLY",
+    "kjv_usage": null,
+    "strongs_ids": [
+      "strongs:H1"
+    ],
+    "provenance": {
+      "source_id": "fixture-source",
+      "source_locator": "fixture:lex:1",
+      "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "release_status": "research"
+  },
+  {
+    "kind": "link",
+    "schema_version": "1.0.0",
+    "id": "fixture-link-disputed",
+    "verse_id": "GEN.1.1",
+    "translation_edition": "KJV1769",
+    "english_occurrence_id": "fixture-english-1",
+    "original_occurrence_id": "fixture-occ-1",
+    "mapping_method": "synthetic",
+    "evidence": [
+      {
+        "source_id": "fixture-source",
+        "source_locator": "fixture:link",
+        "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "status": "disputed",
+    "release_status": "research"
+  }
+]
