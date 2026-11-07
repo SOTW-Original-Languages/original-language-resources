@@ -2,7 +2,7 @@
 
 **Updated:** 2026-11-07  
 **Stage:** Locate accepted normalized public baseline before public index  
-**Status:** Full working snapshot ZIP assembled and hash-verified; GitHub snapshot pointer created, but actual ZIP upload pending appropriate storage/access. No production script or deployment.  
+**Status:** Owner switched continuity to regular GitHub files, no ZIP. Plain-file workspace and validator committed; full research JSON files not yet transferred. No production deployment.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -26,6 +26,14 @@
 Build a **deterministic, research-only display projection** from the selected Strong's digital source and the existing typed fields, preserving complete usable source content, Strong's IDs, grammar and provenance. Normalize only display metadata as previously agreed; **do not** import other lexicon definitions, silently remove senses, or claim original-1894 word perfection. Connect the existing lookup index and validate actual displayed attribution metadata. Preserve research source bytes separately. No public deployment or player change.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Owner replaces ZIP checkpoint plan with regular files
+- **OWNER DECISION:** No ZIP snapshots. Store and update the actual Strong's research JSON and indexes at stable GitHub paths, plus scripts. Each report-back updates changed files and then the log.
+- **VERIFIED:** Added `research/hebrew-strongs/README.md` documenting exact four file paths and research-only boundaries. Added `scripts/validate_hebrew_working_files.py` to check 8,674 unique IDs, matching lookup IDs, and generate SHA-256 manifest.
+- **INCOMPLETE UPLOAD:** The four multi-megabyte JSON files have **not** been transferred to GitHub. Do not imply a new thread can yet recover full research data from the repository.
+- **Next:** Transfer the four original JSON files to the stable paths, run validator, then proceed with display projection. The old ZIP snapshot plan is superseded.
+
+
 
 ### 2026-11-07 | Owner authorizes temporary GitHub snapshot storage
 - **OWNER DECISION:** Existing repository may hold the complete latest working snapshot at one stable path; no private repository required. Owner accepts public-repository storage risk and intends to delete the snapshot when production scripting is complete.
