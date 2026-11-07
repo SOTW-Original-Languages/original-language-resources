@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Hebrew Strong's dictionary research and lookup indexing  
-**Status:** Research artifacts built; public normalized baseline not yet independently located. No production script or deployment.  
+**Stage:** Locate accepted normalized public baseline before public index  
+**Status:** BLOCKED on identifying owner-accepted normalized public artifact. Research lookup index exists; no production script or deployment.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -23,9 +23,18 @@
 
 ## NEXT ACTION (one task only)
 
-**Locate the accepted normalized public dictionary baseline** in current GitHub files or available original artifact inventory. Record exact path, SHA-256/blob SHA, schema/fields, and whether public attribution markers are indeed zero. Then connect the existing ID/token lookup index to **that accepted baseline** without changing source content. If unavailable, report exactly where searched and what file is missing. Do not restart rights vetting or 1894 reconstruction.
+**BLOCKED: identify the owner-accepted normalized public dictionary artifact.** GitHub code search and mounted ZIP filename/member inventory did not locate it. Need its exact GitHub path, ZIP filename, or owner-supplied copy. Once identified, verify its SHA/fields and zero-marker claim, then connect existing ID/token lookup without changing definitions. Do not substitute an audit variant.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Baseline discovery attempt (no replacement)
+- **VERIFIED:** Searched current repository code index for `normalized`, `strongs`, `display`, `lexicon`; search returned no matching files. This search outcome does **not** establish repository absence because code indexing may be incomplete.
+- **VERIFIED:** Examined mounted `/mnt/data` file names and enumerated members of 35 top-level ZIPs for `normaliz`, `public_display`, `display_candidate`, and `approved_public`. No independently named accepted normalized public baseline was identified. Found the known `SOTW_STRONGS_ONLY_DISPLAY_RESEARCH_CANDIDATE_2026-11-07.zip`, which remains an audit variant, not an approved baseline.
+- **BLOCKED:** Cannot safely attach a public search projection until the accepted normalized baseline is positively identified. Do not treat a search miss as proof it never existed.
+- **Unchanged:** No data, schema, player, or public deployment modified.
+- **Next:** Obtain the accepted baseline's exact repository path/artifact filename or identify it from an owner-provided accepted ZIP, then verify content and SHA before indexing.
+
+
 
 ### 2026-11-07 | Lookup index checkpoint
 - **VERIFIED:** Research lookup index created: `SOTW_STRONGS_LOOKUP_RESEARCH_INDEX_2026-11-07.zip`. Counts: 8,674 IDs; 12,457 terms; 24,180 sense/name-gloss items; 55 candidate hooks.
