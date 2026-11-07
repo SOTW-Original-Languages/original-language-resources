@@ -113,6 +113,14 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 **Next:** Run the committed importer end-to-end against the original source archive and live schema, compare records to the earlier research pilot and add regression tests; separately select/verify an independently publishable original-language textual witness for Genesis 1:1 before generating word occurrences. Do not equate dictionary headwords with Genesis word occurrences or publish inferred alignments. No bulk ingestion, production integration, or original archive deletion.
 
+## STEP 2 EXECUTION — local archive importer and regression audit (2026-11-07)
+
+**Actual execution:** The five-entry Hebrew Strong's importer logic was executed locally against the original owner-provided 28 MB archive. All three pinned SHA-256 hashes passed, all five canonical-shaped records were generated, and five OSIS XML entry subtrees survived canonical XML round trips. A second independent local comparison of preserved XML against original source entries passed 5/5. The earlier flattened pilot and current flattened definitions are **not byte/text identical**, because formatting and labeling differ; preserved OSIS is the authoritative representation, not the derived reading summary.
+
+**GitHub addition:** `scripts/audit_strongs_hebrew_pilot.py` (commit `a36ef25a40482b49d250811ac0b2824253fa86b1`) audits generated records against the original source and repository schema, including source locks and original-subtree equivalence. **Important validation boundary:** The local execution used a reduced locally constructed lexical schema because the GitHub-fetched full canonical schema was not mounted into the local runtime. Therefore the actual GitHub audit script against the live canonical schema is **not yet executed/certified**. Do not describe this as a full canonical schema pass or GitHub CI pass.
+
+**Next:** run the committed importer and audit with a checkout of the actual canonical schema (not a reconstructed one), record results; add explicit full-source coverage/field fidelity checks before scaling. Independently establish a permitted original-language Genesis 1:1 textual witness; the earlier research slice's STEP-derived tokens are comparison/research, not automatically publishable original-language occurrence records. No production uploads or release approval.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
