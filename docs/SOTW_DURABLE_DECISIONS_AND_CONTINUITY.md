@@ -35,6 +35,13 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 - **Retire original archive copies only after a documented migration gate:** verify complete required field/record coverage; original-source wording and distinctions; hash and source provenance; rights metadata; deterministic rebuild of public projections from optimized canonical records; cross-record integrity; private/public separation; and a recoverable backup of the optimized canonical library and scripts. Document any non-migrated material explicitly. Do not delete originals as part of this decision-register edit. If original bytes are the only way to re-run the *original ingestion* or substantiate a provenance dispute, acknowledge that capability will be lost on deletion; keep an owner-approved archival fallback until that risk is accepted.
 - **No unsupported public output:** uncertain links remain internal research evidence, not reader-facing inferred facts. The absence of an association is not a claim that no association exists.
 
+## Owner refinement: original source preservation in the shared foundation (2026-11-06)
+
+- **Prefer retaining vetted original archives** in the existing Stewards of the Way Bible Foundation's source-preservation layer where capacity, access controls, rights, and repository constraints permit. Do not delete them merely because optimized canonical records have been built.
+- The SOTW Original Languages repository remains the independently optimized processing and publication library; it should reference foundation originals by stable manifests, exact paths/versions and hashes, not require loading them at runtime.
+- Do not assume the foundation currently hosts every archive, or upload private/restricted bytes to public GitHub without an approved storage and rights plan. Large archives may need a suitable artifact store rather than ordinary Git history.
+- This preservation preference supersedes any implication that original-source deletion is the intended default. The earlier retirement gate remains a safety minimum **only if the owner later explicitly requests deletion**.
+
 ## What was actually verified (as of 2026-11-06)
 
 - `docs/ARCHITECTURE.md` defines four layers: original source manifests, approved lexical records, evidence-backed translation links, and generated display projections.
@@ -65,6 +72,7 @@ Read **[SOTW Vetted Sources, Rights Decisions & Artifact Index](SOTW_VETTED_SOUR
 
 ## Change log
 
+- **2026-11-06 (owner refinement):** Prefer preserving original vetted archives in the existing Bible Foundation where feasible; optimized SOTW library remains independent. No source files moved or deleted.
 - **2026-11-06 (owner pipeline policy):** Settled non-display of unresolved evidence-based claims and conditional retirement of original source archives after a complete, verified optimized-canonical migration. No data deletion or deployment performed.
 - **2026-11-06 (source continuity):** Added permanent vetted-source/artifact index with four original source-package SHA-256 hashes, derived research artifacts, stable repository roles, and explicit STEP comparison-only / Strong's primary-publication decisions. Index is metadata only, not an upload of private archives.
 - **2026-11-06 (owner follow-up):** Accepted archived Greek Strong's CC0 and Hebrew `StrongHebrewG.xml` Public Domain source declarations as the working publication basis; James Strong is the reader-facing historical attribution. No repeated historical-editorial-rights audit absent contradictory evidence. Retain internal provider provenance and update release manifests during implementation. Decision-record update only; no inspector or source-data deployment.
