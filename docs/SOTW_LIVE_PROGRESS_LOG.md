@@ -27,6 +27,14 @@ Build a **deterministic, research-only display projection** from the selected St
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
 
+### 2026-11-07 | Stage 4/5: search evaluation completed
+- **VERIFIED:** 52/52 bounded regression checks PASS for exact IDs, unknown IDs, stopwords, deterministic ranking, valid postings, search limits, and representative English lexical queries. Evaluation script: `SOTW_HEBREW_STAGE4_2026-11-07/evaluate_search.py`; report: `STAGE4_REPORT.json`.
+- **VERIFIED:** Stage 2 raw index contains 106 numeric-only tokens and 23 single-character tokens; Stage 3 ordinary keyword parser filters these. They remain in research indexes; no source data altered.
+- **LIMITS:** Lexical search only, no stemming/fuzzy spelling, Hebrew morphology, or theological inference. Corrected Stage 1 is a pre-beta research projection, not independent certification of prior public-normalized edition.
+- **NEXT:** Stage 5/5 package complete owner-downloadable recovery ZIP including Checkpoint 0 plus Stages 1 corrected, 2, 3, and 4, with integrity manifest and runnable smoke tests. No production/player integration.
+
+
+
 ### 2026-11-07 | Stage 3/5: executable Strong's search engine
 - **VERIFIED:** Created `SOTW_HEBREW_STAGE3_2026-11-07/search_engine.py` (SHA-256 `fbb0b0c781f3ec7eaa155ad1471cedd3bdc86829d96565568177e198f180385b`) and `test_search_engine.py` (SHA-256 `427c139ebe3741090a96bf307070eb2a9ecb07c9a9104b9adfa9ae13064a65d7`).
 - **VERIFIED:** 9/9 unit tests passed: 8,674 entries, exact Strong ID lookup and leading zeros, unknown IDs, stopword and numeric filtering, father and multiword search, stable ranking, no index mutation.
