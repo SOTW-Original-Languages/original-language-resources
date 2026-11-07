@@ -155,7 +155,7 @@
         },
         "verse_id": {
           "type": "string",
-          "pattern": "^[A-Z0-9]{3}\\.\\d+\\.\\d+$"
+          "pattern": "^[A-Z0-9]{3,8}\\.[1-9][0-9]*\\.[1-9][0-9]*$"
         },
         "witness_id": {
           "type": "string",
@@ -339,7 +339,7 @@
         },
         "verse_id": {
           "type": "string",
-          "pattern": "^[A-Z0-9]{3}\\.\\d+\\.\\d+$"
+          "pattern": "^[A-Z0-9]{3,8}\\.[1-9][0-9]*\\.[1-9][0-9]*$"
         },
         "translation_edition": {
           "enum": [
