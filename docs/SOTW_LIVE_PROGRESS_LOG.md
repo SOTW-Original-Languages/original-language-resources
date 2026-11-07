@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 9 complete: Webster 1828 standalone dictionary lookup across four translations
-**Status:** Pre-beta Stage 9 built and tested (7/7): 62,391 Webster 1828 entries in source-preserving SQLite with direct English lookup for BSB, KJV, Webster 1833, ASV. Recovery Checkpoint 9 includes all prior stages. No deployment.
+**Stage:** Stage 10 private Webster 1828 Inspector integration completed
+**Status:** Pre-beta private local inspector integration built and 7/7 tests passed. Recovery Checkpoint 10 includes prior Checkpoint 9 and full private Stage 10 inspector. Not deployed or published.
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -24,9 +24,18 @@
 
 ## NEXT ACTION (one task only)
 
-**Stage 10: Integrate the existing source-preserving Webster 1828 lookup adapter into a private/local Word Study Inspector test path for all four Bible editions.** Use the Stage 9 SQLite resource and original private inspector/shell. Preserve source-authored HTML, sanitize it for browser display, and display CC BY-SA 4.0 attribution/rights. Test real verse-word selection, exact headword matches, duplicate headwords, unavailable inflected forms and private/public separation. Do not invent stemming or sense interpretation, and do not deploy to production. Latest owner backup is Checkpoint 9; original source archives remain separate.
+**Stage 11: Test the Stage 10 private inspector in a real local browser and review representative verse-word behavior in all four editions, including Strong's and Webster panel coexistence, attribution visibility and missing headwords.** Address actual UI defects only. Stage 10 includes original private research data, not a public release; source and rights audit before any public projection. The earlier Stage 8C alignments remain research candidates and were not silently promoted. Latest recovery is Checkpoint 10 plus original archives. No deployment.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Stage 10 COMPLETE: private local Webster 1828 inspector integration; Checkpoint 10
+- **IMPLEMENTED:** Extended original 66-book private inspector, preserving its existing `site/data/` and Strong's evidence behavior. All English words in BSB, KJV, Webster 1833 and ASV are clickable for a direct Webster 1828 exact-headword lookup, independent of Strong's. Existing Strong's-linked words retain their Strong's detail action and additionally open the Webster dictionary panel. Definitions served from Stage 9 SQLite by a loopback-only Python endpoint `/api/webster`; source HTML rendered as plain text, not injected as markup. Source edition is validated; no stemming, sense selection or inferred Strong's tags.
+- **VERIFIED:** 7/7 Python integration checks passed: direct dictionary lookup for each edition, case normalization, missing-word response, invalid edition rejection, and safe plain-text output. Original private inspector assets and 66-book dataset retained. No real browser interaction regression was performed yet; Stage 11 will check it. Original private inspector's existing candidate links were not overwritten by Stage 8C research candidates.
+- **RIGHTS/SECURITY:** Webster digital source CC BY-SA 4.0 attribution included. Stage 10 archive contains private research data/internal flags and is **NOT safe to upload to public GitHub**. No public player integration or deployment.
+- **LATEST SINGLE RECOVERY:** `SOTW_RECOVERY_CHECKPOINT_10_STAGE10_2026-11-07.zip`, **86,104,077 bytes**, SHA-256 `13e43a45d80f3099d84f21d9343557ba1256b64e2e753d313ecb2896c02a3653`. Includes complete nested Checkpoint 9 and full private Stage 10 inspector ZIP (42,195,576 bytes, SHA-256 `be139703902c317f635e39c78367f4b848edf67304afeef8a891d4fb7fd5bf5e`). Both ZIP CRC checks PASS. Original source archives remain separately owner-held.
+- **NEXT:** Stage 11 local browser smoke test and targeted repair. No deployment.
+
+
 
 ### 2026-11-07 | Stage 9 COMPLETE: Webster 1828 direct lookup and Checkpoint 9
 - **VERIFIED SOURCE:** Original source bundle `SOTW_WordStudy_03_DICTIONARIES_LEXICONS_KJV_WEBSTER_2026-11-05.zip` (SHA-256 `a9fbecc8f08063a227ae94da868dfb4c3ad8b98cc3140c492aba17ef77f423eb`), nested `source_files/webster1828-master.zip` (SHA-256 `be9bb797197a878a42a95d2fd63e14cfd3af25a4dc300a6aab4de99a59e48be5`), `webster1828-master/webster1828.csv` (SHA-256 `5ba9750ae13e3938441721d00677f8eacf45b63bd631639de247155892e54fb0`). Digital source LICENSE is **CC BY-SA 4.0**; preserve source attribution/share-alike conditions. Original historical book status does not erase digital transcription license.
