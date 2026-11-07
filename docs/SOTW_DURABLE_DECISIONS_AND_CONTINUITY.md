@@ -191,6 +191,12 @@ Fetched current canonical schema (Git blob `2ff9b33ba9679e858f9994eb8fffbf29976a
 
 **Not yet exact-file certification:** The validator is a local transcription and substitutes kind-only schemas for non-lexicon branches; it is NOT the byte-identical GitHub JSON Schema document. Do not describe it as exact checked-out schema validation. 2,628 `x-pn` entries still require an evidence-backed canonical language representation. Derived definition rendering and typed note mapping remain research-only. No public release or player changes.
 
+## STEP 2 PROPER-NAME MORPHOLOGY AUDIT — 2026-11-07
+
+Executed an independent source-marker and morphology inventory over all 8,674 records in the preserved OSIS source-field research projection (input JSON SHA-256 `61abddbbb34673fd8d9291c7be25da26d925f183b42855eba27a3b154b9f028f`). Exactly **2,628** entries have original `w xml:lang=x-pn` and all have headwords. Among these, exact `morph` codes include `n-pr-m` **1,429**, `n-pr-loc` **653**, `n-pr-f` **127**, and **419** other or combined codes. These categories describe source morphology, **not proven biblical language**; some codes mix proper-name and non-proper-name labels. No automatic Hebrew/Aramaic assignment permitted. Local report: `SOTW_PROPER_NAME_SOURCE_MARKER_AUDIT_2026-11-07.json` (conversation artifact).
+
+**Schema decision remains open:** Current canonical lexicon v1 requires `language` in `heb|arc|grc` and forbids extra properties. Keep these 2,628 as research source records with `source_language_marker=x-pn` and `canonical_language=null` outside the canonical published lexicon until an explicitly reviewed schema extension or independently evidenced language mapping is approved. Do not silently set `language=heb` for them. This audit does not constitute exact live-schema certification of the 6,046 eligible entries or public release.
+
 ## Change log
 
 - **2026-11-06 (Foundation CI pass):** Owner screenshot confirms successful 8-second GitHub Actions job running both canonical and Foundation compatibility validators. Step 1 complete within pinned/synthetic contract scope; real-source checks remain.
