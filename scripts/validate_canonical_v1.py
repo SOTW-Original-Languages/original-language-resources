@@ -86,3 +86,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# CI trigger: execute the pinned canonical-v1 validation suite (2026-11-06).
