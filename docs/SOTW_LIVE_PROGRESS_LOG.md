@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 11 verification performed; browser-level test BLOCKED, not certified
-**Status:** Stage 11 browser verification remains BLOCKED in this environment; owner-local Playwright click-through test packaged in Recovery Checkpoint 12. No browser pass claimed, no deployment.
+**Stage:** Stage 11 private Inspector browser test still BLOCKED; separate public Webster 1828 Pages smoke test OWNER-VERIFIED PASS
+**Status:** Public standalone Webster 1828 dictionary demo is live and owner-tested on GitHub Pages (2026-11-07). The private 66-book Inspector Stage 11 Playwright/real-browser click-through has NOT passed; its local test remains BLOCKED in the prior environment. Checkpoint 12 remains latest recovery. No private Inspector or CGBC player deployment.
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -13,6 +13,9 @@
 
 ## CURRENT STATE
 
+- **VERIFIED (GitHub commit `c06c9ad9b7863ce85acd1fae09b3f20fa4bc0dfc`):** Public-safe static Webster 1828 demo files `index.html`, `webster1828.json`, `LICENSE_WEBSTER_SOURCE.txt`, and `README_UPLOAD.txt` are at repository root. GitHub Pages is serving `https://sotw-original-languages.github.io/original-language-resources/` following owner switch from `/docs` to `/(root)`. This public demo is a direct dictionary headword lookup, **not** the private verse-click Inspector or Strong's integration.
+- **OWNER-VERIFIED (2026-11-07 public website smoke test):** Owner opened the live page, showed ASV 1901 `grace` lookup with 62,388 loaded searchable headwords and source-attributed dictionary entry, and subsequently confirmed checking the remaining BSB/KJV/Webster 1833 selectors plus suggested `love`, `faith`, `covenant`, and nonexistent-headword cases successfully. These are owner-reported browser checks, not an independently executed private Stage 11 browser test or a corpus-wide audit.
+- **RECOVERY VERIFIED (2026-11-07):** Local `SOTW_RECOVERY_CHECKPOINT_12_BROWSER_HANDOFF_2026-11-07.zip` bytes rechecked, 86,109,814 bytes, SHA-256 `d5c7547659bcdc4bca4024e85405b7d4817808e6d2cf2b59570c9392a2f68105`, ZIP CRC PASS. This remains the latest complete development recovery; no new consolidated checkpoint was created for the separately deployed public demo.
 - **VERIFIED:** Selected Hebrew Strong's digital OSIS source is `strongs-master.zip / strongs-master/hebrew/StrongHebrewG.xml`, inside `SOTW_WordStudy_03_DICTIONARIES_LEXICONS_KJV_WEBSTER_2026-11-05.zip`. Original XML SHA-256: `1f9659ea208f4c498843a0280dacb1448627c33ca77712642d8705793ab66061`.
 - **VERIFIED (2026-11-07 source inspection):** Hebrew OSIS source has 8,674 `lemma`, transliteration (`xlit`), POS, morphology, concise `note type=explanation`, and KJV `note type=translation` fields, plus expanded numbered list items. Stage 7 has now restored these source-authored Hebrew fields in a separate complete research projection, alongside the earlier expanded senses. The selected Greek CC0 XML **v1.9** has now been projected with all 5,624 entries, including source-absent fields and 101 explicit Not Used placeholders. Neither is yet integrated into a public site. Distinct BDB/Thayer/STEP resources remain separate candidates/hooks, not merged Strong's definitions.
 - **VERIFIED (research):** 8,674 entries; 24,841 original list items; 21,500 numbered senses and 2,680 proper-name glosses in the selected-content classification. Source language markers: 6,046 Hebrew/Aramaic and 2,628 `x-pn` proper-name markers that must **not** be miscast as a language.
@@ -20,13 +23,20 @@
 - **VERIFIED (internal research):** A source-attribution audit found 202 explicitly labeled sense items in 178 entries in the raw research record. These are **source/audit markers, not 202 new imported sources or newly proven defects**. The earlier 14-unavailable stripped projection was an audit variant, **not** the approved final display.
 - **VERIFIED (research):** `SOTW_STRONGS_LOOKUP_RESEARCH_INDEX_2026-11-07.zip` indexes 8,674 Strong's IDs, 12,457 searchable tokens, 24,180 sense/name-gloss items, and 55 literal cross-reference candidates. These hooks are **not** verified semantic links and the index is **not public-ready**.
 - **CLARIFICATION:** This thread produced research projections, a ten-entry presentation preview, and a lookup index; the record does not establish that a separate approved full public baseline file was ever created. The owner's zero-marker statement is a settled normalization/presentation expectation, not evidence of a missing file. Do not keep asking the owner to locate one.
-- **RELEASE BOUNDARY:** Research-only. No public deployment, production script, canonical-schema replacement, CGBC player modification, or player integration has been authorized.
+- **RELEASE BOUNDARY:** Only the isolated public-safe static Webster 1828 dictionary demo is deployed. The private Inspector, full Bible texts, internal research, Strong's integrations, production scripts, canonical schema replacement, CGBC player modifications and player integrations remain outside that release; no authorization for those deployments is implied.
 
 ## NEXT ACTION (one task only)
 
-**Run the packaged Stage 11 browser test on an owner-controlled machine that permits localhost navigation.** Follow the `SOTW_STAGE11_BROWSER_HANDOFF_2026-11-07.zip` README inside Checkpoint 12, collect its JSON results and inspect mobile/edge-case behavior. Repair only observed defects. Stage 11 remains browser-blocked, not release-certified. No public deployment.
+**Run the private 66-book Inspector Stage 11 click-through in an owner-controlled local browser.** Extract the nested Stage 10 Inspector from Recovery Checkpoint 12, run `python inspector/scripts/launch_viewer.py`, and execute the handoff's `test_browser.py` with Playwright Chromium. Preserve the JSON PASS/FAIL/BLOCKED output and manually inspect mobile layout, missing words, long/duplicate definitions and attribution. Repair only observed defects; do NOT upload any private Inspector/recovery contents to public Pages. The separate static demo already passed owner smoke testing.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Public Webster 1828 GitHub Pages deployed and owner-smoke-tested; Stage 11 private test remains open
+- **VERIFIED (GitHub):** Commit `c06c9ad9b7863ce85acd1fae09b3f20fa4bc0dfc` added root `index.html`, `webster1828.json`, `LICENSE_WEBSTER_SOURCE.txt` and `README_UPLOAD.txt`. Owner changed GitHub Pages source from `main:/docs` to `main:/(root)`. The public demo appeared at `https://sotw-original-languages.github.io/original-language-resources/`.
+- **OWNER-VERIFIED (public browser smoke test):** Screenshot shows `ASV 1901` + `grace` returning a source-authored Webster 1828 entry after loading 62,388 headwords. Owner reports completing the other translation selector and suggested lookup/missing-headword checks successfully. This test covers direct headword lookup only; it does not test verse-click navigation or Strong's in the private Inspector.
+- **RECOVERY RECHECK:** `SOTW_RECOVERY_CHECKPOINT_12_BROWSER_HANDOFF_2026-11-07.zip`, 86,109,814 bytes, SHA-256 `d5c7547659bcdc4bca4024e85405b7d4817808e6d2cf2b59570c9392a2f68105`; ZIP CRC PASS. Checkpoint 12 remains current; no new recovery ZIP needed for this documentation-only milestone.
+- **BLOCKED / UNCHANGED:** Private Stage 11 owner-local Playwright browser test remains unexecuted/uncertified; no private 66-book corpus upload, production script, new public Strong's/translation link assertions, or CGBC player modification.
+- **NEXT:** Execute the Checkpoint 12 `SOTW_STAGE11_BROWSER_HANDOFF_2026-11-07.zip` test against the private Inspector on an owner-controlled localhost browser, save JSON results, inspect mobile and edge cases, and repair only demonstrated failures.
 
 ### 2026-11-07 | Stage 11 browser follow-up: navigation restriction reproduced; Checkpoint 12 test handoff
 - **REPRODUCED:** Playwright Chromium navigation returned `net::ERR_BLOCKED_BY_ADMINISTRATOR` for localhost, local file and even data: page. No browser PASS asserted and no source/UI modification.
