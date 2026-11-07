@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 8D audit and BSB source morphology index complete; Stage 8 remains partial  
-**Status:** Pre-beta Stage 8D complete: all 471,106 Stage 8C candidate links independently checked against source-reconstructed word positions (0 structural errors), 1,052 withheld source tags classified, and BSB morphology index built. Checkpoint 7 contains all earlier stages. No deployment.  
+**Stage:** Stage 8E compound-word evidence review complete; Stage 8 remains research-only  
+**Status:** Pre-beta Stage 8E complete: 1,052 withheld rows examined, 36 duplicates, unique source/target phrase evidence cataloged without promoting ambiguous tags. Checkpoint 8 includes all earlier stages. No deployment.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -24,9 +24,17 @@
 
 ## NEXT ACTION (one task only)
 
-**Stage 8E: Targeted source-evidenced recovery of withheld compound-word Strong's tags.** 993 compound/multi-token and 59 out-of-order KJV native source tags remain withheld; investigate only concrete cases where original source markup and target words support exact correspondence. Never infer a tag from an English word alone. Preserve current BSB native morphology and independent KJV native tags. Then proceed to Webster 1828 English dictionary lookup available directly from all four translations. Latest owner backup is Checkpoint 7; original source archives remain separate. No deployment.
+**Stage 9: Webster 1828 English dictionary direct lookup from all four translations.** Inspect archived Webster 1828 source, preserve authored headwords, all definitions/senses, source rights and provenance; implement deterministic headword lookup independent of Strong's and accessible for BSB, KJV, Webster Bible 1833 and ASV 1901. Historical Webster 1828 is author-paired with Webster 1833, but dictionary senses are not contextual interpretation. Do not promote Stage 8E phrase matches into confirmed word-level Strong's links without further token/markup proof. Owner retains Checkpoint 8 plus original archives; no deployment.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Stage 8E: targeted withheld compound-word evidence; Checkpoint 8
+- **VERIFIED:** Examined all 1,052 Stage 8D withheld source-tag rows; 36 exact duplicate evidence rows, 1,016 distinct withheld cases. 924 distinct cases have a unique literal KJV phrase; 742 have unique exact phrase in KJV and Webster 1833, and 734 in KJV and ASV 1901. 46 cases have no exact KJV phrase and 46 have multiple KJV phrase locations; original 59 out-of-order cases are not automatically resolved. Counts are evidence candidates, not newly established Strong's word links.
+- **CONSERVATIVE RULE:** Multiword KJV surface tagged once cannot be split into separate source-attested tags per token. Stage 8C candidate link files are unchanged. No public promotion or release.
+- **LATEST ONE-ZIP RECOVERY:** `SOTW_RECOVERY_CHECKPOINT_8_STAGE8E_2026-11-07.zip`, 36,962,499 bytes, SHA-256 `672a7c6bd1ac3e6d146debe6b606208e83ae9b73bd2e48ea8e1f5fac51437428`. Includes full nested Checkpoint 7 and Stage 8E builder, 1,016-row evidence catalog, report and README. Outer CRC, hashes and nested Checkpoint 7 CRC PASS. Original source archives separate.
+- **NEXT:** Stage 9 Webster 1828 dictionary direct English-word lookup across all four Bible editions. No deployment.
+
+
 
 ### 2026-11-07 | Stage 8D complete: source-to-token audit, BSB morphology index, Checkpoint 7
 - **VERIFIED:** Independently reconstructed original KJV, ASV and Webster 1833 USFM verse tokens and checked every Stage 8C candidate link: **247,165 Webster 1833 + 223,941 ASV 1901 = 471,106** source/target token position, surface, exact-match and uniqueness checks; **zero structural mismatches**. This does not certify contextual semantic equivalence or public release.
