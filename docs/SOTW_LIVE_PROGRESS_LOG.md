@@ -1,8 +1,8 @@
 # SOTW Original Languages | LIVE PROGRESS LOG
 
 **Updated:** 2026-11-07  
-**Stage:** Stage 8B complete: BSB source-native original-language alignment; Stage 8 remains partial  
-**Status:** Pre-beta Stage 8B complete: 437,587 source-tagged BSB original-language rows built and validated against Stage 7 Strong's; Recovery Checkpoint 5 includes previous Checkpoint 4 and Stage 8B. NWB/ASV and deeper morphology hooks still outstanding. No deployment.  
+**Stage:** Stage 8C conservative KJV bridge complete; Stage 8 remains partial  
+**Status:** Pre-beta Stage 8C built and tested: conservative exact-unique KJV-derived candidate Strong's links for Webster 1833 and ASV 1901. Checkpoint 6 includes all prior stages. Further source-to-token audit and morphology remain outstanding; no deployment.  
 **Repository:** `SOTW-Original-Languages/original-language-resources`
 
 > **START HERE IN A NEW THREAD.** This is the short, frequently updated work log. For binding decisions and detailed history, read [Durable Decisions](SOTW_DURABLE_DECISIONS_AND_CONTINUITY.md) and [Vetted Sources & Artifacts](SOTW_VETTED_SOURCE_AND_ARTIFACT_INDEX.md). This log does not supersede those records.
@@ -24,9 +24,18 @@
 
 ## NEXT ACTION (one task only)
 
-**Stage 8C: Evidence-supported KJV-derived NWB/Webster Bible 1833 and ASV 1901 occurrence links.** Read original Bible text/source comparison artifacts and preserve all supported native KJV tag arrays; do not assume word equivalence across translations or assert unresolved alignments. Keep BSB source-native 8B and KJV source-native 8A independent. After Stage 8C, implement source-credited original-language morphology hooks. Owner needs only latest Recovery Checkpoint 5 plus original source archives. No deployment.
+**Stage 8D: Audit the Stage 8C source-to-token reconstruction and withheld cases; then build source-credited morphology hooks.** Stage 8C generated conservative exact-unique-word KJV-derived candidates for Webster 1833 and ASV 1901, not certified public links. Resolve the 1,052 KJV source-tagged words not safely token-mapped, investigate USFM markup boundary issues, and independently validate sample target associations before release. Keep BSB native alignment independent. Webster 1828 English dictionary must eventually be directly accessible from ALL four translations, not routed through Webster 1833 or Strong's. Latest recovery is Checkpoint 6; original archives remain separate. No deployment.
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
+
+### 2026-11-07 | Stage 8C research build: KJV bridge to Webster 1833 and ASV; Checkpoint 6
+- **VERIFIED:** Parsed original archived KJV, Webster 1833 Bible and ASV 1901 USFM. Source-native KJV tagged occurrences from Stage 8A; source-native BSB Stage 8B unchanged. Compared 29,699 tagged KJV verse keys against each target. Conservative method uses only unchanged sequence-aligned English tokens with **exactly one occurrence of that surface in both verses**; no fuzzy or theological inference.
+- **RESEARCH OUTPUT:** 247,165 Webster 1833 and 223,941 ASV 1901 candidate KJV-derived Strong's links, each with verse, both token surfaces/positions, native tag array, method, source/target archive hashes and derived provenance. Withheld 14,036 changed/unmatched and 51,142 repeated-word occurrences for Webster; 39,284 changed/unmatched and 49,118 repeated for ASV. 1,052 KJV tagged source occurrences could not be safely placed in reconstructed KJV verse token order and were withheld from projection.
+- **VERIFIED VALIDATION:** Both compressed outputs read successfully; record counts, unique target token locations, equal normalized word surfaces, nonempty Strong's arrays, and count partitions PASS. **NOT RELEASE-CERTIFIED:** source-to-token reconstruction and USFM markup edge cases require independent audit; candidate alignment is not contextual semantic proof. No public or player change.
+- **LATEST RECOVERY ZIP:** `SOTW_RECOVERY_CHECKPOINT_6_STAGE8C_2026-11-07.zip`, 36,222,342 bytes, SHA-256 `5c112d61d66693962975eaf27d4663833920ce99889b80393b1dc27ead32978f`. Contains nested complete Checkpoint 5 plus Stage 8C compressed records, deterministic builder, validator, report, README and SHA manifest. Outer ZIP CRC, all member hashes and nested Checkpoint 5 ZIP CRC PASS. Original source ZIPs not duplicated.
+- **NEXT:** Stage 8D audit ambiguous source-to-token cases and source-backed morphology hooks; Webster 1828 direct lookup for all translations follows. No deployment.
+
+
 
 ### 2026-11-07 | OWNER CORRECTION: Webster 1828 dictionary directly available for ALL Bible translations
 - **OWNER DECISION (supersedes prior Webster navigation design):** Webster 1828 is a general historical English dictionary accessible by direct headword lookup from every displayed Bible translation (BSB, KJV, Webster 1833 Bible, ASV 1901). Do **not** require routing via Webster 1833 Bible, KJV, or Strong's before opening a Webster 1828 dictionary entry.
