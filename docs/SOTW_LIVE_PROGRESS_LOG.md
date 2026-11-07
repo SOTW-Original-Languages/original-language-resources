@@ -28,6 +28,14 @@
 
 ## UPDATE HISTORY (newest first; append nothing above this heading except new entries)
 
+### 2026-11-07 | Owner confirms Webster author-paired Bible and Dictionary linkage
+- **OWNER DIRECTION:** Treat Noah Webster's 1833 Bible revision and 1828 English Dictionary as a complementary author-paired study path, using existing original archives rather than new source discovery or speculative interpretive protocols.
+- **EXACT SOURCES:** `SOTW_WordStudy_03_DICTIONARIES_LEXICONS_KJV_WEBSTER_2026-11-05.zip / source_files/engwebster_usfm.zip` (Webster 1833 Bible); same parent archive / `source_files/webster1828-master.zip` (Webster 1828 Dictionary). Distinct provenance and source hashes retained.
+- **PIPELINE:** KJV source-native Strong's tags -> verified KJV/Webster 1833 word correspondence -> Webster 1833 English surface -> normalized, source-preserving Webster 1828 dictionary headword lookup. Headword match is lexical navigation, NOT proof of contextual sense, historical authorial intent, or direct original-language equivalence. Preserve full dictionary senses and ambiguities.
+- **STATUS:** Architectural refinement, not yet implemented. Stage 8C remains next; Recovery Checkpoint 5 remains latest.
+
+
+
 ### 2026-11-07 | Owner refines Stage 8C: KJV textual alignment bridge for ASV and Webster 1833
 - **OWNER DIRECTION:** Favor a straightforward, source-evidenced KJV-to-ASV and KJV-to-Webster Bible 1833 word-alignment workflow over newly invented logical/interpretive protocols. Reuse KJV native Strong's tags as the initial reference for both related translations.
 - **HISTORICAL PRECISION:** ASV 1901 descends through the English Revised Version from the KJV revision tradition; Webster 1833 is a KJV revision. Neither is to be labeled a word-for-word identical KJV text or assumed to preserve every KJV word/tag.
