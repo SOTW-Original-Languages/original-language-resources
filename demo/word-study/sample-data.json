@@ -1,7 +1,7 @@
 {
   "schema": "sotw-public-safe-word-study-demo-v1",
   "updated": "2026-11-07",
-  "scope": "Genesis 1:1-3 and John 1:1-3; native Strong's links on verse 1 for BSB and KJV only",
+  "scope": "Genesis 1:1–3 and John 1:1–3: 4 English Bible edition samples; selected native Strong's links for BSB/KJV and 15 KJV-derived research associations for ASV/Webster 1833, all on verse 1.",
   "asv_repository": "SOTW-ASV-1901/asv-1901-resources",
   "asv_pin": "4179ceb646cf4fed0077760794749821fb989273",
   "translation_order": [
@@ -339,6 +339,17 @@
           "1c) chief",
           "1d) choice part"
         ]
+      },
+      "source_details": {
+        "source_language_marker": "heb",
+        "unpointed_form": "ראשית",
+        "source_POS_attribute_as_encoded": "ray-sheeth'",
+        "source_morph_code": "n-f",
+        "source_TWOT_reference_candidate": "2097e",
+        "source_entry_sha256_research": "af66d769756bbaf7459d1e335345b04153feb659676f8fe12370afdea9d38540",
+        "literal_strongs_references": [
+          "H7218"
+        ]
       }
     },
     "H430": {
@@ -361,6 +372,17 @@
           "2c) works or special possessions of God",
           "2d) the (true) God",
           "2e) God"
+        ]
+      },
+      "source_details": {
+        "source_language_marker": "heb",
+        "unpointed_form": "אלהים",
+        "source_POS_attribute_as_encoded": "el-o-heem'",
+        "source_morph_code": "n-m",
+        "source_TWOT_reference_candidate": "93c",
+        "source_entry_sha256_research": "4c3129cf150a6f44f997b0532e4d5e000a03640c57adb1576817e5895dc52f4b",
+        "literal_strongs_references": [
+          "H433"
         ]
       }
     },
@@ -390,6 +412,15 @@
           "2) to be fat",
           "2a) (Hiphil) to make yourselves fat"
         ]
+      },
+      "source_details": {
+        "source_language_marker": "heb",
+        "unpointed_form": "ברא",
+        "source_POS_attribute_as_encoded": "baw-raw'",
+        "source_morph_code": "v",
+        "source_TWOT_reference_candidate": "278",
+        "source_entry_sha256_research": "689c3eba92f9a01c10774d61257e2df4b2f4bff54c0fe15e4b1fbc294f47183e",
+        "literal_strongs_references": []
       }
     },
     "H8064": {
@@ -407,6 +438,15 @@
           "1a2) as the visible universe,  the sky,  atmosphere,  etc",
           "1b) Heaven (as the abode of God)"
         ]
+      },
+      "source_details": {
+        "source_language_marker": "heb",
+        "unpointed_form": "שמים",
+        "source_POS_attribute_as_encoded": "shaw-mah'-yim",
+        "source_morph_code": "n-m",
+        "source_TWOT_reference_candidate": "2407a",
+        "source_entry_sha256_research": "9320901c1ae64f6d06838a6a7b552bdf84ffffddd24678525de875ff30c99732",
+        "literal_strongs_references": []
       }
     },
     "H776": {
@@ -445,6 +485,15 @@
           "1e1) lands,  countries",
           "1e1a) often in contrast to Canaan"
         ]
+      },
+      "source_details": {
+        "source_language_marker": "heb",
+        "unpointed_form": "ארץ",
+        "source_POS_attribute_as_encoded": "eh'-rets",
+        "source_morph_code": "n-f",
+        "source_TWOT_reference_candidate": "167",
+        "source_entry_sha256_research": "0418ebab39b16079abe94398cee963de8c1c7f70aad042fbc505700085dfe9d1",
+        "literal_strongs_references": []
       }
     },
     "G1722": {
@@ -456,6 +505,15 @@
         "derivation": "a primary preposition denoting (fixed) position (in place, time or state), and (by implication) instrumentality (medially or constructively), i.e. a relation of rest (intermediate between G1519 and G1537);",
         "kjv_rendering": ":--about, after, against, + almost, X altogether, among, X as, at, before, between, (here-)by (+ all means), for (… sake of), + give self wholly to, (here-)in(-to, -wardly), X mightily, (because) of, (up-)on, (open-)ly, X outwardly, one, X quickly, X shortly, (speedi-)ly, X that, X there(-in, -on), through(-out), (un-)to(-ward), under, when, where(-with), while, with(-in).",
         "supplemental_text": "Often used in compounds, with substantially the same import; rarely with verbs of motion, and then not to indicate direction, except (elliptically) by a separate (and different) preposition."
+      },
+      "source_details": {
+        "source_language_marker": "grc",
+        "source_beta_code": "E)N",
+        "source_pronunciation": "en",
+        "literal_strongs_references": [
+          "G1519",
+          "G1537"
+        ]
       }
     },
     "G746": {
@@ -466,6 +524,14 @@
       "source_long_form": {
         "derivation": "from G756;",
         "kjv_rendering": ":--beginning, corner, (at the, the) first (estate), magistrate, power, principality, principle, rule."
+      },
+      "source_details": {
+        "source_language_marker": "grc",
+        "source_beta_code": "A)RXH/",
+        "source_pronunciation": "ar-khay'",
+        "literal_strongs_references": [
+          "G756"
+        ]
       }
     },
     "G1510": {
@@ -477,6 +543,25 @@
         "derivation": "the first person singular present indicative; a prolonged form of a primary and defective verb;",
         "kjv_rendering": ":--am, have been, X it is I, was.",
         "supplemental_text": "See also G1488, G1498, G1511, G1526, G2258, G2071, G2070, G2075, G2076, G2771, G2468, G5600."
+      },
+      "source_details": {
+        "source_language_marker": "grc",
+        "source_beta_code": "EI)MI/",
+        "source_pronunciation": "i-mee'",
+        "literal_strongs_references": [
+          "G1488",
+          "G1498",
+          "G1511",
+          "G1526",
+          "G2258",
+          "G2071",
+          "G2070",
+          "G2075",
+          "G2076",
+          "G2771",
+          "G2468",
+          "G5600"
+        ]
       }
     },
     "G2258": {
@@ -487,6 +572,14 @@
       "source_long_form": {
         "derivation": "imperfect of G1510;",
         "kjv_rendering": ":--+ agree, be, X have (+ charge of), hold, use, was(-t), were."
+      },
+      "source_details": {
+        "source_language_marker": "grc",
+        "source_beta_code": "H)=N",
+        "source_pronunciation": "ane",
+        "literal_strongs_references": [
+          "G1510"
+        ]
       }
     },
     "G3056": {
@@ -497,6 +590,14 @@
       "source_long_form": {
         "derivation": "from G3004;",
         "kjv_rendering": ":--account, cause, communication, X concerning, doctrine, fame, X have to do, intent, matter, mouth, preaching, question, reason, + reckon, remove, say(-ing), shew, X speaker, speech, talk, thing, + none of these things move me, tidings, treatise, utterance, word, work."
+      },
+      "source_details": {
+        "source_language_marker": "grc",
+        "source_beta_code": "LO/GOS",
+        "source_pronunciation": "log'-os",
+        "literal_strongs_references": [
+          "G3004"
+        ]
       }
     },
     "G2532": {
@@ -507,6 +608,12 @@
       "source_long_form": {
         "derivation": "apparently, a primary particle, having a copulative and sometimes also a cumulative force;",
         "kjv_rendering": ":--and, also, both, but, even, for, if, or, so, that, then, therefore, when, yet."
+      },
+      "source_details": {
+        "source_language_marker": "grc",
+        "source_beta_code": "KAI/",
+        "source_pronunciation": "kahee",
+        "literal_strongs_references": []
       }
     },
     "G4314": {
@@ -518,6 +625,14 @@
         "derivation": "a strengthened form of G4253;",
         "kjv_rendering": ":--about, according to , against, among, at, because of, before, between, (where-)by, for, X at thy house, in, for intent, nigh unto, of, which pertain to, that, to (the end that), X together, to (you) -ward, unto, with(-in).",
         "supplemental_text": "In the compound case, it denotes essentially the same applications, namely, motion towards, accession to, or nearness at."
+      },
+      "source_details": {
+        "source_language_marker": "grc",
+        "source_beta_code": "PRO/S",
+        "source_pronunciation": "pros",
+        "literal_strongs_references": [
+          "G4253"
+        ]
       }
     },
     "G2316": {
@@ -528,6 +643,14 @@
       "source_long_form": {
         "derivation": "of uncertain affinity;",
         "kjv_rendering": ":--X exceeding, God, god(-ly, -ward)."
+      },
+      "source_details": {
+        "source_language_marker": "grc",
+        "source_beta_code": "QEO/S",
+        "source_pronunciation": "theh'-os",
+        "literal_strongs_references": [
+          "G3588"
+        ]
       }
     }
   },
@@ -570,5 +693,24 @@
     "excluded": "H853 on English 'and' excluded from contextual display; ambiguous repeated words including John 1:1 'Word' not promoted by derived links",
     "selected_links": 15
   },
-  "reader_version": "1.1_source_fields_and_limited_supported_kjv_derived_links"
+  "reader_version": "1.2_source_field_and_attribution_review",
+  "demo_review": {
+    "revision": "1.2",
+    "scope_note": "13 selected lexical records shown in this two-passage public preview. This is NOT a release of the full Hebrew or Greek research corpora.",
+    "source_research_inventory": {
+      "hebrew_entries_in_private_research": 8674,
+      "greek_entries_in_private_research": 5624,
+      "hebrew_examples_in_demo": 5,
+      "greek_examples_in_demo": 8
+    },
+    "selected_hebrew_source": "strongs-master.zip / strongs-master/hebrew/StrongHebrewG.xml; source-declared Public Domain",
+    "selected_greek_source": "strongs-dictionary-xml-master.zip / strongs-dictionary-xml-master/strongsgreek.xml; Ulrik Sandborg-Petersen XML v1.9; CC0",
+    "excluded_definitions": [
+      "STEP TBESH/TBESG",
+      "BDB digital editions",
+      "Thayer candidate corpus",
+      "TWOT text"
+    ],
+    "rights_warning": "A source label or glossary reference is not a grant to reproduce unrelated third-party definitions; credits and source limits are listed on page."
+  }
 }
