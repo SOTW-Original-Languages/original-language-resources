@@ -98,7 +98,24 @@
         "WEBSTER1833": [
           {
             "id": "GEN.1.1",
-            "text": "In the beginning God created the heaven and the earth."
+            "text": "In the beginning God created the heaven and the earth.",
+            "kjv_derived_links": {
+              "3": [
+                "H7225"
+              ],
+              "4": [
+                "H430"
+              ],
+              "5": [
+                "H1254"
+              ],
+              "7": [
+                "H8064"
+              ],
+              "10": [
+                "H776"
+              ]
+            }
           },
           {
             "id": "GEN.1.2",
@@ -112,7 +129,21 @@
         "ASV1901": [
           {
             "id": "GEN.1.1",
-            "text": "In the beginning God created the heavens and the earth."
+            "text": "In the beginning God created the heavens and the earth.",
+            "kjv_derived_links": {
+              "3": [
+                "H7225"
+              ],
+              "4": [
+                "H430"
+              ],
+              "5": [
+                "H1254"
+              ],
+              "10": [
+                "H776"
+              ]
+            }
           },
           {
             "id": "GEN.1.2",
@@ -242,7 +273,18 @@
         "WEBSTER1833": [
           {
             "id": "JHN.1.1",
-            "text": "In the beginning was the Word, and the Word was with God, and the Word was God."
+            "text": "In the beginning was the Word, and the Word was with God, and the Word was God.",
+            "kjv_derived_links": {
+              "1": [
+                "G1722"
+              ],
+              "3": [
+                "G746"
+              ],
+              "11": [
+                "G4314"
+              ]
+            }
           },
           {
             "id": "JHN.1.2",
@@ -256,7 +298,18 @@
         "ASV1901": [
           {
             "id": "JHN.1.1",
-            "text": "In the beginning was the Word, and the Word was with God, and the Word was God."
+            "text": "In the beginning was the Word, and the Word was with God, and the Word was God.",
+            "kjv_derived_links": {
+              "1": [
+                "G1722"
+              ],
+              "3": [
+                "G746"
+              ],
+              "11": [
+                "G4314"
+              ]
+            }
           },
           {
             "id": "JHN.1.2",
@@ -275,79 +328,207 @@
       "headword": "רֵאשִׁית",
       "transliteration": "rêʼshîyth",
       "concise_definition": "the first, in place, time, order or rank (specifically, a firstfruit)",
-      "source_id": "strongs-hebrew-g"
+      "source_id": "strongs-hebrew-g",
+      "source_long_form": {
+        "derivation": "from the same as H7218;",
+        "kjv_rendering": "beginning, chief(-est), first(-fruits, part, time), principal thing.",
+        "expanded_senses": [
+          "1) first,  beginning,  best,  chief",
+          "1a) beginning",
+          "1b) first",
+          "1c) chief",
+          "1d) choice part"
+        ]
+      }
     },
     "H430": {
       "headword": "אֱלֹהִים",
       "transliteration": "ʼĕlôhîym",
       "concise_definition": "gods in the ordinary sense; but specifically used (in the plural thus, especially with the article) of the supreme God; occasionally applied by way of deference to magistrates; and sometimes as a superlative",
-      "source_id": "strongs-hebrew-g"
+      "source_id": "strongs-hebrew-g",
+      "source_long_form": {
+        "derivation": "plural of H433;",
+        "kjv_rendering": "angels, [idiom] exceeding, God (gods) (-dess, -ly), [idiom] (very) great, judges, [idiom] mighty.",
+        "expanded_senses": [
+          "1) (plural)",
+          "1a) rulers,  judges",
+          "1b) divine ones",
+          "1c) angels",
+          "1d) gods",
+          "2) (plural intensive-singular meaning)",
+          "2a) god,  goddess",
+          "2b) godlike one",
+          "2c) works or special possessions of God",
+          "2d) the (true) God",
+          "2e) God"
+        ]
+      }
     },
     "H1254": {
       "headword": "בָּרָא",
       "transliteration": "bârâʼ",
       "concise_definition": "(absolutely) to create; (qualified) to cut down (a wood), select, feed (as formative processes)",
-      "source_id": "strongs-hebrew-g"
+      "source_id": "strongs-hebrew-g",
+      "source_long_form": {
+        "derivation": "a primitive root;",
+        "kjv_rendering": "choose, create (creator), cut down, dispatch, do, make (fat).",
+        "expanded_senses": [
+          "1) to create,  shape,  form",
+          "1a) (Qal) to shape,  fashion,  create (always with God as subject)",
+          "1a1) of heaven and earth",
+          "1a2) of individual man",
+          "1a3) of new conditions and circumstances",
+          "1a4) of transformations",
+          "1b) (Niphal) to be created",
+          "1b1) of heaven and earth",
+          "1b2) of birth",
+          "1b3) of something new",
+          "1b4) of miracles",
+          "1c) (Piel)",
+          "1c1) to cut down",
+          "1c2) to cut out",
+          "2) to be fat",
+          "2a) (Hiphil) to make yourselves fat"
+        ]
+      }
     },
     "H8064": {
       "headword": "שָׁמַיִם",
       "transliteration": "shâmayim",
       "concise_definition": "the sky (as aloft; the dual perhaps alluding to the visible arch in which the clouds move, as well as to the higher ether where the celestial bodies revolve)",
-      "source_id": "strongs-hebrew-g"
+      "source_id": "strongs-hebrew-g",
+      "source_long_form": {
+        "derivation": "dual of an unused singular ; from an unused root meaning to be lofty;",
+        "kjv_rendering": "air, [idiom] astrologer, heaven(-s).",
+        "expanded_senses": [
+          "1) heaven,  heavens,  sky",
+          "1a) visible heavens,  sky",
+          "1a1) as abode of the stars",
+          "1a2) as the visible universe,  the sky,  atmosphere,  etc",
+          "1b) Heaven (as the abode of God)"
+        ]
+      }
     },
     "H776": {
       "headword": "אֶרֶץ",
       "transliteration": "ʼerets",
       "concise_definition": "the earth (at large, or partitively a land)",
-      "source_id": "strongs-hebrew-g"
+      "source_id": "strongs-hebrew-g",
+      "source_long_form": {
+        "derivation": "from an unused root probably meaning to be firm;",
+        "kjv_rendering": "[idiom] common, country, earth, field, ground, land, [idiom] natins, way, [phrase] wilderness, world.",
+        "expanded_senses": [
+          "1) land,  earth",
+          "1a) earth",
+          "1a1) whole earth (as opposed to a part)",
+          "1a2) earth (as opposed to heaven)",
+          "1a3) earth (inhabitants)",
+          "1b) land",
+          "1b1) country,  territory",
+          "1b2) district,  region",
+          "1b3) tribal territory",
+          "1b4) piece of ground",
+          "1b5) land of Canaan,  Israel",
+          "1b6) inhabitants of land",
+          "1b7) Sheol,  land without return,  (under) world",
+          "1b8) city (-state)",
+          "1c) ground,  surface of the earth",
+          "1c1) ground",
+          "1c2) soil",
+          "1d) (in phrases)",
+          "1d1) people of the land",
+          "1d2) space or distance of country (in measurements of distance)",
+          "1d3) level or plain country",
+          "1d4) land of the living",
+          "1d5) end(s) of the earth",
+          "1e) (almost wholly late in usage)",
+          "1e1) lands,  countries",
+          "1e1a) often in contrast to Canaan"
+        ]
+      }
     },
     "G1722": {
       "headword": "ἐν",
       "transliteration": "en",
       "concise_definition": "\"in,\" at, (up-)on, by, etc.",
-      "source_id": "strongs-greek-xml-1.9-cc0"
+      "source_id": "strongs-greek-xml-1.9-cc0",
+      "source_long_form": {
+        "derivation": "a primary preposition denoting (fixed) position (in place, time or state), and (by implication) instrumentality (medially or constructively), i.e. a relation of rest (intermediate between G1519 and G1537);",
+        "kjv_rendering": ":--about, after, against, + almost, X altogether, among, X as, at, before, between, (here-)by (+ all means), for (… sake of), + give self wholly to, (here-)in(-to, -wardly), X mightily, (because) of, (up-)on, (open-)ly, X outwardly, one, X quickly, X shortly, (speedi-)ly, X that, X there(-in, -on), through(-out), (un-)to(-ward), under, when, where(-with), while, with(-in).",
+        "supplemental_text": "Often used in compounds, with substantially the same import; rarely with verbs of motion, and then not to indicate direction, except (elliptically) by a separate (and different) preposition."
+      }
     },
     "G746": {
       "headword": "ἀρχή",
       "transliteration": "archḗ",
       "concise_definition": "(properly abstract) a commencement, or (concretely) chief (in various applications of order, time, place, or rank)",
-      "source_id": "strongs-greek-xml-1.9-cc0"
+      "source_id": "strongs-greek-xml-1.9-cc0",
+      "source_long_form": {
+        "derivation": "from G756;",
+        "kjv_rendering": ":--beginning, corner, (at the, the) first (estate), magistrate, power, principality, principle, rule."
+      }
     },
     "G1510": {
       "headword": "εἰμί",
       "transliteration": "eimí",
       "concise_definition": "I exist (used only when emphatic)",
-      "source_id": "strongs-greek-xml-1.9-cc0"
+      "source_id": "strongs-greek-xml-1.9-cc0",
+      "source_long_form": {
+        "derivation": "the first person singular present indicative; a prolonged form of a primary and defective verb;",
+        "kjv_rendering": ":--am, have been, X it is I, was.",
+        "supplemental_text": "See also G1488, G1498, G1511, G1526, G2258, G2071, G2070, G2075, G2076, G2771, G2468, G5600."
+      }
     },
     "G2258": {
       "headword": "ἦν",
       "transliteration": "ēn",
       "concise_definition": "I (thou, etc.) was (wast or were)",
-      "source_id": "strongs-greek-xml-1.9-cc0"
+      "source_id": "strongs-greek-xml-1.9-cc0",
+      "source_long_form": {
+        "derivation": "imperfect of G1510;",
+        "kjv_rendering": ":--+ agree, be, X have (+ charge of), hold, use, was(-t), were."
+      }
     },
     "G3056": {
       "headword": "λόγος",
       "transliteration": "lógos",
       "concise_definition": "something said (including the thought); by implication, a topic (subject of discourse), also reasoning (the mental faculty) or motive; by extension, a computation; specially, (with the article in John) the Divine Expression (i.e. Christ)",
-      "source_id": "strongs-greek-xml-1.9-cc0"
+      "source_id": "strongs-greek-xml-1.9-cc0",
+      "source_long_form": {
+        "derivation": "from G3004;",
+        "kjv_rendering": ":--account, cause, communication, X concerning, doctrine, fame, X have to do, intent, matter, mouth, preaching, question, reason, + reckon, remove, say(-ing), shew, X speaker, speech, talk, thing, + none of these things move me, tidings, treatise, utterance, word, work."
+      }
     },
     "G2532": {
       "headword": "καί",
       "transliteration": "kaí",
       "concise_definition": "and, also, even, so then, too, etc.; often used in connection (or composition) with other particles or small words",
-      "source_id": "strongs-greek-xml-1.9-cc0"
+      "source_id": "strongs-greek-xml-1.9-cc0",
+      "source_long_form": {
+        "derivation": "apparently, a primary particle, having a copulative and sometimes also a cumulative force;",
+        "kjv_rendering": ":--and, also, both, but, even, for, if, or, so, that, then, therefore, when, yet."
+      }
     },
     "G4314": {
       "headword": "πρός",
       "transliteration": "prós",
       "concise_definition": "a preposition of direction; forward to, i.e. toward (with the genitive case, the side of, i.e. pertaining to; with the dative case, by the side of, i.e. near to; usually with the accusative case, the place, time, occasion, or respect, which is the destination of the relation, i.e. whither or for which it is predicated)",
-      "source_id": "strongs-greek-xml-1.9-cc0"
+      "source_id": "strongs-greek-xml-1.9-cc0",
+      "source_long_form": {
+        "derivation": "a strengthened form of G4253;",
+        "kjv_rendering": ":--about, according to , against, among, at, because of, before, between, (where-)by, for, X at thy house, in, for intent, nigh unto, of, which pertain to, that, to (the end that), X together, to (you) -ward, unto, with(-in).",
+        "supplemental_text": "In the compound case, it denotes essentially the same applications, namely, motion towards, accession to, or nearness at."
+      }
     },
     "G2316": {
       "headword": "θεός",
       "transliteration": "theós",
       "concise_definition": "a deity, especially (with G3588) the supreme Divinity; figuratively, a magistrate; by Hebraism, very",
-      "source_id": "strongs-greek-xml-1.9-cc0"
+      "source_id": "strongs-greek-xml-1.9-cc0",
+      "source_long_form": {
+        "derivation": "of uncertain affinity;",
+        "kjv_rendering": ":--X exceeding, God, god(-ly, -ward)."
+      }
     }
   },
   "rights": {
@@ -374,5 +555,20 @@
       "GEN": "796c9ecc1ab3716b8475410cb0a38fc1a56f72c6",
       "JHN": "54fa1cb421f8fee53bb953d00e583c7cc719d317"
     }
-  }
+  },
+  "kjv_derived_evidence": {
+    "scope": "limited GEN.1.1 and JHN.1.1 preview only; source-target token index verified against displayed verses",
+    "source": "Checkpoint 12 > Stage 8C verified_links research JSONL > Stage 8D independent token-position validation",
+    "method": "exact_unique_token_in_unchanged_sequence",
+    "status": "supported_kjv_derived_research_association_not_native_tag_or_contextual_semantic_proof",
+    "source_edition": "KJV2006_USFM",
+    "source_archive_sha256": "ce1f526c64c2376f407308c2c23cb2d2fb58efaf5296327d2d8e408c3700650d",
+    "targets": {
+      "ASV1901": "5e385a1a89887849cb07c88ddf4df37708e0fa901b1f1b7f0b8204c153f0a901",
+      "WEBSTER1833": "0f3c1122422adba66cf1e0c98e11db117beebbe40994d2d8afb5e80cc84942cf"
+    },
+    "excluded": "H853 on English 'and' excluded from contextual display; ambiguous repeated words including John 1:1 'Word' not promoted by derived links",
+    "selected_links": 15
+  },
+  "reader_version": "1.1_source_fields_and_limited_supported_kjv_derived_links"
 }
