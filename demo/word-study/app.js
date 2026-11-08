@@ -26,7 +26,7 @@ function initialDetails(){
   const d=$('details');d.replaceChildren();
   add('div','Choose a study tool',d,'marker');
   add('h3','Select a word',d);
-  add('p',"Tap any English word for Webster's 1828 dictionary. On BSB and KJV verse 1, tap a small H/G badge to inspect the source-attested Strong's number.",d);
+  add('p',"Tap any English word for Webster's 1828 dictionary. Small H/G badges on BSB/KJV come from that edition's native sources. Outlined H/G badges on ASV/Webster are limited supported KJV-derived research associations. Neither selects a contextual sense.",d);
 }
 function clearSelected(){document.querySelectorAll('.word.selected').forEach(b=>b.classList.remove('selected'))}
 function show(){
@@ -50,20 +50,24 @@ function show(){
         w.setAttribute('aria-label','Webster 1828 lookup for '+piece);
         w.addEventListener('click',()=>websterLookup(piece,w));
         const native=verse.native_links&&verse.native_links[String(wordIndex)];
-        if(native){
-          for(const id of native){
-            const tag=add('button',id,para,'strong');
+        const derived=verse.kjv_derived_links&&verse.kjv_derived_links[String(wordIndex)];
+        if(native||derived){
+          const associations=native||derived;
+          const associationType=native?'native':'kjv_derived';
+          for(const id of associations){
+            const tag=add('button',id,para,associationType==='native'?'strong':'strong derived');
             tag.type='button';
-            tag.title="Historical Strong's "+id;
-            tag.setAttribute('aria-label',"Strong's "+id+' for '+piece);
-            tag.addEventListener('click',()=>showStrongs(id,piece,verse.id));
+            tag.title=associationType==='native'?"Source-native Strong's "+id:"Supported KJV-derived research association "+id+" (not a native tag)";
+            tag.setAttribute('aria-label',(associationType==='native'?"Source-native Strong's ":"KJV-derived association ")+id+' for '+piece);
+            tag.addEventListener('click',()=>showStrongs(id,piece,verse.id,associationType));
           }
         }
       }else para.appendChild(document.createTextNode(piece));
     }
   }
   if(edition==='ASV1901')verifyASV(book,asvRequest);
-  else message('Small verified-source archive excerpt; no complete Bible repository is implied for this edition.');
+  else if(edition==='WEBSTER1833') message('Webster 1833 is a limited archived text sample. Outlined H/G badges are source-checked KJV-derived research associations, not Webster native Strong’s tags.');
+  else message('Small source-archived verse excerpt. Filled H/G badges represent the selected edition’s own native tags; no complete Bible repository is implied.');
 }
 async function verifyASV(selected,request){
   const segment=selected==='GEN'?'genesis':'john';
@@ -96,19 +100,31 @@ function details(type,title,sub){
   if(sub)add('p',sub,d,'secondary');
   return d;
 }
-function showStrongs(id,english,verse){
+function showStrongs(id,english,verse,associationType){
   ++activeRequest;clearSelected();
   const record=sample.lexicon[id];
   if(!record){
     details('Historical Strong’s · '+id,'No entry in this limited sample');
     return;
   }
+  const kind=associationType==='kjv_derived';
   const d=details("Strong's "+id,record.headword,record.transliteration+' · '+verse+' · selected English word: '+english);
-  add('h4','Source-authored concise explanation',d);
+  add('div',kind?'KJV-derived supported research association · not a native tag':'Native source-linked association',d,kind?'source evidence-note':'source evidence-note');
+  add('h4','Historical Strong’s source-authored explanation',d);
   add('p',record.concise_definition,d);
-  add('h4','Digital source',d);
+  const extra=record.source_long_form||{};
+  if(extra.expanded_senses&&extra.expanded_senses.length){
+    add('h4','Expanded Hebrew senses · same selected digital source',d);
+    add('div',extra.expanded_senses.join('\n'),d,'definition');
+    add('p','Numbered alternatives are reproduced as recorded. They are not automatically selected as the meaning of this verse.',d,'secondary');
+  }
+  if(extra.derivation){add('h4','Source derivation or grammatical note',d);add('p',extra.derivation,d);}
+  if(extra.kjv_rendering){add('h4','Source-recorded KJV renderings',d);add('div',extra.kjv_rendering,d,'definition');}
+  if(extra.supplemental_text){add('h4','Other source-authored note',d);add('p',extra.supplemental_text,d);}
+  if(id.startsWith('G'))add('p','The selected Greek Strong’s XML does not contain a separate numbered extended-sense list. Its other source fields are shown above; no external long lexicon has been substituted.',d,'secondary');
+  add('h4','Source and evidence',d);
   add('p',record.source_id,d,'source');
-  add('p',"Strong's is a historical lexical index, not a verified choice of contextual sense. This link comes from the selected edition's native evidence, not an automatic transfer from another Bible.",d,'secondary');
+  add('p',kind?'This badge is based on an exact unique English-word alignment from native KJV tags into this translation. It is research evidence, not this edition’s own Strong’s tag or proof of contextual semantic equivalence.':'This badge comes from the selected edition’s own native source data. A Strong’s entry does not independently prove which historical sense the verse means.',d,'secondary');
   const button=add('button',"Look up '"+english+"' in Webster 1828",d,'pill');
   button.type='button';button.addEventListener('click',()=>websterLookup(english,null));
 }
