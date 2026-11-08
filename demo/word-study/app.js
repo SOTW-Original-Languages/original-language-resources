@@ -103,30 +103,112 @@ function details(type,title,sub){
 function showStrongs(id,english,verse,associationType){
   ++activeRequest;clearSelected();
   const record=sample.lexicon[id];
-  if(!record){
-    details('Historical Strong’s · '+id,'No entry in this limited sample');
-    return;
-  }
-  const kind=associationType==='kjv_derived';
-  const d=details("Strong's "+id,record.headword,record.transliteration+' · '+verse+' · selected English word: '+english);
-  add('div',kind?'KJV-derived supported research association · not a native tag':'Native source-linked association',d,kind?'source evidence-note':'source evidence-note');
-  add('h4','Historical Strong’s source-authored explanation',d);
-  add('p',record.concise_definition,d);
+  if(!record){details('Historical Strong’s · '+id,'No entry in this limited sample');return;}
+  const derived=associationType==='kjv_derived';
+  const inventory=associationType==='review_only';
+  const subtitle=inventory?'Public sample inventory, no verse assertion':record.transliteration+' · '+verse+' · English word: '+english;
+  const d=details("Strong's "+id+' · original-language entry',record.headword,subtitle);
+  const evidence=inventory?'Full inspection of this selected sample record; no word alignment asserted.':derived?
+    'KJV-derived research association · not a native ASV/Webster Strong’s tag':
+    'Source-native BSB/KJV association · no contextual sense selected';
+  add('div',evidence,d,'source evidence-note');
+
+  // Always show both definition layers clearly. The Greek selected source has no separately numbered long list.
+  add('h4',"1 · Strong’s concise definition (source-authored)",d);
+  add('div',record.concise_definition||'Not present in this selected source record.',d,'concise-field');
+
   const extra=record.source_long_form||{};
+  add('h4',"2 · Strong’s expanded / full source material",d);
   if(extra.expanded_senses&&extra.expanded_senses.length){
-    add('h4','Expanded Hebrew senses · same selected digital source',d);
-    add('div',extra.expanded_senses.join('\n'),d,'definition');
-    add('p','Numbered alternatives are reproduced as recorded. They are not automatically selected as the meaning of this verse.',d,'secondary');
+    add('div',extra.expanded_senses.join('\n'),d,'definition expanded-field');
+    add('p','Numbered Hebrew sense alternatives as present in the selected digital source. These are not an automatic interpretation of the verse.',d,'secondary');
+  }else{
+    add('p',id.startsWith('G')?'No separately numbered long-sense list exists in the selected Greek XML v1.9. Its complete available source fields for this sample are presented below.':'No separate numbered expanded-sense field exists for this selected source entry.',d,'secondary');
   }
-  if(extra.derivation){add('h4','Source derivation or grammatical note',d);add('p',extra.derivation,d);}
-  if(extra.kjv_rendering){add('h4','Source-recorded KJV renderings',d);add('div',extra.kjv_rendering,d,'definition');}
-  if(extra.supplemental_text){add('h4','Other source-authored note',d);add('p',extra.supplemental_text,d);}
-  if(id.startsWith('G'))add('p','The selected Greek Strong’s XML does not contain a separate numbered extended-sense list. Its other source fields are shown above; no external long lexicon has been substituted.',d,'secondary');
-  add('h4','Source and evidence',d);
-  add('p',record.source_id,d,'source');
-  add('p',kind?'This badge is based on an exact unique English-word alignment from native KJV tags into this translation. It is research evidence, not this edition’s own Strong’s tag or proof of contextual semantic equivalence.':'This badge comes from the selected edition’s own native source data. A Strong’s entry does not independently prove which historical sense the verse means.',d,'secondary');
-  const button=add('button',"Look up '"+english+"' in Webster 1828",d,'pill');
-  button.type='button';button.addEventListener('click',()=>websterLookup(english,null));
+
+  add('h4',"3 · Source derivation / grammar note",d);
+  add('div',extra.derivation||'Not present in selected source record.',d,'definition');
+  add('h4',"4 · Strong’s source-recorded KJV renderings",d);
+  add('div',extra.kjv_rendering||'Not present in selected source record.',d,'definition');
+  add('h4',"5 · Additional source-authored notes",d);
+  add('p',extra.supplemental_text||'No separate supplemental note for this selected record.',d,'secondary');
+
+  const meta=record.source_details||{};
+  add('h4',"6 · Original-language and editorial metadata",d);
+  const metadata=[];
+  if(record.transliteration)metadata.push('Transliteration: '+record.transliteration);
+  if(meta.unpointed_form)metadata.push('Unpointed Hebrew form: '+meta.unpointed_form);
+  if(meta.source_POS_attribute_as_encoded)metadata.push('Hebrew source POS attribute (as encoded): '+meta.source_POS_attribute_as_encoded);
+  if(meta.source_morph_code)metadata.push('Hebrew source morphology code: '+meta.source_morph_code);
+  if(meta.source_beta_code)metadata.push('Greek source Beta Code: '+meta.source_beta_code);
+  if(meta.source_pronunciation)metadata.push('Greek source pronunciation: '+meta.source_pronunciation);
+  if(meta.source_TWOT_reference_candidate)metadata.push('Source TWOT reference candidate (reference only, NOT TWOT text): '+meta.source_TWOT_reference_candidate);
+  if(meta.literal_strongs_references?.length)metadata.push('Literal Strong’s cross-references in source: '+meta.literal_strongs_references.join(', ')+' (not verified verse/meaning links)');
+  if(meta.source_entry_sha256_research)metadata.push('Source research entry SHA-256: '+meta.source_entry_sha256_research);
+  add('div',metadata.length?metadata.join('\n'):'No additional metadata in this bounded sample.',d,'definition metadata-field');
+
+  add('h4',"7 · Source attribution and rights",d);
+  const lock=id.startsWith('H')?sample.source_locks?.strongs_hebrew:sample.source_locks?.strongs_greek;
+  add('div','Historical author: James Strong\nSelected digital source: '+record.source_id+
+      '\nSource file: '+(lock?.source||'See demo README')+
+      '\nXML SHA-256: '+(lock?.source_xml_sha256||'Not shown')+
+      '\nRights basis: '+(lock?.source_edition||'See source manifest')+
+      (id.startsWith('G')?'\nGreek XML digital-editor attribution: Ulrik Sandborg-Petersen; version 1.9.':''),
+      d,'definition metadata-field');
+  add('p',inventory?'This record is one of 13 public preview examples. Full pre-beta Hebrew/Greek research corpora are NOT published on this page.':
+    derived?'This exact English token was conservatively aligned from a KJV source tag. It is not the target Bible’s own native tag and is not proof of contextual meaning.':
+    'This selected link comes from the displayed edition’s native source. The lexical meanings remain alternatives, not a verse-specific interpretation.',d,'secondary');
+  if(english){
+    const button=add('button',"Look up '"+english+"' in Webster 1828",d,'pill');
+    button.type='button';button.addEventListener('click',()=>websterLookup(english,null));
+  }
+  const sourceLink=add('a','Review all 13 entries and attribution ledger',d,'review-back');
+  sourceLink.href='#source-review';
+}
+function reviewInventory(){
+  const catalog=$('entry-catalog'),table=$('field-audit');
+  if(!catalog||!table||!sample)return;
+  catalog.replaceChildren();table.replaceChildren();
+  const ids=Object.keys(sample.lexicon).sort((a,b)=>a[0]===b[0]?Number(a.slice(1))-Number(b.slice(1)):a[0]==='H'?-1:1);
+  $('inventory-summary').textContent=ids.length+' selected historical Strong’s records: '+
+    ids.filter(id=>id[0]==='H').length+' Hebrew and '+ids.filter(id=>id[0]==='G').length+
+    ' Greek. This is the COMPLETE inventory of the demo sample, not the underlying full research library.';
+  const thead=document.createElement('thead'),headrow=document.createElement('tr');
+  for(const label of ['Entry','Concise','Numbered senses','Derivation','KJV renderings','Extra note','Source metadata']){
+    add('th',label,headrow);
+  }
+  thead.appendChild(headrow);table.appendChild(thead);
+  const tbody=document.createElement('tbody');
+  for(const id of ids){
+    const r=sample.lexicon[id],x=r.source_long_form||{},m=r.source_details||{};
+    const b=add('button',id+' · '+r.headword+' ('+r.transliteration+')',catalog,'pill inventory-link');
+    b.type='button';
+    b.addEventListener('click',()=>{
+      showStrongs(id,null,null,'review_only');
+      if(typeof $('details').scrollIntoView==='function')$('details').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    const row=document.createElement('tr');
+    const status=(v)=>v?'Present':'Not in selected source';
+    const vals=[id,status(r.concise_definition),x.expanded_senses?.length?x.expanded_senses.length+' senses':'No numbered list',
+      status(x.derivation),status(x.kjv_rendering),status(x.supplemental_text),
+      (id.startsWith('H')?'Hebrew form/morph/TWOT ref':'Greek Beta Code/pronunciation')];
+    for(const v of vals)add('td',String(v),row);
+    tbody.appendChild(row);
+  }
+  table.appendChild(tbody);
+  $('source-summary').textContent='The research checkpoint catalogs 8,674 Hebrew and 5,624 Greek source records; this public page includes just 5 Hebrew + 8 Greek examples. The original source libraries, private Inspector and full word-alignment research are not exposed here.';
+  const locks=$('source-locks');locks.replaceChildren();
+  const h=sample.source_locks.strongs_hebrew,g=sample.source_locks.strongs_greek;
+  for(const [title,p] of [
+    ['Hebrew Strong’s | James Strong',h],
+    ['Greek Strong’s | James Strong; XML editor Ulrik Sandborg-Petersen',g]
+  ]){
+    const card=add('div','',locks,'source-card');
+    add('h3',title,card);
+    add('p',p.source_edition,card,'secondary');
+    add('p','Source: '+p.source,card,'source');
+    add('p','XML SHA-256: '+p.source_xml_sha256,card,'source');
+  }
 }
 async function loadDictionary(){
   if(dictionary)return dictionary;
@@ -165,9 +247,9 @@ async function websterLookup(word,button){
 }
 document.querySelectorAll('[data-book]').forEach(b=>b.addEventListener('click',()=>{book=b.dataset.book;show()}));
 document.querySelectorAll('[data-edition]').forEach(b=>b.addEventListener('click',()=>{edition=b.dataset.edition;show()}));
-fetch('sample-data.json').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()})
+fetch('sample-data.json?v=1.2').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()})
 .then(result=>{
   if(result.schema!=='sotw-public-safe-word-study-demo-v1')throw Error('Unknown sample schema');
   if(Object.keys(result.passages).length!==2)throw Error('Unexpected passage count');
-  sample=result;show();
+  sample=result;show();reviewInventory();
 }).catch(err=>{add('p','Sample data failed to load: '+err.message,$('reader'));message('Demo cannot start until sample-data.json is deployed alongside index.html.')});
