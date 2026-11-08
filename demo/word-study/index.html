@@ -28,10 +28,15 @@ header p{max-width:760px;color:#d9e5ea}a{color:#17716b}header a{color:#b8e6df}
 .marker{color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.secondary{color:var(--muted);font-size:13px}
 .definition{background:#f5f8f6;border:1px solid #e0e8e3;border-radius:9px;padding:10px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:420px;overflow:auto;font-size:13px}
 .source{font-size:12px;color:#566772;overflow-wrap:anywhere}
+.concise-field{background:#e4f3ec;border-left:5px solid #16816d;border-radius:8px;padding:15px 16px;font:700 17px/1.55 Georgia,serif;white-space:pre-wrap;overflow-wrap:anywhere}
+.expanded-field{background:#f7f5ee;border-left:4px solid #c59f60}.metadata-field{font:12.5px/1.75 ui-monospace,Consolas,monospace;overflow-wrap:anywhere}.review-back{display:block;margin-top:18px;font-size:13px}.review-nav{display:inline-block;margin:0 0 20px;font-weight:700}
+.review-section{margin:24px 0 0;padding:22px;background:#fff;border:1px solid var(--line);border-radius:14px}.review-section h2{font:700 27px Georgia,serif;margin:5px 0}.review-section h3{font-size:15px;margin:10px 0 5px}.review-summary{font-size:13px;color:var(--muted)}
+.inventory-links{display:flex;gap:7px;flex-wrap:wrap;margin:13px 0 20px}.inventory-link{font-size:12px;max-width:100%;white-space:normal;text-align:left}.table-scroll{overflow-x:auto;margin-bottom:18px}.source-matrix{border-collapse:collapse;font-size:12px;width:100%;min-width:650px}.source-matrix th,.source-matrix td{padding:9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.source-matrix th{background:#edf3ef;color:#344b55}.source-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:13px 0}.source-card{border:1px solid var(--line);background:#f8faf8;border-radius:8px;padding:10px 14px;overflow-wrap:anywhere}.source-card p{margin:5px 0}.rights-list{margin:8px 0 2px;padding-left:22px}.rights-list li{margin:9px 0}.rights-warning{border-left:3px solid #b4894a;background:#fff8e9;padding:9px 13px;border-radius:5px;font-size:12px;color:#614c2c}
+
 #status{font-size:12px;color:#416062;min-height:22px;margin:11px 0}
 footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 0 40px;font-size:13px;color:var(--muted)}
 footer h2{font:700 20px Georgia,serif;color:var(--ink)}
-@media(max-width:820px){.layout,.controls{grid-template-columns:1fr}}@media(max-width:500px){.wrap{padding:15px}.verse{font-size:18px}.panel-head{padding:13px}#reader{padding:6px 13px}#details{padding:16px}}
+@media(max-width:820px){.layout,.controls,.source-grid{grid-template-columns:1fr}}@media(max-width:500px){.wrap{padding:15px}.verse{font-size:18px}.panel-head{padding:13px}#reader{padding:6px 13px}#details{padding:16px}}
 </style></head><body>
 <header><div class="wrap">
 <a href="../../">← Webster 1828 homepage</a><div class="overline">Stewards of the Way · Public-safe research demo</div>
@@ -40,6 +45,7 @@ footer h2{font:700 20px Georgia,serif;color:var(--ink)}
 </div></header>
 <main class="wrap">
 <div class="notice"><strong>Limited sample:</strong> Genesis 1:1–3 and John 1:1–3. This does not publish the private 66-book Inspector or claim all four Bibles are hosted. Selected BSB/KJV badges come from native tags. ASV/Webster 1833 have a smaller set of independently token-checked, KJV-derived research association badges in verse 1. These are not native tags or contextual meaning claims.</div>
+<a href="#source-review" class="review-nav">Inspect all 13 Strong’s entries, source fields and attributions ↓</a>
 <div class="controls">
 <div class="control"><h2>Passage</h2><div class="pills">
 <button type="button" class="pill" data-book="GEN" aria-pressed="true">Genesis 1</button>
@@ -62,11 +68,35 @@ footer h2{font:700 20px Georgia,serif;color:var(--ink)}
 <div id="details" aria-live="polite"><div class="marker">Start here</div><h3>Select a word</h3><p>Choose an English word or a native Strong's badge in the passage.</p></div></section>
 </div>
 <p id="status" role="status"></p>
+<section class="review-section" id="source-review" aria-label="Source fields and attribution review">
+ <div class="overline" style="color:#166f67">Before Bible processing · source audit view</div>
+ <h2>What is actually in this demo?</h2>
+ <p id="source-summary" class="review-summary">Loading sample inventory…</p>
+ <h3>Review every selected Strong’s entry</h3>
+ <p id="inventory-summary" class="review-summary">The demo inventory will appear here.</p>
+ <div class="inventory-links" id="entry-catalog" aria-label="All Strong's examples"></div>
+ <p class="review-summary">Select any entry to see <strong>1. Concise definition</strong>, <strong>2. Expanded / full source material</strong>, derivation, KJV renderings, notes, original-language metadata, source IDs and provenance. Both definition sections remain visible, with an explicit “not present” message where appropriate.</p>
+ <div class="table-scroll" aria-label="Sample field completeness"><table id="field-audit" class="source-matrix"></table></div>
+ <h3>Selected historical Strong’s source files</h3>
+ <div class="source-grid" id="source-locks"></div>
+ <h3>Attribution and rights ledger for this page</h3>
+ <ul class="rights-list">
+  <li><strong>Hebrew Strong’s:</strong> Historical author James Strong. Selected digital OSIS source declares <strong>Public Domain</strong>. We retain scholarly and digital-source identification; this does not import any STEP Bible definitions.</li>
+  <li><strong>Greek Strong’s:</strong> Historical author James Strong; selected XML v1.9 digital editor <strong>Ulrik Sandborg-Petersen</strong>. Source declares <strong>CC0</strong>. Displayed credit is provenance, not an extra attribution condition.</li>
+  <li><strong>Webster’s Dictionary (1828):</strong> Historical author <strong>Noah Webster</strong>; digital transcription <a href="https://github.com/akaitsurugi/webster1828">akaitsurugi/webster1828</a>. The digital edition is <strong>CC BY-SA 4.0</strong>, so attribution and applicable share-alike conditions must be retained. <a href="../../LICENSE_WEBSTER_SOURCE.txt">Read the included source license</a>. Definitions are loaded directly from the existing public dictionary.</li>
+  <li><strong>Berean Standard Bible:</strong> BSB publisher's <a href="https://berean.bible/terms.htm">public-domain dedication</a> supports the excerpt. Publisher/source credit is retained for traceability.</li>
+  <li><strong>KJV 1769, Webster Bible 1833, ASV 1901:</strong> Historical English Bible editions, with edition/source identities retained. The demo KJV and Webster 1833 excerpts are from vetted source archives; ASV is checked against <a href="https://github.com/SOTW-ASV-1901/asv-1901-resources">the independent SOTW ASV repository</a>. Modern digital-source notices still require source-by-source review for wider distribution.</li>
+  <li><strong>KJV-derived ASV/Webster badges:</strong> A separate research association, not a native original-language tag. Stage 8C/8D source evidence is retained in the owner recovery package and not published wholesale.</li>
+  <li><strong>NOT used for displayed definitions:</strong> <strong>STEP Bible</strong>, BDB, Thayer, or TWOT text. A source-native TWOT <em>reference candidate</em> is metadata only. None of these excluded works is being reproduced as a dictionary definition in this sample.</li>
+ </ul>
+ <p class="rights-warning">Rights review reflects source notices and the current owner-approved sample, not blanket permission to publish unrelated digital editions. This page shows all 13 *sample* lexical entries, not all 14,298 source records or private research flags. Keep the existing release gates before automated Bible-wide processing.</p>
+ <p class="review-summary">For transparent machine-readable review: <a href="sample-data.json?v=1.2">view the public sample JSON</a> · <a href="README.md">source manifest, rights notes and limitations</a> · <a href="https://github.com/SOTW-Original-Languages/original-language-resources/blob/main/docs/SOTW_LIVE_PROGRESS_LOG.md">current progress log</a>.</p>
+</section>
 <footer>
 <h2>Where this text comes from</h2>
 <p><strong>ASV:</strong> pinned, independently published <a href="https://github.com/SOTW-ASV-1901/asv-1901-resources">ASV chapter JSON</a>, with an exact-checked packaged fallback. <strong>BSB, KJV and Webster Bible:</strong> small passages extracted from original archived source-backed research. Selected BSB original-language rows and native KJV USFM tags are shown separately from carefully selected, exact-word KJV-derived ASV/Webster research links. Derived badges are not the translation’s own original-language tags, and neither type selects a contextual sense.</p>
 <p>Webster's English dictionary is loaded from this site's existing <a href="../../">Webster 1828 resource</a>, not from a second dictionary copy. Its digital transcription is <a href="../../LICENSE_WEBSTER_SOURCE.txt">CC BY-SA 4.0</a>. The BSB is <a href="https://berean.bible/terms.htm">public domain</a>. Detailed scope and source locks: <a href="README.md">demo README</a>.</p>
 <p>Strong's source-authored explanations, Hebrew expanded numbered senses, derivation and KJV renderings are kept distinct. The selected Greek XML contains no separately numbered long-sense list. Dictionary definitions are historical reference material, not a selection of the meaning intended in a specific Bible verse. This demo contains no private research corpus, internal flags, STEP glosses, or CGBC code.</p>
 </footer></main>
-<script src="app.js"></script>
+<script src="app.js?v=1.2"></script>
 </body></html>
