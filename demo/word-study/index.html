@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOTW | Scripture Word Study Demo</title>
+<style>
+:root{--navy:#182e43;--teal:#15736d;--ink:#213242;--muted:#566876;--line:#d6dfdd;--paper:#f8f8f5}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 system-ui,-apple-system,sans-serif}
+header{background:var(--navy);color:#fff;border-bottom:5px solid #caa767}.wrap{max-width:1100px;margin:auto;padding:20px 24px}
+header .wrap{padding-top:24px;padding-bottom:28px}header h1{font:700 clamp(29px,5vw,47px)/1.12 Georgia,serif;margin:10px 0}
+header p{max-width:760px;color:#d9e5ea}a{color:#17716b}header a{color:#b8e6df}
+.overline{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:750;color:#9bd6ca}
+.notice{background:#e4f0eb;border-left:4px solid var(--teal);padding:12px 16px;border-radius:7px;margin:6px 0 22px}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 18px}
+.control,.panel{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.control{padding:14px 16px}.control h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 10px}
+.pills{display:flex;gap:8px;flex-wrap:wrap}button{cursor:pointer;font:inherit}button:focus-visible,a:focus-visible{outline:3px solid #d6a548;outline-offset:3px}
+.pill{border:1px solid #c8d6d2;background:#fff;color:var(--navy);border-radius:22px;padding:8px 12px;font-size:13px;font-weight:650}
+.pill[aria-pressed="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+.layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(310px,.88fr);gap:18px;align-items:start}
+.panel-head{background:#f1f5f3;border-bottom:1px solid var(--line);padding:16px 19px}
+.panel-head h2{font:700 25px Georgia,serif;margin:0}.panel-head p{font-size:12px;color:var(--muted);margin:4px 0 0}
+#reader{padding:9px 20px 18px}.verse{font:19px/2.05 Georgia,serif;padding:0 0 13px;border-bottom:1px solid #eef0ee;margin:16px 0}
+.verse:last-child{border:0}.vnum{color:var(--teal);font:700 12px system-ui;vertical-align:super;margin-right:9px}
+.word{font:inherit;color:inherit;background:transparent;border:0;padding:1px;text-decoration:underline dotted #9bbab0;text-underline-offset:5px}
+.word:hover,.word.selected{background:#ccece1;color:#095b55}
+.strong{vertical-align:super;font:700 9px system-ui;padding:1px 3px;margin-right:1px;border-radius:4px;border:1px solid #b0d6cd;background:#e8f5f0;color:#11695f}
+.strong:hover{background:#cce7df}.legend{border-top:1px solid var(--line);background:#fafcfa;padding:11px 18px;color:var(--muted);font-size:12px}
+#details{padding:22px;min-height:280px}#details h3{font:700 27px Georgia,serif;margin:5px 0}#details h4{text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-size:11px;margin:20px 0 4px}
+.marker{color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.secondary{color:var(--muted);font-size:13px}
+.definition{background:#f5f8f6;border:1px solid #e0e8e3;border-radius:9px;padding:10px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:420px;overflow:auto;font-size:13px}
+.source{font-size:12px;color:#566772;overflow-wrap:anywhere}
+#status{font-size:12px;color:#416062;min-height:22px;margin:11px 0}
+footer{border-top:1px solid var(--line);margin-top:24px;padding:18px 0 40px;font-size:13px;color:var(--muted)}
+footer h2{font:700 20px Georgia,serif;color:var(--ink)}
+@media(max-width:820px){.layout,.controls{grid-template-columns:1fr}}@media(max-width:500px){.wrap{padding:15px}.verse{font-size:18px}.panel-head{padding:13px}#reader{padding:6px 13px}#details{padding:16px}}
+</style></head><body>
+<header><div class="wrap">
+<a href="../../">← Webster 1828 homepage</a><div class="overline">Stewards of the Way · Public-safe research demo</div>
+<h1>Scripture Word Study</h1>
+<p>Read Genesis and John in four Bible editions. Tap any word for Webster's 1828 English dictionary, or a small Strong's badge where original source evidence supports the association.</p>
+</div></header>
+<main class="wrap">
+<div class="notice"><strong>Limited sample:</strong> Genesis 1:1–3 and John 1:1–3. This does not publish the private 66-book Inspector or claim all four Bibles are hosted. Native Strong's links are displayed only for selected BSB and KJV words in verse 1.</div>
+<div class="controls">
+<div class="control"><h2>Passage</h2><div class="pills">
+<button type="button" class="pill" data-book="GEN" aria-pressed="true">Genesis 1</button>
+<button type="button" class="pill" data-book="JHN" aria-pressed="false">John 1</button>
+</div></div>
+<div class="control"><h2>Translation</h2><div class="pills">
+<button type="button" class="pill" data-edition="BSB" aria-pressed="false">BSB</button>
+<button type="button" class="pill" data-edition="KJV1769" aria-pressed="false">KJV 1769</button>
+<button type="button" class="pill" data-edition="WEBSTER1833" aria-pressed="false">Webster 1833</button>
+<button type="button" class="pill" data-edition="ASV1901" aria-pressed="true">ASV 1901</button>
+</div></div>
+</div>
+<div class="layout">
+<section class="panel" aria-label="Scripture passage">
+<div class="panel-head"><h2 id="reading-title">Genesis 1 · ASV 1901</h2><p id="origin">Loading Scripture sample…</p></div>
+<div id="reader" aria-live="polite"><p>Loading...</p></div>
+<div class="legend">Underlined word → Webster 1828 · Small <strong>H/G</strong> badge → historical Strong's entry</div>
+</section>
+<section class="panel" aria-label="Word study panel"><div class="panel-head"><h2>Word Study</h2><p>Historical sources kept separate</p></div>
+<div id="details" aria-live="polite"><div class="marker">Start here</div><h3>Select a word</h3><p>Choose an English word or a native Strong's badge in the passage.</p></div></section>
+</div>
+<p id="status" role="status"></p>
+<footer>
+<h2>Where this text comes from</h2>
+<p><strong>ASV:</strong> pinned, independently published <a href="https://github.com/SOTW-ASV-1901/asv-1901-resources">ASV chapter JSON</a>, with an exact-checked packaged fallback. <strong>BSB, KJV and Webster Bible:</strong> small passages extracted from original archived source-backed research. Native BSB original-language rows and KJV USFM tags are selectively exposed; no inferred ASV/Webster-to-KJV Strong's links are presented as verified.</p>
+<p>Webster's English dictionary is loaded from this site's existing <a href="../../">Webster 1828 resource</a>, not from a second dictionary copy. Its digital transcription is <a href="../../LICENSE_WEBSTER_SOURCE.txt">CC BY-SA 4.0</a>. The BSB is <a href="https://berean.bible/terms.htm">public domain</a>. Detailed scope and source locks: <a href="README.md">demo README</a>.</p>
+<p>Dictionary definitions are historical reference material, not a selection of the meaning intended in a specific Bible verse. This demo contains no private research corpus, internal flags, STEP glosses, or CGBC code.</p>
+</footer></main>
+<script src="app.js"></script>
+</body></html>
