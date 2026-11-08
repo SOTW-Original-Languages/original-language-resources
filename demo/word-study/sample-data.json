@@ -275,91 +275,78 @@
       "headword": "רֵאשִׁית",
       "transliteration": "rêʼshîyth",
       "concise_definition": "the first, in place, time, order or rank (specifically, a firstfruit)",
-      "kjv_rendering": "beginning, chief(-est), first(-fruits, part, time), principal thing.",
       "source_id": "strongs-hebrew-g"
     },
     "H430": {
       "headword": "אֱלֹהִים",
       "transliteration": "ʼĕlôhîym",
       "concise_definition": "gods in the ordinary sense; but specifically used (in the plural thus, especially with the article) of the supreme God; occasionally applied by way of deference to magistrates; and sometimes as a superlative",
-      "kjv_rendering": "angels, [idiom] exceeding, God (gods) (-dess, -ly), [idiom] (very) great, judges, [idiom] mighty.",
       "source_id": "strongs-hebrew-g"
     },
     "H1254": {
       "headword": "בָּרָא",
       "transliteration": "bârâʼ",
       "concise_definition": "(absolutely) to create; (qualified) to cut down (a wood), select, feed (as formative processes)",
-      "kjv_rendering": "choose, create (creator), cut down, dispatch, do, make (fat).",
       "source_id": "strongs-hebrew-g"
     },
     "H8064": {
       "headword": "שָׁמַיִם",
       "transliteration": "shâmayim",
       "concise_definition": "the sky (as aloft; the dual perhaps alluding to the visible arch in which the clouds move, as well as to the higher ether where the celestial bodies revolve)",
-      "kjv_rendering": "air, [idiom] astrologer, heaven(-s).",
       "source_id": "strongs-hebrew-g"
     },
     "H776": {
       "headword": "אֶרֶץ",
       "transliteration": "ʼerets",
       "concise_definition": "the earth (at large, or partitively a land)",
-      "kjv_rendering": "[idiom] common, country, earth, field, ground, land, [idiom] natins, way, [phrase] wilderness, world.",
       "source_id": "strongs-hebrew-g"
     },
     "G1722": {
       "headword": "ἐν",
       "transliteration": "en",
       "concise_definition": "\"in,\" at, (up-)on, by, etc.",
-      "kjv_rendering": ":--about, after, against, among, at, for, in, on, with.",
       "source_id": "strongs-greek-xml-1.9-cc0"
     },
     "G746": {
       "headword": "ἀρχή",
       "transliteration": "archḗ",
       "concise_definition": "(properly abstract) a commencement, or (concretely) chief (in various applications of order, time, place, or rank)",
-      "kjv_rendering": ":--beginning, corner, (at the, the) first (estate), magistrate, power, principality, principle, rule.",
       "source_id": "strongs-greek-xml-1.9-cc0"
     },
     "G1510": {
       "headword": "εἰμί",
       "transliteration": "eimí",
       "concise_definition": "I exist (used only when emphatic)",
-      "kjv_rendering": ":--am, have been, X it is I, was.",
       "source_id": "strongs-greek-xml-1.9-cc0"
     },
     "G2258": {
       "headword": "ἦν",
       "transliteration": "ēn",
       "concise_definition": "I (thou, etc.) was (wast or were)",
-      "kjv_rendering": ":--+ agree, be, X have (+ charge of), hold, use, was(-t), were.",
       "source_id": "strongs-greek-xml-1.9-cc0"
     },
     "G3056": {
       "headword": "λόγος",
       "transliteration": "lógos",
       "concise_definition": "something said (including the thought); by implication, a topic (subject of discourse), also reasoning (the mental faculty) or motive; by extension, a computation; specially, (with the article in John) the Divine Expression (i.e. Christ)",
-      "kjv_rendering": ":--account, cause, communication, doctrine, matter, preaching, reason, speech, word.",
       "source_id": "strongs-greek-xml-1.9-cc0"
     },
     "G2532": {
       "headword": "καί",
       "transliteration": "kaí",
       "concise_definition": "and, also, even, so then, too, etc.; often used in connection (or composition) with other particles or small words",
-      "kjv_rendering": ":--and, also, both, but, even, for, if, or, so, that, then, therefore, when, yet.",
       "source_id": "strongs-greek-xml-1.9-cc0"
     },
     "G4314": {
       "headword": "πρός",
       "transliteration": "prós",
       "concise_definition": "a preposition of direction; forward to, i.e. toward (with the genitive case, the side of, i.e. pertaining to; with the dative case, by the side of, i.e. near to; usually with the accusative case, the place, time, occasion, or respect, which is the destination of the relation, i.e. whither or for which it is predicated)",
-      "kjv_rendering": ":--about, according to, against, among, at, before, by, for, in, of, to, unto, with.",
       "source_id": "strongs-greek-xml-1.9-cc0"
     },
     "G2316": {
       "headword": "θεός",
       "transliteration": "theós",
       "concise_definition": "a deity, especially (with G3588) the supreme Divinity; figuratively, a magistrate; by Hebraism, very",
-      "kjv_rendering": ":--X exceeding, God, god(-ly, -ward).",
       "source_id": "strongs-greek-xml-1.9-cc0"
     }
   },
@@ -370,5 +357,22 @@
     "ASV1901": "SOTW ASV 1901 approved public chapter JSON; pinned repo source, stage10 verse texts cross-checked",
     "STRONGS": "Selected digital James Strong Hebrew public-domain OSIS and Greek CC0 v1.9; historical headword explanations, not contextual sense claims",
     "WEBSTER1828": "CC BY-SA 4.0 digital transcription, retained at repository root"
+  },
+  "source_locks": {
+    "strongs_hebrew": {
+      "source": "strongs-master.zip / strongs-master/hebrew/StrongHebrewG.xml",
+      "source_xml_sha256": "1f9659ea208f4c498843a0280dacb1448627c33ca77712642d8705793ab66061",
+      "source_edition": "Selected James Strong Hebrew digital OSIS; source-declared Public Domain"
+    },
+    "strongs_greek": {
+      "source": "strongs-dictionary-xml-master.zip / strongs-dictionary-xml-master/strongsgreek.xml",
+      "source_xml_sha256": "91474213b208a4e487d35f85c10e5c90737acc69082dad15dec5431406003545",
+      "source_edition": "Selected James Strong Greek digital XML v1.9; source-declared CC0"
+    },
+    "archived_bible_research": "Checkpoint 12 / Stage 10 private source-locked Inspector; only small nonprivate source-backed verses were extracted. Original archives remain owner-held.",
+    "asv_chapter_sha": {
+      "GEN": "796c9ecc1ab3716b8475410cb0a38fc1a56f72c6",
+      "JHN": "54fa1cb421f8fee53bb953d00e583c7cc719d317"
+    }
   }
 }
