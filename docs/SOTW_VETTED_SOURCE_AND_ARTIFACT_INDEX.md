@@ -56,3 +56,11 @@ The private 66-book research build and the four large original source ZIPs are *
 
 ## Index maintenance
 On new source acquisition or replacement, add exact archive/file identity, hash, provenance, role and release treatment here, without discarding old audit history. Processed outputs can be re-scanned from source archives; this document intentionally focuses on durable sources and decisions, not a weekly work-state ledger.
+
+## 2026-11-07 | New bounded public Word Study demo (distinct from archived Inspector)
+
+- **Current public demo files:** `demo/word-study/index.html`, `demo/word-study/app.js`, `demo/word-study/sample-data.json`, and `demo/word-study/README.md` in `SOTW-Original-Languages/original-language-resources`. GitHub Pages expected path: `/original-language-resources/demo/word-study/`.
+- **Source basis:** Previously owner-vetted November 5 Bible source archives through verified Checkpoint 12 private Inspector source locks; two sample passages, three verses each, four English Bible editions. ASV also cross-referenced against the independent public SOTW ASV chapter files pinned at commit `4179ceb646cf4fed0077760794749821fb989273`. Source-byte hashes are recorded in the demo's public JSON/README.
+- **Scope and safety:** 36 *selected native* BSB/KJV Strong's links to 13 selected James Strong historical entries, not unpublished semantic/cross-edition candidates. Webster 1828 exact headword lookup uses the existing root public dictionary, not a new dictionary release. No private 66-book JSON, internal flags, STEP glosses or unresolved research associations were uploaded. This limited demo does not replace or certify the historical `docs/inspector/` v2.3 preview, the private Stage 10 Inspector, or a future complete translation publication.
+- **QA status:** Source and simulated UI checks PASS; new demo's live browser/mobile owner acceptance PENDING. The separate standalone Webster homepage was already owner browser-tested.
+
