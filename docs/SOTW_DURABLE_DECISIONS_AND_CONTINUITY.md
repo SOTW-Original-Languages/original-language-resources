@@ -359,3 +359,11 @@ Built `SOTW_STRONGS_LOOKUP_RESEARCH_INDEX_2026-11-07.zip` from the preserved Str
 ## Continuity rule
 
 **Evidence first; reopen only a documented contradiction.** Owner decisions govern the intended design, while release rights and source provenance remain independently verifiable requirements. Preserve both without substituting one for the other.
+
+## 2026-11-07 | Owner-authorized standalone web Word Study demo
+
+- **OWNER DECISION:** Prefer a public-safe, website-based interactive Word Study demonstration over requiring owner-local Mac installation solely to exercise visible reader interactions. The demo may be hosted separately at `demo/word-study/` in this existing Original Languages GitHub Pages repository; this is authorization for that bounded demonstration, **not** for publishing the full private 66-book Inspector or changing the CGBC player.
+- **VERIFIED IMPLEMENTATION (GitHub files):** `demo/word-study/index.html`, `app.js`, `sample-data.json`, and `README.md` provide BSB, KJV 1769, Webster Bible 1833, and ASV 1901 for Genesis 1:1–3 and John 1:1–3. Only selected native BSB/KJV Strong's links are exposed; no ambiguous KJV-derived ASV/Webster links are promoted. English word taps use the separately published root Webster 1828 dictionary. The standalone root dictionary homepage remains unchanged.
+- **ASV OWNER ARCHITECTURE PRESERVED:** The independent SOTW ASV repository remains the sole fully hosted Bible edition in this four-edition workflow. Demo ASV excerpts verify against pinned published chapter records; the other three translation texts are limited, source-traceable excerpts from owner-held archives and do not imply that complete independent Bible repositories are published.
+- **VALIDATION BOUNDARY:** Static source, link counts/positions, JavaScript syntax, private-field scan, and simulated UI interactions were tested. Live GitHub Pages browser/mobile verification of this new demo is **PENDING**; the original private 66-book Inspector Stage 11 remains unverified. See the active `docs/SOTW_LIVE_PROGRESS_LOG.md` and demo README for exact test status and source locks. Checkpoint 12 remains the latest full development recovery archive, and no new recovery ZIP was fabricated for these public-safe GitHub file additions.
+
